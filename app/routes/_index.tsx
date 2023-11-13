@@ -1,27 +1,30 @@
-import type { MetaFunction } from "@remix-run/node";
-import { SiteFooter } from "~/components/site-footer";
-import { SiteHeader } from "~/components/site-header";
+import { Link } from "@remix-run/react";
+import {
+  PageHeader,
+  PageHeaderDescription,
+  PageHeaderHeading,
+} from "~/components/page-header";
+import { buttonVariants } from "~/components/ui/button";
+import { cn } from "~/lib/utils";
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: "CollegeDunia" },
-    {
-      name: "description",
-      content: "Welcome to CollegeDunia!",
-    },
-  ];
-};
-
-interface IndexProps {
-  children: React.ReactNode;
-}
-
-export default function Index({ children }: IndexProps) {
+export default function Index() {
   return (
-    <div className="relative flex min-h-screen flex-col">
-      <SiteHeader />
-      <div className="flex-1">{children}</div>
-      <SiteFooter />
+    <div className="container relative">
+      <PageHeader className="pb-8">
+        <p className="capitalize">PROFESSIONAL EDUCATION CONSULTING</p>
+        <PageHeaderHeading className="capitalize">
+          TAKE YOUR FUTURE TO NEW HEIGHTS
+        </PageHeaderHeading>
+        <PageHeaderDescription>SOME GEBBRISH</PageHeaderDescription>
+        <div className="w-full flex items-center space-x-4 pb-8 pt-4 md:pb-10">
+          <Link to="#" className={cn(buttonVariants())}>
+            Get Started
+          </Link>
+          <Link to="#" className={cn(buttonVariants({ variant: "outline" }))}>
+            Learn More
+          </Link>
+        </div>
+      </PageHeader>
     </div>
   );
 }
