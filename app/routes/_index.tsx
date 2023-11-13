@@ -15,7 +15,6 @@ export default function Index() {
         <PageHeaderHeading className="capitalize">
           TAKE YOUR FUTURE TO NEW HEIGHTS
         </PageHeaderHeading>
-        <PageHeaderDescription>SOME GEBBRISH</PageHeaderDescription>
         <div className="w-full flex items-center space-x-4 pb-8 pt-4 md:pb-10">
           <Link to="#" className={cn(buttonVariants())}>
             Get Started

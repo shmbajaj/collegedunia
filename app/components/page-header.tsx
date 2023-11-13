@@ -35,6 +35,12 @@ function PageHeaderHeading({
   );
 }
 
+// TODO[fix]: Getting below error message on using Balancer
+/*
+ * Error: Element type is invalid: expected a string 
+ * (for built-in components) 
+ * or a class/function (for composite components) but got: object.
+ */
 function PageHeaderDescription({
   className,
   ...props
