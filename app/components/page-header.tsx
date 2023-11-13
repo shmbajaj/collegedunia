@@ -1,5 +1,5 @@
 import React from "react";
-import Balancer from "react-wrap-balancer";
+// import Balance from "react-wrap-balancer";
 import { cn } from "~/lib/utils";
 
 function PageHeader({
@@ -37,8 +37,8 @@ function PageHeaderHeading({
 
 // TODO[fix]: Getting below error message on using Balancer
 /*
- * Error: Element type is invalid: expected a string 
- * (for built-in components) 
+ * Error: Element type is invalid: expected a string
+ * (for built-in components)
  * or a class/function (for composite components) but got: object.
  */
 function PageHeaderDescription({
@@ -46,7 +46,7 @@ function PageHeaderDescription({
   ...props
 }: React.HTMLAttributes<HTMLParagraphElement>) {
   return (
-    <Balancer
+    <p
       className={cn(
         "max-w-[750px] text-lg text-muted-foreground sm:text-xl",
         className
