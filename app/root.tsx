@@ -1,5 +1,5 @@
 import { cssBundleHref } from "@remix-run/css-bundle";
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -10,11 +10,23 @@ import {
 } from "@remix-run/react";
 
 import styles from "./tailwind.css";
+import { SiteHeader } from "./components/site-header";
+import { SiteFooter } from "./components/site-footer";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "CollegeDunia" },
+    {
+      name: "description",
+      content: "Welcome to CollegeDunia!",
+    },
+  ];
+};
 
 export default function App() {
   return (
@@ -25,8 +37,12 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
-        <Outlet />
+      <body className="relative min-h-screen bg-background flex flex-col font-sans">
+        <SiteHeader />
+        <div className="flex-1">
+          <Outlet />
+        </div>
+        <SiteFooter />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
