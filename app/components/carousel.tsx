@@ -16,7 +16,6 @@ export function Carousel({ children }: CarouselProps) {
   const prevSlide = () =>
     setActiveIndex((prevIndex) => (prevIndex - 1 + slidesCount) % slidesCount);
   const setIndex = (index: number) => setActiveIndex(index);
-  console.log({ slidesCount, index, emptyArray });
   return (
     <article className="relative p-8 flex flex-col items-center">
       {/* TODO: add animation, delay and trainsition */}
