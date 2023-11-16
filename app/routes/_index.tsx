@@ -5,6 +5,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from "~/components/page-header";
+import { Stats } from "~/components/stats";
 import { Testimonials } from "~/components/testimonials";
 import { buttonVariants } from "~/components/ui/button";
 import {
@@ -228,6 +229,7 @@ export default function Index() {
           </div>
         </div>
       </section>
+      <Stats />
     </div>
   );
 }
