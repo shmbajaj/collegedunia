@@ -5,6 +5,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from "~/components/page-header";
+import { Testimonials } from "~/components/testimonials";
 import { buttonVariants } from "~/components/ui/button";
 import {
   Card,
@@ -131,7 +132,7 @@ export default function Index() {
           </PageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
-        <article className="flex flex-col gap-4 md:gap-8 md:flex-row p-24">
+        <article className="flex flex-col gap-4 md:gap-8 md:flex-row p-20 md:p-24">
           <Card className="p-10 grid place-items-center text-center shadow-md md:mt-10 md:mb-10 md:max-w-xs">
             <CardHeader className="items-center gap-4">
               <div className="bg-orange-500 rounded-full p-4 w-20 h-20 pb-4 flex items-center">
@@ -183,6 +184,7 @@ export default function Index() {
           </Card>
         </article>
       </section>
+      <Testimonials />
     </div>
   );
 }
