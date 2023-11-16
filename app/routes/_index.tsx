@@ -1,5 +1,6 @@
 import { Link } from "@remix-run/react";
 import { BookTextIcon, LightbulbIcon, MessageCircleIcon } from "lucide-react";
+import { GetInTouch } from "~/components/get-in-touch";
 import {
   PageHeader,
   PageHeaderDescription,
@@ -230,6 +231,7 @@ export default function Index() {
         </div>
       </section>
       <Stats />
+      <GetInTouch />
     </div>
   );
 }
