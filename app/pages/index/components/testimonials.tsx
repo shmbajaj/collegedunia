@@ -1,5 +1,5 @@
-import { FeedbackCard } from "./feedback-card";
-import { Carousel } from "./carousel";
+import { FeedbackCard } from "../../../components/feedback-card";
+import { Carousel } from "../../../components/carousel";
 
 export function Testimonials() {
   return (

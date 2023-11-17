@@ -1,5 +1,5 @@
 import { GetInTouchForm } from "./get-in-touch-form";
-import { PageHeaderHeading } from "./page-header";
+import { PageHeaderHeading } from "../../../components/page-header";
 
 export function GetInTouch() {
   return (
