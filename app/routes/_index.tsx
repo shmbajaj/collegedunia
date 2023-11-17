@@ -39,7 +39,7 @@ export default function Index() {
       </section>
       <OurConsultingServices />
       <WhatWeOffer />
-      {/* <Testimonials /> */}
+      <Testimonials />
       {/* <WhyChooseUs /> */}
       {/* <Stats /> */}
       {/* <GetInTouch /> */}
