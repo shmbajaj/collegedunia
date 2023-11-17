@@ -40,7 +40,7 @@ export default function Index() {
       <OurConsultingServices />
       <WhatWeOffer />
       <Testimonials />
-      {/* <WhyChooseUs /> */}
+      <WhyChooseUs />
       {/* <Stats /> */}
       {/* <GetInTouch /> */}
     </div>
