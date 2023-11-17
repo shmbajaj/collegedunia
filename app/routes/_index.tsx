@@ -41,8 +41,8 @@ export default function Index() {
       <WhatWeOffer />
       <Testimonials />
       <WhyChooseUs />
-      {/* <Stats /> */}
-      {/* <GetInTouch /> */}
+      <Stats />
+      <GetInTouch />
     </div>
   );
 }
