@@ -1,5 +1,5 @@
-import { FeedbackCard } from "./feedback-card";
-import { Carousel } from "./carousel";
+import { FeedbackCard } from "../../../components/feedback-card";
+import { Carousel } from "../../../components/carousel";
 
 export function Testimonials() {
   return (
@@ -7,8 +7,6 @@ export function Testimonials() {
       id="clients"
       className={`sm:py-16 py-6 flex justify-center items-center flex-col relative `}
     >
-      <div className="absolute z-[0] w-[60%] h-[60%] -right-[50%] rounded-full blue__gradient bottom-40" />
-
       <div className="w-full flex justify-between items-center md:flex-row flex-col sm:mb-16 mb-6 relative z-[1]">
         <h2
           className={`font-semibold xs:text-[48px] text-[40px] xs:leading-[76.8px] leading-[66.8px] w-full`}

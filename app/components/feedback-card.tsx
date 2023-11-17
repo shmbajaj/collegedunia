@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardContent, CardHeader } from "./ui/card";
 
 interface FeedbackCardProps {
@@ -20,7 +19,7 @@ export function FeedbackCard({ name, title, content, img }: FeedbackCardProps) {
       <CardHeader className="font-normal text-[18px] leading-[32.4px]my-10">
         <blockquote>{content}</blockquote>
       </CardHeader>
-      <CardContent className="flex items-center">
+      <CardContent className="flex items-center flex-wrap sm:flex-nowrap">
         <img src={img} alt="User" className="w-10 h-10 rounded-full mr-4" />
         <span>
           <span className="font-semibold text-[20px] leading-[32px]">

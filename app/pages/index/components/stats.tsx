@@ -1,4 +1,4 @@
-import { PageHeaderHeading } from "./page-header";
+import { PageHeaderHeading } from "../../../components/page-header";
 
 const data = [
   { heading: "SUCCESSFUL ADMISSIONS", value: "5340", symbol: "+" },
