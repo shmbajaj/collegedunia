@@ -19,10 +19,18 @@ export default function Index() {
             TAKE YOUR FUTURE TO NEW HEIGHTS
           </PageHeaderHeading>
           <div className="w-full flex items-center space-x-4 pb-8 pt-4 md:pb-10">
-            <Link to="#" className={cn(buttonVariants())}>
+            <Link
+              to="#"
+              className={cn(buttonVariants({ className: "text-center" }))}
+            >
               Get Started
             </Link>
-            <Link to="#" className={cn(buttonVariants({ variant: "outline" }))}>
+            <Link
+              to="#"
+              className={cn(
+                buttonVariants({ variant: "outline", className: "text-center" })
+              )}
+            >
               Learn More
             </Link>
           </div>
@@ -31,10 +39,10 @@ export default function Index() {
       </section>
       <OurConsultingServices />
       <WhatWeOffer />
-      <Testimonials />
-      <WhyChooseUs />
-      <Stats />
-      <GetInTouch />
+      {/* <Testimonials /> */}
+      {/* <WhyChooseUs /> */}
+      {/* <Stats /> */}
+      {/* <GetInTouch /> */}
     </div>
   );
 }

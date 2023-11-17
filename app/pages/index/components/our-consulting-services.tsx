@@ -21,7 +21,7 @@ export function OurConsultingServices() {
         <p className="uppercase text-center text-orange-500">
           Don’t Settle For Less
         </p>
-        <PageHeaderHeading className="capitalize">
+        <PageHeaderHeading className="capitalize text-center md:text-left">
           Our Consulting Services
         </PageHeaderHeading>
         <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
@@ -39,7 +39,7 @@ export function OurConsultingServices() {
           and abroad.
         </PageHeaderDescription>
       </PageHeader>
-      <article className="flex flex-col md:flex-row">
+      <article className="flex flex-col lg:flex-row">
         <Card className="bg-orange-500 p-10 grid place-items-center text-center shadow-md md:mt-10 md:mb-10 md:max-w-xs">
           <CardHeader>
             <CardTitle className="text-white">Management Admission</CardTitle>
