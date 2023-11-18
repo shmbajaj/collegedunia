@@ -3,7 +3,9 @@ export interface NavItem {
   title: string;
 }
 
-export interface MainNavItem extends NavItem {}
+export type NavItemArray = Array<NavItem>;
+
+export type MainNavItem = NavItem;
 export interface MobileNavItem extends Omit<NavItem, "to"> {
   items: Array<NavItem>;
 }
