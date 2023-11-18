@@ -6,8 +6,8 @@ import { Icons } from "./icons";
 
 export function SiteFooter() {
   return (
-    <footer className="py-6 md:px-8 md:py-0 w-full border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex flex-col items-center justify-between gap-4 md:flex-row m-auto max-w-5xl h-14">
+    <footer className="py-6 md:px-8 md:py-0 w-full border-t text-white  bg-orange-500/95">
+      <div className=" container flex flex-col items-center justify-between gap-4 md:flex-row m-auto max-w-5xl h-14">
         <p className="text-center leading-loose md:text-left">
           {`Copyright © ${siteConfig.year}`}{" "}
           <span className="font-medium">{siteConfig.name}</span> | Powered by{" "}
@@ -28,7 +28,7 @@ export function SiteFooter() {
                   buttonVariants({
                     variant: "ghost",
                   }),
-                  "w-9 px-0"
+                  "w-9 px-0 hover:bg-orange-500 hover:opacity-85 "
                 )}
               >
                 <Icons.Instagram className="h-4 w-4" />
