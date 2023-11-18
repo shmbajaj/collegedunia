@@ -1,6 +1,6 @@
 import React from "react";
-import type { LinkProps } from "@remix-run/react";
-import { Link, useNavigate, useLocation } from "@remix-run/react";
+import type { NavLinkProps } from "@remix-run/react";
+import { useNavigate, useLocation, NavLink } from "@remix-run/react";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Button } from "./ui/button";
 import { MenuIcon } from "lucide-react";
@@ -31,17 +31,23 @@ export function MobileNav() {
           <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-          <div className="flex flex-col space-y-3">
+          <div
+            className="flex flex-col space-y-3"
+            onClick={() => setOpen(false)}
+          >
             {navConfig.mainNav.map((item) => (
               <MobileLink
                 key={item.to}
                 to={item.to}
-                className={cn(
-                  "transition-colors hover:text-foreground/80",
-                  pathname?.startsWith(`/${item.to}`)
-                    ? "text-foreground"
-                    : "text-foreground/60"
-                )}
+                className={({ isActive }) =>
+                  cn(
+                    "transition-colors hover:text-foreground/80",
+                    pathname?.startsWith(`/${item.to}`)
+                      ? "text-foreground"
+                      : "text-foreground/60",
+                    { "text-orange-500": isActive }
+                  )
+                }
               >
                 {item.title}
               </MobileLink>
@@ -56,12 +62,15 @@ export function MobileNav() {
                     <MobileLink
                       to={item.to}
                       onOpenChange={setOpen}
-                      className={cn(
-                        "transition-colors hover:text-foreground/80",
-                        pathname?.startsWith(`/${item.to}`)
-                          ? "text-foreground"
-                          : "text-foreground/60"
-                      )}
+                      className={({ isActive }) =>
+                        cn(
+                          "transition-colors hover:text-foreground/80",
+                          pathname?.startsWith(`/${item.to}`)
+                            ? "text-foreground"
+                            : "text-foreground/60",
+                          { "text-orange-500": isActive }
+                        )
+                      }
                     >
                       {item.title}
                     </MobileLink>
@@ -76,31 +85,23 @@ export function MobileNav() {
   );
 }
 
-interface MobileLinkProps extends LinkProps {
+interface MobileLinkProps extends NavLinkProps {
   onOpenChange?: (open: boolean) => void;
   children: React.ReactNode;
-  className?: string;
 }
 
-function MobileLink({
-  to,
-  onOpenChange,
-  className,
-  children,
-  ...props
-}: MobileLinkProps) {
+function MobileLink({ to, onOpenChange, children, ...props }: MobileLinkProps) {
   const navigate = useNavigate();
   return (
-    <Link
+    <NavLink
       to={to}
       onClick={() => {
         navigate(to.toString());
         onOpenChange?.(false);
       }}
-      className={cn(className)}
       {...props}
     >
       {children}
-    </Link>
+    </NavLink>
   );
 }
