@@ -10,7 +10,7 @@ interface FeedbackCardProps {
 // INFO[source-for-css]: https://medium.com/@ryaddev/building-a-testimonials-carousel-with-react-nuka-carousel-and-tailwind-css-b34686d61880
 export function FeedbackCard({ name, title, content, img }: FeedbackCardProps) {
   return (
-    <Card className="p-4 rounded-lg shadow-md hover:shadow-inner">
+    <Card className="p-4 shadow-md hover:shadow-inner">
       <img
         src={"https://i.imgur.com/rx3eOUo.png"}
         alt="double_quotes"

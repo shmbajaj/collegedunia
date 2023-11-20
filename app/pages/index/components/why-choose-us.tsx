@@ -1,4 +1,3 @@
-// import { Link } from "lucide-react";
 import { PageHeaderHeading } from "../../../components/page-header";
 import {
   Card,
@@ -6,8 +5,9 @@ import {
   CardFooter,
   CardHeader,
 } from "../../../components/ui/card";
-// import { cn } from "~/lib/utils";
-import { Button, buttonVariants } from "../../../components/ui/button";
+import { cn } from "~/lib/utils";
+import {  buttonVariants } from "../../../components/ui/button";
+import { Link } from "@remix-run/react";
 
 export function WhyChooseUs() {
   return (
@@ -34,23 +34,18 @@ export function WhyChooseUs() {
           </CardDescription>
           {/* TODO: fix Link component not working */}
           <CardFooter className="pt-6">
-            {/* <Link
-              to="#"
+            <Link
+              to="about-us"
               className={cn(
                 buttonVariants({
                   variant: "outline",
-                  className: "",
+                  className:
+                    "bg-orange-500 hover:bg-orange-500 hover:bg-opacity-95 hover:text-white text-white font-medium",
                 })
               )}
             >
               Full Article
-            </Link> */}
-            <Button
-              variant="link"
-              className="bg-orange-500 hover:bg-orange-500 hover:bg-opacity-95 text-white font-medium"
-            >
-              Full Article
-            </Button>
+            </Link>
           </CardFooter>
         </Card>
         <div className="lg:max-w-md">

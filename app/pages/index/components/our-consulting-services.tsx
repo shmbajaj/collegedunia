@@ -52,7 +52,10 @@ export function OurConsultingServices() {
             </p>
           </CardDescription>
           <CardFooter className="pt-6">
-            <Link to="#" className={cn(buttonVariants({ variant: "outline" }))}>
+            <Link
+              to="management-admission"
+              className={cn(buttonVariants({ variant: "outline" }))}
+            >
               Learn More
             </Link>{" "}
           </CardFooter>
@@ -69,7 +72,10 @@ export function OurConsultingServices() {
             </p>
           </CardDescription>
           <CardFooter className="pt-6">
-            <Link to="#" className={cn(buttonVariants({ variant: "outline" }))}>
+            <Link
+              to="engineering-admission"
+              className={cn(buttonVariants({ variant: "outline" }))}
+            >
               Learn More
             </Link>{" "}
           </CardFooter>
@@ -86,7 +92,10 @@ export function OurConsultingServices() {
             </p>
           </CardDescription>
           <CardFooter className="pt-6">
-            <Link to="#" className={cn(buttonVariants({ variant: "outline" }))}>
+            <Link
+              to="medical-admission"
+              className={cn(buttonVariants({ variant: "outline" }))}
+            >
               Learn More
             </Link>{" "}
           </CardFooter>
