@@ -1,6 +1,7 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import type { ZodError, ZodSchema } from "zod";
+import type { $TSFixME } from "~/types";
 import type { ActionErrors } from "~/types/validation-action";
 
 export function cn(...inputs: ClassValue[]) {
@@ -15,14 +16,19 @@ export async function validationAction<ActionInput>({
   schema: ZodSchema;
 }) {
   const formData = await request.formData();
-  const formDataArray = Array.from(formData.entries());
-  const body = formDataArray.reduce(
-    (acc, [key, value]) => ({
-      ...acc,
-      [key]: acc[key] ? [...(acc[key] ?? []), value] : value,
-    }),
-    {} as ActionInput
-  );
+  const body: Record<string, $TSFixME> = {};
+
+  for (const key of formData.keys()) {
+    // INFO: cheap trick to direct check key name instead of field type
+    // TODO: check isTypeArray using zodSchema
+    const values = formData.getAll(key);
+    body[key] =
+      values.length > 1
+        ? values
+        : key === "courseLookingFor"
+        ? [values[0]]
+        : values[0];
+  }
 
   try {
     const data = schema.parse(body);
