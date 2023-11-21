@@ -7,7 +7,21 @@ import { Testimonials } from "~/pages/index/components/testimonials";
 import { buttonVariants } from "~/components/ui/button";
 import { WhatWeOffer } from "~/pages/index/components/what-we-offer";
 import { WhyChooseUs } from "~/pages/index/components/why-choose-us";
-import { cn } from "~/lib/utils";
+import { cn, validationAction } from "~/lib/utils";
+import { json, type ActionFunctionArgs } from "@remix-run/node";
+import { GetInTouchFormSchema } from "~/data/schema";
+import type { GetInTouchFormInput } from "~/pages/index/components/get-in-touch-form";
+
+export const action = async ({ request }: ActionFunctionArgs) => {
+  const { data, errors } = await validationAction<GetInTouchFormInput>({
+    request,
+    schema: GetInTouchFormSchema,
+  });
+  if (errors) {
+    return json({ errors }, { status: 400 });
+  }
+  return json({ data });
+};
 
 export default function Index() {
   return (
