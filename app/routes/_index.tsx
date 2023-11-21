@@ -18,7 +18,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     schema: GetInTouchFormSchema,
   });
   if (errors) {
-    return json({ errors }, { status: 400 });
+    return json({ errors });
   }
   return json({ data });
 };

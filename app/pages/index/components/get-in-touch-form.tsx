@@ -53,12 +53,14 @@ export function GetInTouchForm() {
             "flex flex-col w-full max-w-sm  gap-1.5",
             actionData?.errors?.name && "text-destructive"
           )}
+          htmlFor="name"
         >
           Name
         </Label>
         <Input
           placeholder="Shubham Bajaj"
           name="name"
+          id="name"
           defaultValue={getInTouchFormDefaultValues.name}
         />
         <p className="text-sm text-muted-foreground">
@@ -75,12 +77,14 @@ export function GetInTouchForm() {
       <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
         <Label
           className={cn(actionData?.errors?.phoneNumber && "text-destructive")}
+          htmlFor="phoneNumber"
         >
           Phone Number
         </Label>
         <Input
           placeholder="89xxxxxxxx"
           name="phoneNumber"
+          id="phoneNumber"
           defaultValue={getInTouchFormDefaultValues.phoneNumber}
         />
         <p className="text-sm text-muted-foreground">
@@ -95,12 +99,16 @@ export function GetInTouchForm() {
       </div>
 
       <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
-        <Label className={cn(actionData?.errors?.email && "text-destructive")}>
+        <Label
+          className={cn(actionData?.errors?.email && "text-destructive")}
+          htmlFor="email"
+        >
           Email
         </Label>
         <Input
           placeholder="shubham@gmail.com"
           name="email"
+          id="email"
           defaultValue={getInTouchFormDefaultValues.email}
         />
         <p className="text-sm text-muted-foreground">
@@ -134,12 +142,15 @@ export function GetInTouchForm() {
             className="flex flex-row items-start space-x-3 space-y-0"
           >
             <Checkbox
-              name="courseLookingFor"
+              name={`courseLookingFor__${item.id}`}
+              id={item.id}
               defaultChecked={getInTouchFormDefaultValues.courseLookingFor.includes(
                 item.id
               )}
             />
-            <span className="font-normal">{item.label}</span>
+            <Label className="font-normal" htmlFor={item.id}>
+              {item.label}
+            </Label>
           </div>
         ))}
         {actionData?.errors?.courseLookingFor ? (
@@ -152,6 +163,7 @@ export function GetInTouchForm() {
       <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
         <Label
           className={cn(actionData?.errors?.message && "text-destructive")}
+          htmlFor="message"
         >
           Message
         </Label>
@@ -159,6 +171,7 @@ export function GetInTouchForm() {
           placeholder="Tell us a little bit about yourself"
           className="resize-none"
           name="message"
+          id="message"
           defaultValue={getInTouchFormDefaultValues.message}
         />
         <p className="text-sm text-muted-foreground">
