@@ -27,11 +27,9 @@ export function WhatWeOffer() {
             </div>
             <CardTitle className="text-blue-500">GENUINE COUNSELLING</CardTitle>
           </CardHeader>
-          <CardDescription>
-            <p className="font-medium text-base leading-8">
-              Our team of experienced counselors in India have the expertise to
-              provide you with credible, real-time and authentic advice.
-            </p>
+          <CardDescription className="font-medium text-base leading-8">
+            Our team of experienced counselors in India have the expertise to
+            provide you with credible, real-time and authentic advice.
           </CardDescription>
         </Card>
         <Card className="p-4 flex flex-col text-center shadow-xl lg:p-6">
@@ -41,11 +39,9 @@ export function WhatWeOffer() {
             </div>
             <CardTitle className="text-blue-500">YOUR KNOWLEDGE BANK</CardTitle>
           </CardHeader>
-          <CardDescription>
-            <p className="font-medium text-base leading-8">
-              Access to regular and up-to-date notes, lectures, webinars,
-              recorded sessions, daily practice questions, and model test papers
-            </p>
+          <CardDescription className="font-medium text-base leading-8">
+            Access to regular and up-to-date notes, lectures, webinars, recorded
+            sessions, daily practice questions, and model test papers
           </CardDescription>
         </Card>
         <Card className="p-4 flex flex-col text-center shadow-md lg:mt-10 lg:mb-10 lg:p-6">
@@ -57,11 +53,9 @@ export function WhatWeOffer() {
               ADMISSION & MANAGEMENT QUOTA ASSISTANCE
             </CardTitle>
           </CardHeader>
-          <CardDescription>
-            <p className="font-medium text-base leading-8">
-              Hand-holding Services right from Registration to Documentation and
-              admission-related formalities.
-            </p>
+          <CardDescription className="font-medium text-base leading-8">
+            Hand-holding Services right from Registration to Documentation and
+            admission-related formalities.
           </CardDescription>
         </Card>
       </article>

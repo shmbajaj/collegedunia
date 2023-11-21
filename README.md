@@ -36,3 +36,7 @@ Make sure to deploy the output of `remix build`
 
 - `build/`
 - `public/build/`
+
+### Important Issues Which Helped Me
+
+- [Bug:"Warning: Did not expect server HTML to contain a"](https://github.com/remix-run/remix/issues/1463)

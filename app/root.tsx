@@ -12,6 +12,7 @@ import {
 import styles from "./tailwind.css";
 import { SiteHeader } from "./components/site-header";
 import { SiteFooter } from "./components/site-footer";
+import { Toaster } from "./components/ui/toaster";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
@@ -43,6 +44,7 @@ export default function App() {
           <Outlet />
         </div>
         <SiteFooter />
+        <Toaster />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

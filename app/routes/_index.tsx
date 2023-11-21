@@ -7,7 +7,21 @@ import { Testimonials } from "~/pages/index/components/testimonials";
 import { buttonVariants } from "~/components/ui/button";
 import { WhatWeOffer } from "~/pages/index/components/what-we-offer";
 import { WhyChooseUs } from "~/pages/index/components/why-choose-us";
-import { cn } from "~/lib/utils";
+import { cn, validationAction } from "~/lib/utils";
+import { json, type ActionFunctionArgs } from "@remix-run/node";
+import { GetInTouchFormSchema } from "~/data/schema";
+import type { GetInTouchFormInput } from "~/pages/index/components/get-in-touch-form";
+
+export const action = async ({ request }: ActionFunctionArgs) => {
+  const { data, errors } = await validationAction<GetInTouchFormInput>({
+    request,
+    schema: GetInTouchFormSchema,
+  });
+  if (errors) {
+    return json({ errors });
+  }
+  return json({ data });
+};
 
 export default function Index() {
   return (
@@ -20,13 +34,13 @@ export default function Index() {
           </PageHeaderHeading>
           <div className="w-full flex items-center space-x-4 pb-8 pt-4 md:pb-10">
             <Link
-              to="#"
+              to="contact-us"
               className={cn(buttonVariants({ className: "text-center" }))}
             >
               Get Started
             </Link>
             <Link
-              to="#"
+              to="services"
               className={cn(
                 buttonVariants({ variant: "outline", className: "text-center" })
               )}

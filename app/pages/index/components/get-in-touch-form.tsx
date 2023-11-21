@@ -1,20 +1,16 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import * as z from "zod";
 import { toast } from "../../../components/ui/use-toast";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "../../../components/ui/form";
 import { Input } from "../../../components/ui/input";
 import { Textarea } from "../../../components/ui/textarea";
 import { Button } from "../../../components/ui/button";
 import { Checkbox } from "../../../components/ui/checkbox";
+import { useFetcher } from "@remix-run/react";
+import { Label } from "~/components/ui/label";
+import type { GetInTouchFormSchema } from "~/data/schema";
+import type { ActionErrors } from "~/types/validation-action";
+import { cn } from "~/lib/utils";
+import { useEffect, useRef } from "react";
 
 const items = [
   { label: "Engineering", id: "engineering" },
@@ -28,47 +24,14 @@ const items = [
   { label: "Other", id: "other" },
 ];
 
-const PartialGetInTouchFormSchema = z.object({
-  name: z
-    .string()
-    .min(2, {
-      message: "Name must be at least 2 characters.",
-    })
-    .max(30, {
-      message: "Name must not be longer than 30 characters.",
-    }),
-  phoneNumber: z
-    .string()
-    .min(10, {
-      message: "The PhoneNumber must be 10 characters",
-    })
-    .max(10, {
-      message: "The PhoneNumber must be 10 characters",
-    })
-    .regex(/^[6-9]\d{9}$/, "The PhoneNumber must contain numbers"),
-  email: z
-    .string({
-      required_error: "Please select an email to display.",
-    })
-    .email(),
-  message: z.string().optional(),
-});
+export type GetInTouchFormInput = z.infer<typeof GetInTouchFormSchema>;
 
-const CourseLookingForSchema = z.object({
-  courseLookingFor: z
-    .array(z.string())
-    .refine((value) => value.some((item) => item), {
-      message: "You have to select at least one item.",
-    }),
-});
+export interface GetInTouchFormActionData {
+  errors?: ActionErrors<GetInTouchFormInput>;
+  data?: GetInTouchFormInput;
+}
 
-const GetInTouchFormSchema = PartialGetInTouchFormSchema.merge(
-  CourseLookingForSchema
-);
-
-type GetInTouchFormValues = z.infer<typeof GetInTouchFormSchema>;
-
-const defaultValues: GetInTouchFormValues = {
+const getInTouchFormDefaultValues: GetInTouchFormInput = {
   courseLookingFor: [],
   name: "",
   email: "",
@@ -77,146 +40,173 @@ const defaultValues: GetInTouchFormValues = {
 };
 
 export function GetInTouchForm() {
-  const form = useForm<GetInTouchFormValues>({
-    defaultValues,
-    resolver: zodResolver(GetInTouchFormSchema),
-  });
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const fetcher = useFetcher<GetInTouchFormActionData>();
 
-  function onSubmit(data: GetInTouchFormValues) {
+  const actionData = fetcher.data;
+
+  const isSubmitting = fetcher.state === "submitting";
+  const isSubmitted = Boolean(fetcher.data?.data && !fetcher.data.errors);
+
+  useEffect(() => {
+    if (!isSubmitted) return;
     toast({
       title: "You submitted the following values:",
       description: (
         <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+          <code className="text-white">
+            {JSON.stringify(fetcher.data?.data, null, 2)}
+          </code>
         </pre>
       ),
     });
-  }
+    formRef.current?.reset();
+  }, [isSubmitted]);
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
+    <fetcher.Form method="post" className="space-y-8" ref={formRef}>
+      <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
+        <Label
+          className={cn(
+            "flex flex-col w-full max-w-sm  gap-1.5",
+            actionData?.errors?.name && "text-destructive"
+          )}
+          htmlFor="name"
+        >
+          Name
+        </Label>
+        <Input
+          placeholder="Shubham Bajaj"
           name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name</FormLabel>
-              <FormControl>
-                <Input placeholder="Shubham Bajaj" {...field} />
-              </FormControl>
-              <FormDescription>
-                This is your public display name. It can be your real name or a
-                pseudonym. You can only change this once every 30 days.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
+          id="name"
+          defaultValue={getInTouchFormDefaultValues.name}
         />
-        <FormField
-          control={form.control}
+        <p className="text-sm text-muted-foreground">
+          This is your public display name. It can be your real name or a
+          pseudonym. You can only change this once every 30 days.
+        </p>
+        {actionData?.errors?.name ? (
+          <p className={"text-sm font-medium text-destructive"}>
+            {actionData.errors.name}
+          </p>
+        ) : null}
+      </div>
+
+      <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
+        <Label
+          className={cn(actionData?.errors?.phoneNumber && "text-destructive")}
+          htmlFor="phoneNumber"
+        >
+          Phone Number
+        </Label>
+        <Input
+          placeholder="89xxxxxxxx"
           name="phoneNumber"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Phone Number</FormLabel>
-              <FormControl>
-                <Input placeholder="89xxxxxxxx" {...field} />
-              </FormControl>
-              <FormDescription>
-                This is your public display name. It can be your real name or a
-                pseudonym. You can only change this once every 30 days.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
+          id="phoneNumber"
+          defaultValue={getInTouchFormDefaultValues.phoneNumber}
         />
-        <FormField
-          control={form.control}
+        <p className="text-sm text-muted-foreground">
+          This is your public display name. It can be your real name or a
+          pseudonym. You can only change this once every 30 days.
+        </p>
+        {actionData?.errors?.phoneNumber ? (
+          <p className={"text-sm font-medium text-destructive"}>
+            {actionData.errors.phoneNumber}
+          </p>
+        ) : null}
+      </div>
+
+      <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
+        <Label
+          className={cn(actionData?.errors?.email && "text-destructive")}
+          htmlFor="email"
+        >
+          Email
+        </Label>
+        <Input
+          placeholder="shubham@gmail.com"
           name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input placeholder="shubham@gmail.com" {...field} />
-              </FormControl>
-              <FormDescription>
-                This is your public display name. It can be your real name or a
-                pseudonym. You can only change this once every 30 days.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
+          id="email"
+          defaultValue={getInTouchFormDefaultValues.email}
         />
-        <FormField
-          control={form.control}
-          name="courseLookingFor"
-          render={({ field }) => (
-            <FormItem>
-              <div className="mb-4">
-                <FormLabel className="text-base">Course Looking For</FormLabel>
-                <FormDescription>
-                  Select the items you want to display in the sidebar.
-                </FormDescription>
-              </div>
-              {items.map((item) => (
-                <FormField
-                  key={item.id}
-                  control={form.control}
-                  name="courseLookingFor"
-                  render={({ field }) => {
-                    return (
-                      <FormItem
-                        key={item.id}
-                        className="flex flex-row items-start space-x-3 space-y-0"
-                      >
-                        <FormControl>
-                          <Checkbox
-                            checked={field.value?.includes(item.id)}
-                            onCheckedChange={(checked: any) => {
-                              return checked
-                                ? field.onChange([...field.value, item.id])
-                                : field.onChange(
-                                    field.value?.filter(
-                                      (value: any) => value !== item.id
-                                    )
-                                  );
-                            }}
-                          />
-                        </FormControl>
-                        <FormLabel className="font-normal">
-                          {item.label}
-                        </FormLabel>
-                      </FormItem>
-                    );
-                  }}
-                />
-              ))}
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
+        <p className="text-sm text-muted-foreground">
+          This is your public display name. It can be your real name or a
+          pseudonym. You can only change this once every 30 days.
+        </p>
+        {actionData?.errors?.email ? (
+          <p className={"text-sm font-medium text-destructive"}>
+            {actionData.errors.email}
+          </p>
+        ) : null}
+      </div>
+
+      <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
+        <div className="mb-4">
+          <Label
+            className={cn(
+              "text-base",
+              actionData?.errors?.courseLookingFor && "text-destructive"
+            )}
+          >
+            Course Looking For
+          </Label>
+          <p className="text-sm text-muted-foreground">
+            Select the items you want to display in the sidebar.
+          </p>
+        </div>
+        {items.map((item) => (
+          <div
+            key={item.id}
+            className="flex flex-row items-start space-x-3 space-y-0"
+          >
+            <Checkbox
+              name="courseLookingFor"
+              id={item.id}
+              value={item.id}
+              defaultChecked={getInTouchFormDefaultValues.courseLookingFor.includes(
+                item.id
+              )}
+            />
+            <Label className="font-normal" htmlFor={item.id}>
+              {item.label}
+            </Label>
+          </div>
+        ))}
+        {actionData?.errors?.courseLookingFor ? (
+          <p className={"text-sm font-medium text-destructive"}>
+            {actionData.errors.courseLookingFor}
+          </p>
+        ) : null}
+      </div>
+
+      <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
+        <Label
+          className={cn(actionData?.errors?.message && "text-destructive")}
+          htmlFor="message"
+        >
+          Message
+        </Label>
+        <Textarea
+          placeholder="Tell us a little bit about yourself"
+          className="resize-none"
           name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Tell us a little bit about yourself"
-                  className="resize-none"
-                  {...field}
-                />
-              </FormControl>
-              <FormDescription>
-                You can <span>@mention</span> other users and organizations to
-                link to them.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
+          id="message"
+          defaultValue={getInTouchFormDefaultValues.message}
         />
-        <Button type="submit">Submit</Button>
-      </form>
-    </Form>
+        <p className="text-sm text-muted-foreground">
+          You can <span>@mention</span> other users and organizations to link to
+          them.
+        </p>
+        {actionData?.errors?.message ? (
+          <p className={"text-sm font-medium text-destructive"}>
+            {actionData.errors.message}
+          </p>
+        ) : null}
+      </div>
+
+      <Button type="submit" disabled={isSubmitting}>
+        Contact
+      </Button>
+    </fetcher.Form>
   );
 }
