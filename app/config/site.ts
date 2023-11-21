@@ -6,9 +6,9 @@ export const siteConfig = {
     link: "#",
   },
   links: [
-    { to: "#", title: "Facebook" },
+    { to: "/cd-fb", title: "Facebook" },
     {
-      to: "#",
+      to: "/cd-ig",
       title: "Instagram",
     },
   ],

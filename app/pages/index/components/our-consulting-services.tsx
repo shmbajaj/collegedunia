@@ -44,12 +44,10 @@ export function OurConsultingServices() {
           <CardHeader>
             <CardTitle className="text-white">Management Admission</CardTitle>
           </CardHeader>
-          <CardDescription>
-            <p className="font-medium text-base text-white leading-8">
-              The management field continues to be one of the most sought-after
-              fields in India, if not the most sought-after. This makes the
-              Medical Courses all the more important.
-            </p>
+          <CardDescription className="font-medium text-base text-white leading-8">
+            The management field continues to be one of the most sought-after
+            fields in India, if not the most sought-after. This makes the
+            Medical Courses all the more important.
           </CardDescription>
           <CardFooter className="pt-6">
             <Link
@@ -64,12 +62,10 @@ export function OurConsultingServices() {
           <CardHeader>
             <CardTitle>Engineering Admission</CardTitle>
           </CardHeader>
-          <CardDescription>
-            <p className="font-medium text-base text-black leading-8">
-              Around 35-45 lakh people enrol in B Tech courses every year. This
-              leads to increased competition for courses as well as confusion
-              regarding the Engineering course in India.
-            </p>
+          <CardDescription className="font-medium text-base text-black leading-8">
+            Around 35-45 lakh people enrol in B Tech courses every year. This
+            leads to increased competition for courses as well as confusion
+            regarding the Engineering course in India.
           </CardDescription>
           <CardFooter className="pt-6">
             <Link
@@ -84,12 +80,10 @@ export function OurConsultingServices() {
           <CardHeader>
             <CardTitle className="text-white">Medical Admission</CardTitle>
           </CardHeader>
-          <CardDescription>
-            <p className="font-medium text-base text-white leading-8">
-              Every year, thousands of students across the country vie for
-              admissions into medical schools in India. Hence the Competition
-              for getting into a medical program is high.
-            </p>
+          <CardDescription className="font-medium text-base text-white leading-8">
+            Every year, thousands of students across the country vie for
+            admissions into medical schools in India. Hence the Competition for
+            getting into a medical program is high.
           </CardDescription>
           <CardFooter className="pt-6">
             <Link
