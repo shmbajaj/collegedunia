@@ -15,10 +15,17 @@ export async function validationAction<ActionInput>({
   schema: ZodSchema;
 }) {
   const formData = await request.formData();
-  const body = Object.fromEntries(formData);
+  const formDataArray = Array.from(formData.entries());
+  const body = formDataArray.reduce(
+    (acc, [key, value]) => ({
+      ...acc,
+      [key]: acc[key] ? [...(acc[key] ?? []), value] : value,
+    }),
+    {} as ActionInput
+  );
 
   try {
-    const data = schema.parse(body) as ActionInput;
+    const data = schema.parse(body);
     return { data, errors: null };
   } catch (e) {
     const _errors = e as ZodError<ActionInput>;
