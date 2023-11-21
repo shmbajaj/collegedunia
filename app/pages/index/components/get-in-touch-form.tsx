@@ -1,20 +1,11 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { toast } from "../../../components/ui/use-toast";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "../../../components/ui/form";
+// import { toast } from "../../../components/ui/use-toast";
 import { Input } from "../../../components/ui/input";
 import { Textarea } from "../../../components/ui/textarea";
 import { Button } from "../../../components/ui/button";
 import { Checkbox } from "../../../components/ui/checkbox";
+import { useFetcher } from "@remix-run/react";
+import { Label } from "~/components/ui/label";
 
 const items = [
   { label: "Engineering", id: "engineering" },
@@ -77,146 +68,69 @@ const defaultValues: GetInTouchFormValues = {
 };
 
 export function GetInTouchForm() {
-  const form = useForm<GetInTouchFormValues>({
-    defaultValues,
-    resolver: zodResolver(GetInTouchFormSchema),
-  });
-
-  function onSubmit(data: GetInTouchFormValues) {
-    toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    });
-  }
+  const fetcher = useFetcher();
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name</FormLabel>
-              <FormControl>
-                <Input placeholder="Shubham Bajaj" {...field} />
-              </FormControl>
-              <FormDescription>
-                This is your public display name. It can be your real name or a
-                pseudonym. You can only change this once every 30 days.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="phoneNumber"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Phone Number</FormLabel>
-              <FormControl>
-                <Input placeholder="89xxxxxxxx" {...field} />
-              </FormControl>
-              <FormDescription>
-                This is your public display name. It can be your real name or a
-                pseudonym. You can only change this once every 30 days.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input placeholder="shubham@gmail.com" {...field} />
-              </FormControl>
-              <FormDescription>
-                This is your public display name. It can be your real name or a
-                pseudonym. You can only change this once every 30 days.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="courseLookingFor"
-          render={({ field }) => (
-            <FormItem>
-              <div className="mb-4">
-                <FormLabel className="text-base">Course Looking For</FormLabel>
-                <FormDescription>
-                  Select the items you want to display in the sidebar.
-                </FormDescription>
-              </div>
-              {items.map((item) => (
-                <FormField
-                  key={item.id}
-                  control={form.control}
-                  name="courseLookingFor"
-                  render={({ field }) => {
-                    return (
-                      <FormItem
-                        key={item.id}
-                        className="flex flex-row items-start space-x-3 space-y-0"
-                      >
-                        <FormControl>
-                          <Checkbox
-                            checked={field.value?.includes(item.id)}
-                            onCheckedChange={(checked: any) => {
-                              return checked
-                                ? field.onChange([...field.value, item.id])
-                                : field.onChange(
-                                    field.value?.filter(
-                                      (value: any) => value !== item.id
-                                    )
-                                  );
-                            }}
-                          />
-                        </FormControl>
-                        <FormLabel className="font-normal">
-                          {item.label}
-                        </FormLabel>
-                      </FormItem>
-                    );
-                  }}
-                />
-              ))}
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
+    <fetcher.Form className="space-y-8">
+      <Label className="flex flex-col w-full max-w-sm  gap-1.5">
+        <span>Name</span>
+        <Input placeholder="Shubham Bajaj" name="name" />
+        <p className="text-sm text-muted-foreground">
+          This is your public display name. It can be your real name or a
+          pseudonym. You can only change this once every 30 days.
+        </p>
+      </Label>
+
+      <Label className="flex flex-col w-full max-w-sm  gap-1.5">
+        <span>Phone Number</span>
+        <Input placeholder="89xxxxxxxx" name="phoneNumber" />
+        <p className="text-sm text-muted-foreground">
+          This is your public display name. It can be your real name or a
+          pseudonym. You can only change this once every 30 days.
+        </p>
+      </Label>
+
+      <Label className="flex flex-col w-full max-w-sm  gap-1.5">
+        <span>Email</span>
+        <Input placeholder="shubham@gmail.com" name="email" />
+        <p className="text-sm text-muted-foreground">
+          This is your public display name. It can be your real name or a
+          pseudonym. You can only change this once every 30 days.
+        </p>
+      </Label>
+
+      <Label className="flex flex-col w-full max-w-sm  gap-1.5">
+        <div className="mb-4">
+          <span className="text-base">Course Looking For</span>
+          <p className="text-sm text-muted-foreground">
+            Select the items you want to display in the sidebar.
+          </p>
+        </div>
+        {items.map((item) => (
+          <Label
+            key={item.id}
+            className="flex flex-row items-start space-x-3 space-y-0"
+          >
+            <Checkbox name="courseLookingFor" />
+            <span className="font-normal">{item.label}</span>
+          </Label>
+        ))}
+      </Label>
+
+      <Label className="flex flex-col w-full max-w-sm  gap-1.5">
+        <span>Message</span>
+        <Textarea
+          placeholder="Tell us a little bit about yourself"
+          className="resize-none"
           name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Tell us a little bit about yourself"
-                  className="resize-none"
-                  {...field}
-                />
-              </FormControl>
-              <FormDescription>
-                You can <span>@mention</span> other users and organizations to
-                link to them.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
         />
-        <Button type="submit">Submit</Button>
-      </form>
-    </Form>
+        <p className="text-sm text-muted-foreground">
+          You can <span>@mention</span> other users and organizations to link to
+          them.
+        </p>
+      </Label>
+
+      <Button type="submit">Submit</Button>
+    </fetcher.Form>
   );
 }
