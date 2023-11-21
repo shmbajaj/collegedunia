@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import * as z from "zod";
-// import { toast } from "../../../components/ui/use-toast";
+import { toast } from "../../../components/ui/use-toast";
 import { Input } from "../../../components/ui/input";
 import { Textarea } from "../../../components/ui/textarea";
 import { Button } from "../../../components/ui/button";
@@ -10,6 +10,7 @@ import { Label } from "~/components/ui/label";
 import type { GetInTouchFormSchema } from "~/data/schema";
 import type { ActionErrors } from "~/types/validation-action";
 import { cn } from "~/lib/utils";
+import { useEffect, useRef } from "react";
 
 const items = [
   { label: "Engineering", id: "engineering" },
@@ -39,14 +40,31 @@ const getInTouchFormDefaultValues: GetInTouchFormInput = {
 };
 
 export function GetInTouchForm() {
+  const formRef = useRef<HTMLFormElement | null>(null);
   const fetcher = useFetcher<GetInTouchFormActionData>();
-  const actionData = fetcher.data;
-  const isSubmitting = fetcher.state !== "idle";
 
-  // TODO: reset form on successful Submit
-  // TODO: ack success form subission
+  const actionData = fetcher.data;
+
+  const isSubmitting = fetcher.state === "submitting";
+  const isSubmitted = Boolean(fetcher.data?.data && !fetcher.data.errors);
+
+  useEffect(() => {
+    if (!isSubmitted) return;
+    toast({
+      title: "You submitted the following values:",
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">
+            {JSON.stringify(fetcher.data?.data, null, 2)}
+          </code>
+        </pre>
+      ),
+    });
+    formRef.current?.reset();
+  }, [isSubmitted]);
+
   return (
-    <fetcher.Form method="post" className="space-y-8">
+    <fetcher.Form method="post" className="space-y-8" ref={formRef}>
       <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
         <Label
           className={cn(
@@ -187,7 +205,7 @@ export function GetInTouchForm() {
       </div>
 
       <Button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Contacting..." : "Contact"}
+        Contact
       </Button>
     </fetcher.Form>
   );
