@@ -142,8 +142,9 @@ export function GetInTouchForm() {
             className="flex flex-row items-start space-x-3 space-y-0"
           >
             <Checkbox
-              name={`courseLookingFor__${item.id}`}
+              name="courseLookingFor"
               id={item.id}
+              value={item.id}
               defaultChecked={getInTouchFormDefaultValues.courseLookingFor.includes(
                 item.id
               )}
