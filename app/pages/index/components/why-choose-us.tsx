@@ -6,7 +6,7 @@ import {
   CardHeader,
 } from "../../../components/ui/card";
 import { cn } from "~/lib/utils";
-import {  buttonVariants } from "../../../components/ui/button";
+import { buttonVariants } from "../../../components/ui/button";
 import { Link } from "@remix-run/react";
 
 export function WhyChooseUs() {
@@ -35,9 +35,7 @@ export function WhyChooseUs() {
               to="about-us"
               className={cn(
                 buttonVariants({
-                  variant: "outline",
-                  className:
-                    "bg-orange-500 hover:bg-orange-500 hover:bg-opacity-95 hover:text-white text-white font-medium",
+                  variant: "default",
                 })
               )}
             >
