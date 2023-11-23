@@ -8,8 +8,8 @@ export function GetInTouch() {
         GET IN TOUCH
       </PageHeaderHeading>
       <div className="flex flex-col md:flex-row gap-4">
-        <GetInTouchForm />
-        <div className="p-4 lg:p-12 bg-blue-500 border-t-8 border-orange-500 text-white flex flex-col gap-2 text-center font-semibold h-max">
+        <GetInTouchForm className="flex-1" />
+        <div className="p-4 lg:p-12 bg-blue-500 border-t-8 border-orange-500 text-white flex flex-col flex-1 gap-2 text-center font-semibold h-max">
           <span>
             COMMERCIA, HINJAWADI BRIDGE,WAKAD, PUNE, MAHARASHTRA 411057
           </span>

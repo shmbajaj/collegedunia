@@ -39,7 +39,10 @@ const getInTouchFormDefaultValues: GetInTouchFormInput = {
   message: "",
 };
 
-export function GetInTouchForm() {
+export function GetInTouchForm({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLFormElement>) {
   const formRef = useRef<HTMLFormElement | null>(null);
   const fetcher = useFetcher<GetInTouchFormActionData>();
 
@@ -61,10 +64,16 @@ export function GetInTouchForm() {
       ),
     });
     formRef.current?.reset();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSubmitted]);
 
   return (
-    <fetcher.Form method="post" className="space-y-8" ref={formRef}>
+    <fetcher.Form
+      {...props}
+      method="post"
+      className={cn("space-y-8", className)}
+      ref={formRef}
+    >
       <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
         <Label
           className={cn(
