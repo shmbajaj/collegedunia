@@ -56,7 +56,17 @@ export default function Index() {
       <Testimonials />
       <WhyChooseUs />
       <Stats />
-      <GetInTouch />
+      <GetInTouch>
+        <div className="p-4 lg:p-12 bg-blue-500 border-t-8 border-orange-500 text-white 
+         font-semibold h-max">
+          <span>
+            COMMERCIA, HINJAWADI BRIDGE,WAKAD, PUNE, MAHARASHTRA 411057
+          </span>
+          <span>CONTACT:</span>
+          <span>+91 77579 20539</span>
+          <span>+91 87673 31852</span>
+        </div>
+      </GetInTouch>
     </div>
   );
 }
