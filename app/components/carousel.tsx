@@ -1,45 +1,31 @@
 import React from "react";
-import { Button } from "./ui/button";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import { cn } from "~/lib/utils";
+import type { CarouselProviderProps } from "pure-react-carousel";
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext,
+} from "pure-react-carousel";
+import styles from "pure-react-carousel/dist/react-carousel.es.css";
+import type { LinksFunction } from "@remix-run/node";
 
-interface CarouselProps {
-  children: React.ReactElement[];
-}
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
-export function Carousel({ children }: CarouselProps) {
-  const [index, setActiveIndex] = React.useState(0);
-  const slidesCount = children.length;
-  const emptyArray = Array.from({ length: slidesCount });
-  const nextSlide = () =>
-    setActiveIndex((prevIndex) => (prevIndex + 1) % slidesCount);
-  const prevSlide = () =>
-    setActiveIndex((prevIndex) => (prevIndex - 1 + slidesCount) % slidesCount);
-  const setIndex = (index: number) => setActiveIndex(index);
+export function Carousel({ children, ...props }: CarouselProviderProps) {
   return (
-    <article className="relative p-8 flex flex-col items-center">
-      {/* TODO: add animation, delay and trainsition */}
-      <div className="max-w-xs p-4 md:max-w-sm md:p-6">{children[index]}</div>
-      <div className="absolute top-1/2 left-0 transform -translate-y-2/3 flex justify-between w-full">
-        <Button variant="outline" size="icon" onClick={prevSlide}>
-          <ChevronLeftIcon className="h-4 w-4" />
-        </Button>
-        <Button variant="outline" size="icon" onClick={nextSlide}>
-          <ChevronRightIcon className="h-4 w-4" />
-        </Button>
-      </div>
-      <div className="flex gap-4">
-        {emptyArray.map((_, buttonIndex) => (
-          <Button
-            key={buttonIndex}
-            className={cn("p-0 rounded-full w-2 h-2", {
-              "bg-gray-500": index !== buttonIndex,
-              "bg-black": index === buttonIndex,
-            })}
-            onClick={() => setIndex(buttonIndex)}
-          />
-        ))}
-      </div>
-    </article>
+    <CarouselProvider {...props}>
+      <Slider className="pb-0">
+        {React.Children.toArray(children)
+          .filter(Boolean)
+          .map((child, index) => (
+            <Slide index={index} key={index} className="pb-0">
+              {child}
+            </Slide>
+          ))}
+      </Slider>
+      <ButtonBack>Back</ButtonBack>
+      <ButtonNext>Next</ButtonNext>
+    </CarouselProvider>
   );
 }
