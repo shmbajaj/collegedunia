@@ -49,6 +49,7 @@ export default function Index() {
             </Link>
           </div>
         </PageHeader>
+        {/* TODO: replace image url with own asset url */}
         <div className="absolute w-full h-full top-0 left-0 bg-slate-500 bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit2-scaled.jpg')] bg-no-repeat bg-cover bg-center bg-fixed"></div>
       </section>
       <OurConsultingServices />
@@ -57,8 +58,7 @@ export default function Index() {
       <WhyChooseUs />
       <Stats />
       <GetInTouch>
-        <div className="p-4 lg:p-12 bg-blue-500 border-t-8 border-orange-500 text-white 
-         font-semibold h-max">
+        <div className="p-4 lg:p-12 bg-blue-500 border-t-8 border-orange-500 text-white flex flex-col gap-2 text-center font-semibold h-max">
           <span>
             COMMERCIA, HINJAWADI BRIDGE,WAKAD, PUNE, MAHARASHTRA 411057
           </span>
