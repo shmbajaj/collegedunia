@@ -81,7 +81,7 @@ export default function EngineeringAdmissions() {
           </PageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
-        <div className="container grid gap-4 md:grid-cols-2 max-w-5xl">
+        <div className="container grid md:gap-4 md:grid-cols-2 max-w-5xl">
           <div>
             {" "}
             {Array.from({ length: 3 }).map((_, index) => (
@@ -227,6 +227,73 @@ export default function EngineeringAdmissions() {
                   </Accordion>
                 </CardFooter>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="flex flex-col items-center pb-8">
+        <PageHeader className="pb-8 items-center">
+          <p className="uppercase text-center font-bold text-orange-500">
+            FREQUENTLY ASKED QUESTIONS
+          </p>
+          <PageHeaderHeading className="capitalize text-center md:text-left">
+            FAQS
+          </PageHeaderHeading>
+          <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
+        </PageHeader>
+        <div className="container grid md:gap-4 md:grid-cols-2 max-w-5xl">
+          <div>
+            {Array.from({ length: 3 }).map((_, index) => (
+              <Accordion
+                type="single"
+                collapsible
+                className="w-full border-[1px] border-gray-300 mb-4"
+                key={index}
+              >
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="border-b-0 data-[state=open]:bg-gray-100 p-2"
+                >
+                  <AccordionTrigger>
+                    {` Q${index + 1}. Is it worth pursuing engineering?`}
+                  </AccordionTrigger>
+                  <AccordionContent className="grid gap-4 text-base text-gray-500">
+                    Yes, engineering is worth it! Engineers are in high demand
+                    and have great career prospects. An engineering degree can
+                    open up many opportunities in a diverse range of
+                    professions. A degree in engineering typically leads to
+                    higher salary and job satisfaction along with the chance for
+                    professional growth and development.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            ))}
+          </div>
+          <div>
+            {Array.from({ length: 3 }).map((_, index) => (
+              <Accordion
+                type="single"
+                collapsible
+                className="w-full border-[1px] border-gray-300 mb-4"
+                key={index}
+              >
+                <AccordionItem
+                  value={`item-${index}`}
+                  className="border-b-0 data-[state=open]:bg-gray-100 p-2"
+                >
+                  <AccordionTrigger>
+                    {` Q${index + 1}. Is it worth pursuing engineering?`}
+                  </AccordionTrigger>
+                  <AccordionContent className="grid gap-4 text-base text-gray-500">
+                    Yes, engineering is worth it! Engineers are in high demand
+                    and have great career prospects. An engineering degree can
+                    open up many opportunities in a diverse range of
+                    professions. A degree in engineering typically leads to
+                    higher salary and job satisfaction along with the chance for
+                    professional growth and development.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             ))}
           </div>
         </div>
