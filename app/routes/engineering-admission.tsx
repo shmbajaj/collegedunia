@@ -15,6 +15,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { buttonVariants } from "~/components/ui/button";
 import { Card, CardContent, CardFooter } from "~/components/ui/card";
 import { cn } from "~/lib/utils";
+import { GetInTouch } from "~/pages/index/components/get-in-touch";
+import { OurConsultingServices } from "~/pages/index/components/our-consulting-services";
 
 export const meta: MetaFunction = () => {
   return [
@@ -26,6 +28,9 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+// INFO: using redudant code and static text as content for site not available yet
+// INFO: , and site preview has to be finished fast.
+// TODO: Make content components dynamic
 export default function EngineeringAdmissions() {
   return (
     <div className="relative">
@@ -297,6 +302,21 @@ export default function EngineeringAdmissions() {
             ))}
           </div>
         </div>
+      </section>
+      <section className="mx-4 my-auto">
+        <OurConsultingServices />
+      </section>
+      <section className="mx-4 my-auto mb-4">
+        <GetInTouch>
+          <div className="p-4 lg:p-12 bg-blue-500 border-t-8 border-orange-500 text-white flex flex-col gap-2 text-center font-semibold h-max">
+            <span>
+              COMMERCIA, HINJAWADI BRIDGE,WAKAD, PUNE, MAHARASHTRA 411057
+            </span>
+            <span>CONTACT:</span>
+            <span>+91 77579 20539</span>
+            <span>+91 87673 31852</span>
+          </div>
+        </GetInTouch>
       </section>
     </div>
   );
