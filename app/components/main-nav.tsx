@@ -7,7 +7,6 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "./ui/navigation-menu";
@@ -29,11 +28,9 @@ export function MainNav() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Consultation</NavigationMenuTrigger>
               <NavigationMenuContent>
-                {/* TODO: use NavLink */}
                 <div className="border-t-4 border-orange-500"></div>
                 <ul className="grid gap-3 p-4 w-52 ">
                   {consultationLink.items.map((link) => (
-                    <NavigationMenuLink key={link.to}>
                       <NavLink
                         to={link.to}
                         className={({ isActive }) =>
@@ -45,17 +42,16 @@ export function MainNav() {
                             { "text-orange-500": isActive }
                           )
                         }
+                        key={link.to}
                       >
                         {link.title}
                       </NavLink>
-                    </NavigationMenuLink>
                   ))}
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        {/* TODO: use NavLink */}
         <div className="flex items-center space-x-3">
           {navConfig.mainNav.map((item) => (
             <NavLink

@@ -74,11 +74,3 @@
     @apply bg-background text-foreground;
   }
 }
-/* Your global CSS or component-specific CSS file */
-.slide___3-Nqo.slideHorizontal___1NzNV.carousel__slide.carousel__slide--visible {
-  padding-bottom: 0 !important;
-}
-
-.carousel__slider-tray--horizontal{
-  display: flex !important;
-}

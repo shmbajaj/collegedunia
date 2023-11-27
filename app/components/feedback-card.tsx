@@ -1,6 +1,8 @@
+import { cn } from "~/lib/utils";
 import { Card, CardContent, CardHeader } from "./ui/card";
 
 interface FeedbackCardProps {
+  className?: string;
   name: string;
   title: string;
   content: string;
@@ -8,9 +10,15 @@ interface FeedbackCardProps {
 }
 
 // INFO[source-for-css]: https://medium.com/@ryaddev/building-a-testimonials-carousel-with-react-nuka-carousel-and-tailwind-css-b34686d61880
-export function FeedbackCard({ name, title, content, img }: FeedbackCardProps) {
+export function FeedbackCard({
+  name,
+  title,
+  content,
+  img,
+  className,
+}: FeedbackCardProps) {
   return (
-    <Card className="p-4 shadow-md hover:shadow-inner">
+    <Card className={cn("p-4 shadow-md hover:shadow-inner", className)}>
       <img
         src={"https://i.imgur.com/rx3eOUo.png"}
         alt="double_quotes"
