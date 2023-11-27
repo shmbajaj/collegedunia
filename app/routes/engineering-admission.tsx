@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/react";
 import { Link } from "@remix-run/react";
+import { Carousel } from "~/components/carousel";
 import {
   PageHeader,
   PageHeaderDescription,
@@ -13,7 +14,12 @@ import {
 } from "~/components/ui/accordion";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { buttonVariants } from "~/components/ui/button";
-import { Card, CardContent, CardFooter } from "~/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "~/components/ui/card";
 import { cn } from "~/lib/utils";
 import { GetInTouch } from "~/pages/index/components/get-in-touch";
 import { OurConsultingServices } from "~/pages/index/components/our-consulting-services";
@@ -74,7 +80,29 @@ export default function EngineeringAdmissions() {
           </PageHeaderDescription>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
-        {/* TODO: use carousel */}
+        <Carousel className="max-w-[320px] h-[650px] md:h-[612px]">
+          {Array.from({ length: 10 }).map((_, index) => (
+            <Card className="border-2 border-[#0C71C3] w-full" key={index}>
+              <CardHeader className="relative h-44 p-0">
+                <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center"></div>
+              </CardHeader>
+              <CardContent className="p-2">
+                <p className="uppercase text-center font-bold text-orange-500">
+                  Telecommunications Engineering {index}
+                </p>
+                <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-black md:my-4" />
+                <p className="leading-8">
+                  Telecommunications engineering is an intersection of
+                  electrical and computer engineering, providing students the
+                  practical knowledge to work on the interconnections between
+                  networks, telecom systems and cyberspace. With learning about
+                  these components, graduates of telecommunications engineering
+                  are capable of working in a variety of fields.
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </Carousel>
       </section>
       <section className="flex flex-col items-center pb-8">
         <PageHeader className="pb-8 items-center">
@@ -89,7 +117,29 @@ export default function EngineeringAdmissions() {
           </PageHeaderDescription>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
-        {/* TODO: use carousel */}
+        <Carousel className="max-w-[320px] h-[650px] md:h-[612px]">
+          {Array.from({ length: 10 }).map((_, index) => (
+            <Card className="border-2 border-[#0C71C3] w-full" key={index}>
+              <CardHeader className="relative h-44 p-0">
+                <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center"></div>
+              </CardHeader>
+              <CardContent className="p-2">
+                <p className="uppercase text-center font-bold text-orange-500">
+                  Telecommunications Engineering {index}
+                </p>
+                <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-black md:my-4" />
+                <p className="leading-8">
+                  Telecommunications engineering is an intersection of
+                  electrical and computer engineering, providing students the
+                  practical knowledge to work on the interconnections between
+                  networks, telecom systems and cyberspace. With learning about
+                  these components, graduates of telecommunications engineering
+                  are capable of working in a variety of fields.
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </Carousel>{" "}
       </section>
       <section className="flex flex-col items-center pb-8">
         <PageHeader className="pb-8 items-center">
