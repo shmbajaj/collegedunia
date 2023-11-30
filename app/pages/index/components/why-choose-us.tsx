@@ -32,7 +32,7 @@ export function WhyChooseUs() {
           </CardDescription>
           <CardFooter className="pt-6">
             <Link
-              to="about-us"
+              to="/about-us"
               className={cn(
                 buttonVariants({
                   variant: "default",

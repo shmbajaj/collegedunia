@@ -55,7 +55,7 @@ export default function EngineeringAdmissions() {
           </PageHeaderDescription>
           <div className="w-full flex items-center space-x-4 pb-8 pt-4 md:pb-10">
             <Link
-              to="services"
+              to="/services"
               className={cn(
                 buttonVariants({ variant: "outline", className: "text-center" })
               )}

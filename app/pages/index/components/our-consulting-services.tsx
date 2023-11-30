@@ -1,18 +1,18 @@
-import { Link } from "@remix-run/react";
+import { Link } from '@remix-run/react';
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/components/page-header";
-import { buttonVariants } from "~/components/ui/button";
+} from '~/components/page-header';
+import { buttonVariants } from '~/components/ui/button';
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card";
-import { cn } from "~/lib/utils";
+} from '~/components/ui/card';
+import { cn } from '~/lib/utils';
 
 export function OurConsultingServices() {
   return (
@@ -26,12 +26,12 @@ export function OurConsultingServices() {
         </PageHeaderHeading>
         <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         <PageHeaderDescription className="leading-8 text-center">
-          Catalyst Education Consultancy is one of the{" "}
+          Catalyst Education Consultancy is one of the{' '}
           <strong>Leading Direct Admission Consultant</strong> in Pune, Mumbai
           and all over India. We provide direct admission in Colleges in Pune,
           Mumbai through institute level empty seats or the management quota
-          seats. We also help in{" "}
-          <strong>direct admissions for NRI Quota Admissions Seats.</strong>{" "}
+          seats. We also help in{' '}
+          <strong>direct admissions for NRI Quota Admissions Seats.</strong>{' '}
           With our rich experience and dependable methodologies combined with
           cost-adequacy we have made incredible progress in putting the correct
           student to the correct institution. We provide admission assistance,
@@ -51,11 +51,11 @@ export function OurConsultingServices() {
           </CardDescription>
           <CardFooter className="pt-6">
             <Link
-              to="management-admission"
-              className={cn(buttonVariants({ variant: "outline" }))}
+              to="/management-admission"
+              className={cn(buttonVariants({ variant: 'outline' }))}
             >
               Learn More
-            </Link>{" "}
+            </Link>{' '}
           </CardFooter>
         </Card>
         <Card className="p-10 grid place-items-center text-center shadow-xl  md:max-w-xs">
@@ -69,11 +69,11 @@ export function OurConsultingServices() {
           </CardDescription>
           <CardFooter className="pt-6">
             <Link
-              to="engineering-admission"
-              className={cn(buttonVariants({ variant: "outline" }))}
+              to="/engineering-admission"
+              className={cn(buttonVariants({ variant: 'outline' }))}
             >
               Learn More
-            </Link>{" "}
+            </Link>{' '}
           </CardFooter>
         </Card>
         <Card className="bg-blue-500 p-10 grid place-items-center text-center shadow-md md:mt-10 md:mb-10 md:max-w-xs">
@@ -87,11 +87,11 @@ export function OurConsultingServices() {
           </CardDescription>
           <CardFooter className="pt-6">
             <Link
-              to="medical-admission"
-              className={cn(buttonVariants({ variant: "outline" }))}
+              to="/medical-admission"
+              className={cn(buttonVariants({ variant: 'outline' }))}
             >
               Learn More
-            </Link>{" "}
+            </Link>{' '}
           </CardFooter>
         </Card>
       </article>
