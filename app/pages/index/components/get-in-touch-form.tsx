@@ -1,28 +1,17 @@
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
-import * as z from "zod";
-import { toast } from "../../../components/ui/use-toast";
-import { Input } from "../../../components/ui/input";
-import { Textarea } from "../../../components/ui/textarea";
-import { Button } from "../../../components/ui/button";
-import { Checkbox } from "../../../components/ui/checkbox";
-import { useFetcher } from "@remix-run/react";
-import { Label } from "~/components/ui/label";
-import type { GetInTouchFormSchema } from "~/data/schema";
-import type { ActionErrors } from "~/types/validation-action";
-import { cn } from "~/lib/utils";
-import { useEffect, useRef } from "react";
-
-const items = [
-  { label: "Engineering", id: "engineering" },
-  { label: "Medical", id: "medical" },
-  { label: "BA LLB/ LLM", id: "ballb/llm" },
-  { label: "MBA/PGDM/MMS", id: "mba/pgdm/mms" },
-  { label: "BBA/BBM", id: "bba/bbm" },
-  { label: "B Com./ M Com.", id: "bcom./mcom." },
-  { label: "B Pharma / M Pharma", id: "bpharma/mpharma" },
-  { label: "BCA/MCA/BSc./MSc.", id: "bca/mca/bsc./msc." },
-  { label: "Other", id: "other" },
-];
+import * as z from 'zod';
+import { toast } from '../../../components/ui/use-toast';
+import { Input } from '../../../components/ui/input';
+import { Textarea } from '../../../components/ui/textarea';
+import { Button } from '../../../components/ui/button';
+import { Checkbox } from '../../../components/ui/checkbox';
+import { useFetcher } from '@remix-run/react';
+import { Label } from '~/components/ui/label';
+import type { GetInTouchFormSchema } from '~/data/schema';
+import type { ActionErrors } from '~/types/validation-action';
+import { cn } from '~/lib/utils';
+import { useEffect, useRef } from 'react';
+import { itemsCourseLookingFor } from '~/data/form.data';
 
 export type GetInTouchFormInput = z.infer<typeof GetInTouchFormSchema>;
 
@@ -33,10 +22,10 @@ export interface GetInTouchFormActionData {
 
 const getInTouchFormDefaultValues: GetInTouchFormInput = {
   courseLookingFor: [],
-  name: "",
-  email: "",
-  phoneNumber: "",
-  message: "",
+  name: '',
+  email: '',
+  phoneNumber: '',
+  message: '',
 };
 
 export function GetInTouchForm({
@@ -48,13 +37,13 @@ export function GetInTouchForm({
 
   const actionData = fetcher.data;
 
-  const isSubmitting = fetcher.state === "submitting";
+  const isSubmitting = fetcher.state === 'submitting';
   const isSubmitted = Boolean(fetcher.data?.data && !fetcher.data.errors);
 
   useEffect(() => {
     if (!isSubmitted) return;
     toast({
-      title: "You submitted the following values:",
+      title: 'You submitted the following values:',
       description: (
         <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
           <code className="text-white">
@@ -71,14 +60,14 @@ export function GetInTouchForm({
     <fetcher.Form
       {...props}
       method="post"
-      className={cn("space-y-8", className)}
+      className={cn('space-y-8', className)}
       ref={formRef}
     >
-      <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
+      <div className={'flex flex-col w-full max-w-sm  gap-1.5'}>
         <Label
           className={cn(
-            "flex flex-col w-full max-w-sm  gap-1.5",
-            actionData?.errors?.name && "text-destructive"
+            'flex flex-col w-full max-w-sm  gap-1.5',
+            actionData?.errors?.name && 'text-destructive'
           )}
           htmlFor="name"
         >
@@ -95,15 +84,15 @@ export function GetInTouchForm({
           pseudonym. You can only change this once every 30 days.
         </p>
         {actionData?.errors?.name ? (
-          <p className={"text-sm font-medium text-destructive"}>
+          <p className={'text-sm font-medium text-destructive'}>
             {actionData.errors.name}
           </p>
         ) : null}
       </div>
 
-      <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
+      <div className={'flex flex-col w-full max-w-sm  gap-1.5'}>
         <Label
-          className={cn(actionData?.errors?.phoneNumber && "text-destructive")}
+          className={cn(actionData?.errors?.phoneNumber && 'text-destructive')}
           htmlFor="phoneNumber"
         >
           Phone Number
@@ -119,15 +108,15 @@ export function GetInTouchForm({
           pseudonym. You can only change this once every 30 days.
         </p>
         {actionData?.errors?.phoneNumber ? (
-          <p className={"text-sm font-medium text-destructive"}>
+          <p className={'text-sm font-medium text-destructive'}>
             {actionData.errors.phoneNumber}
           </p>
         ) : null}
       </div>
 
-      <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
+      <div className={'flex flex-col w-full max-w-sm  gap-1.5'}>
         <Label
-          className={cn(actionData?.errors?.email && "text-destructive")}
+          className={cn(actionData?.errors?.email && 'text-destructive')}
           htmlFor="email"
         >
           Email
@@ -143,18 +132,18 @@ export function GetInTouchForm({
           pseudonym. You can only change this once every 30 days.
         </p>
         {actionData?.errors?.email ? (
-          <p className={"text-sm font-medium text-destructive"}>
+          <p className={'text-sm font-medium text-destructive'}>
             {actionData.errors.email}
           </p>
         ) : null}
       </div>
 
-      <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
+      <div className={'flex flex-col w-full max-w-sm  gap-1.5'}>
         <div className="mb-4">
           <Label
             className={cn(
-              "text-base",
-              actionData?.errors?.courseLookingFor && "text-destructive"
+              'text-base',
+              actionData?.errors?.courseLookingFor && 'text-destructive'
             )}
           >
             Course Looking For
@@ -163,7 +152,7 @@ export function GetInTouchForm({
             Select the items you want to display in the sidebar.
           </p>
         </div>
-        {items.map((item) => (
+        {itemsCourseLookingFor.map((item) => (
           <div
             key={item.id}
             className="flex flex-row items-start space-x-3 space-y-0"
@@ -182,15 +171,15 @@ export function GetInTouchForm({
           </div>
         ))}
         {actionData?.errors?.courseLookingFor ? (
-          <p className={"text-sm font-medium text-destructive"}>
+          <p className={'text-sm font-medium text-destructive'}>
             {actionData.errors.courseLookingFor}
           </p>
         ) : null}
       </div>
 
-      <div className={"flex flex-col w-full max-w-sm  gap-1.5"}>
+      <div className={'flex flex-col w-full max-w-sm  gap-1.5'}>
         <Label
-          className={cn(actionData?.errors?.message && "text-destructive")}
+          className={cn(actionData?.errors?.message && 'text-destructive')}
           htmlFor="message"
         >
           Message
@@ -207,7 +196,7 @@ export function GetInTouchForm({
           them.
         </p>
         {actionData?.errors?.message ? (
-          <p className={"text-sm font-medium text-destructive"}>
+          <p className={'text-sm font-medium text-destructive'}>
             {actionData.errors.message}
           </p>
         ) : null}
