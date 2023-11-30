@@ -27,10 +27,10 @@ import { OurConsultingServices } from "~/pages/index/components/our-consulting-s
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Management Admissions" },
+    { title: 'Management Admissions' },
     {
-      name: "description",
-      content: "Get Admission in Management",
+      name: 'description',
+      content: 'Get Admission in Management',
     },
   ];
 };
