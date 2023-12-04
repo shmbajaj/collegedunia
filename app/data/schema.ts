@@ -193,11 +193,11 @@ export const FormRegisterationSchema = z
     fathersOccupation: z
       .string()
       .min(1, { message: "Father's Occupation is required." }),
-    annualIncome: z.number().int().min(1, {
+    annualIncome: z.coerce.number().min(1, {
       message: 'Annual Income is required and should be a positive integer.',
     }),
   })
-  .refine((value) => value.confirmPassword === value.password, {
+  .refine((data) => data.confirmPassword === data.password, {
     message: 'Passwords do not match.',
     path: ['confirmPassword'],
   });
