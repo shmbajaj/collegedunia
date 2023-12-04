@@ -132,6 +132,12 @@ export const FormRegisterationSchema = z
         message: 'The PhoneNumber must be 10 characters',
       })
       .regex(/^[6-9]\d{9}$/, 'The PhoneNumber must contain numbers'),
+    highestEducationSchema: z.enum(
+      ['twelfth', 'graduation', 'postGraduation'],
+      {
+        required_error: 'Highest Education is required.',
+      }
+    ),
     email: z
       .string({
         required_error: 'Please select an email to display.',
@@ -187,12 +193,9 @@ export const FormRegisterationSchema = z
     fathersOccupation: z
       .string()
       .min(1, { message: "Father's Occupation is required." }),
-    annualIncome: z
-      .number()
-      .int()
-      .min(1, {
-        message: 'Annual Income is required and should be a positive integer.',
-      }),
+    annualIncome: z.number().int().min(1, {
+      message: 'Annual Income is required and should be a positive integer.',
+    }),
   })
   .refine((value) => value.confirmPassword === value.password, {
     message: 'Passwords do not match.',

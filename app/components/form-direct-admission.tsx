@@ -78,8 +78,6 @@ export function FormDirectAdmission({
       className={cn('space-y-8', className)}
       ref={formRef}
     >
-      {/* <div className={'flex flex-col w-full max-w-sm  gap-4'}> */}
-
       <div className="flex flex-col md:flex-row gap-4">
         <FormItem>
           <FormLabel htmlFor="name" error={actionData?.errors?.name}>
@@ -347,7 +345,6 @@ export function FormDirectAdmission({
       <Button type="submit" disabled={isSubmitting}>
         Submit
       </Button>
-      {/* </div> */}
     </fetcher.Form>
   );
 }
