@@ -181,24 +181,26 @@ export function FormDirectAdmission({
             Select the items you want to display in the sidebar.
           </FormDescription>
         </div>
-        {itemsCourseLookingFor.map((item) => (
-          <FormItem
-            key={item.id}
-            className="flex flex-row items-start space-x-3 space-y-0"
-          >
-            <Checkbox
-              name="courseLookingFor"
-              id={item.id}
-              value={item.id}
-              defaultChecked={formDirectAdmissionDefaultValues.courseLookingFor?.includes(
-                item.id
-              )}
-            />
-            <FormLabel className="font-normal" htmlFor={item.id}>
-              {item.label}
-            </FormLabel>
-          </FormItem>
-        ))}
+        <div className="grid gap-4 md:grid-flow-row md:grid-cols-[repeat(auto-fill,minmax(120px,1fr))]">
+          {itemsCourseLookingFor.map((item) => (
+            <FormItem
+              key={item.id}
+              className="flex flex-row items-start space-x-3 space-y-0"
+            >
+              <Checkbox
+                name="courseLookingFor"
+                id={item.id}
+                value={item.id}
+                defaultChecked={formDirectAdmissionDefaultValues.courseLookingFor?.includes(
+                  item.id
+                )}
+              />
+              <FormLabel className="font-normal" htmlFor={item.id}>
+                {item.label}
+              </FormLabel>
+            </FormItem>
+          ))}
+        </div>
         <FormMessage>{actionData?.errors?.courseLookingFor}</FormMessage>
       </FormItem>
 

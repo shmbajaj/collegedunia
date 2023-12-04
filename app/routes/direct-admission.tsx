@@ -22,7 +22,6 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     request,
     schema: FormDirectAdmissionSchema,
   });
-  console.log({ data, errors });
   if (errors) {
     return json({ errors });
   }
@@ -31,15 +30,15 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
 export default function DirectAdmission() {
   return (
-    <div className="container relative">
-      <PageHeader className="pb-8">
+    <div className="container relative mb-8 flex flex-col items-center justify-center gap-8">
+      <PageHeader className="pb-8 items-center">
         <p className="capitalize font-bold text-orange-500">
           DON’T SETTLE FOR LESS
         </p>
         <PageHeaderHeading className="capitalize">
           Direct Admission
         </PageHeaderHeading>
-        <PageHeaderDescription>
+        <PageHeaderDescription className="leading-8 text-center">
           Catalyst Education is a prominent{' '}
           <strong>direct admission consultant</strong> that offers direct
           admission to colleges in{' '}
@@ -56,6 +55,12 @@ export default function DirectAdmission() {
           within a short period seems challenging.
         </PageHeaderDescription>
       </PageHeader>
+
+      <h2 className="text-xl leading-tight tracking-tighter md:text-2xl lg:leading-[1.1] mb-8 text-center">
+        Fill in the following form with your details to apply for direct
+        admissions to your Dream College.
+      </h2>
+
       <FormDirectAdmission />
     </div>
   );
