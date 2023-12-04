@@ -76,20 +76,22 @@ const PartialFormDirectAdmissionSchema = z.object({
       required_error: 'Please select an email to display.',
     })
     .email(),
-  collegePreferedLocation: z.string(),
+  collegePreferedLocation: z.string().min(4, {
+    message: 'The College Prefered Location must be atleast 4 characters.',
+  }),
   preferedCollege: z.string().optional(),
   tenthScore: z
     .string()
-    .min(0, {
-      message: 'The Tenth Score must be 0%',
+    .min(1, {
+      message: 'The Tenth Score must be 1%',
     })
     .max(100, {
       message: 'The Tenth Score must be 100%',
     }),
   twelfthScore: z
     .string()
-    .min(0, {
-      message: 'The Twelfth Score must be 0%',
+    .min(1, {
+      message: 'The Twelfth Score must be 1%',
     })
     .max(100, {
       message: 'The Twelfth Score must be 100%',
@@ -97,8 +99,9 @@ const PartialFormDirectAdmissionSchema = z.object({
   yearOfPassing: z
     .string()
     .regex(/^\d{4}$/, 'YearOfPassing must contain numbers'),
-  majorSubject: z.string({
+  majorSubject: z.enum(['pcb', 'pcm', 'commerce', 'arts', 'any-other'], {
     required_error: 'Please select a major subject.',
+    invalid_type_error: 'Select a major subject',
   }),
 });
 
