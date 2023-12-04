@@ -24,6 +24,7 @@ import {
   FormMessage,
 } from '~/components/form';
 import { Input } from '~/components/ui/input';
+import { Separator } from '~/components/ui/separator';
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Registration' }];
@@ -94,7 +95,7 @@ export default function Registration({
   }, [isSubmitted]);
 
   return (
-    <div className="container relative">
+    <div className="container relative flex items-center justify-center p-8">
       <fetcher.Form
         {...props}
         method="post"
@@ -239,6 +240,8 @@ export default function Registration({
           <FormMessage>{actionData?.errors?.confirmPassword}</FormMessage>
         </FormItem>
 
+        <Separator />
+
         <FormItem>
           <FormLabel
             htmlFor="tenthSchool"
@@ -352,6 +355,8 @@ export default function Registration({
           </FormDescription>
           <FormMessage>{actionData?.errors?.twelfthYearOfPassing}</FormMessage>
         </FormItem>
+
+        <Separator />
 
         <FormItem>
           <FormLabel
