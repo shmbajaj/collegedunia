@@ -6,6 +6,8 @@ import { cn } from '~/lib/utils';
 import type { ActionErrors } from '~/types/validation-action';
 import { toast } from './ui/use-toast';
 import { Button } from './ui/button';
+import { FormItem, FormLabel, FormDescription, FormMessage } from './form';
+import { Input } from './ui/input';
 
 export type FormDirectAdmissionInput = z.infer<
   typeof FormDirectAdmissionSchema
@@ -66,6 +68,41 @@ export function FormDirectAdmission({
       ref={formRef}
     >
       <div className={'flex flex-col w-full max-w-sm  gap-1.5'}>
+        <div className="flex flex-col md:flex-row gap-4">
+          <FormItem>
+            <FormLabel htmlFor="name" error={actionData?.errors?.name}>
+              Name
+            </FormLabel>
+            <Input
+              placeholder="Shubham Bajaj"
+              name="name"
+              id="name"
+              defaultValue={formDirectAdmissionDefaultValues.name}
+            />
+            <FormDescription>
+              This is your public display name. It has to be your real name.
+            </FormDescription>
+            <FormMessage>{actionData?.errors?.name}</FormMessage>
+          </FormItem>
+          <FormItem>
+            <FormLabel
+              htmlFor="phoneNumber"
+              error={actionData?.errors?.phoneNumber}
+            >
+              Phone
+            </FormLabel>
+            <Input
+              placeholder="89500XXXXX"
+              name="phoneNumber"
+              id="phoneNumber"
+              defaultValue={formDirectAdmissionDefaultValues.phoneNumber}
+            />
+            <FormDescription>
+              This is your public display name. It has to be your real name.
+            </FormDescription>
+            <FormMessage>{actionData?.errors?.phoneNumber}</FormMessage>
+          </FormItem>
+        </div>
         <Button type="submit" disabled={isSubmitting}>
           Submit
         </Button>
