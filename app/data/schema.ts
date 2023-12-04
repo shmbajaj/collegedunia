@@ -112,3 +112,89 @@ export const GetInTouchFormSchema = PartialGetInTouchFormSchema.merge(
 export const FormDirectAdmissionSchema = PartialFormDirectAdmissionSchema.merge(
   CourseLookingForSchema
 );
+
+export const FormRegisterationSchema = z
+  .object({
+    name: z
+      .string()
+      .min(2, {
+        message: 'Name must be at least 2 characters.',
+      })
+      .max(30, {
+        message: 'Name must not be longer than 30 characters.',
+      }),
+    phoneNumber: z
+      .string()
+      .min(10, {
+        message: 'The PhoneNumber must be 10 characters',
+      })
+      .max(10, {
+        message: 'The PhoneNumber must be 10 characters',
+      })
+      .regex(/^[6-9]\d{9}$/, 'The PhoneNumber must contain numbers'),
+    email: z
+      .string({
+        required_error: 'Please select an email to display.',
+      })
+      .email(),
+    preferedCollege: z.string().optional(),
+    password: z
+      .string()
+      .min(8, { message: 'Password must be at least 8 characters long.' }),
+    confirmPassword: z.string(),
+    tenthSchool: z.string().min(4, { message: 'Tenth School is required.' }),
+    tenthBoard: z.string().min(3, { message: 'Tenth Board is required.' }),
+    tenthScore: z
+      .string()
+      .min(1, {
+        message: 'The Tenth Score must be 1%',
+      })
+      .max(100, {
+        message: 'The Tenth Score must be 100%',
+      }),
+    tenthYearOfPassing: z
+      .string()
+      .regex(/^\d{4}$/, 'Tenth YearOfPassing must contain numbers'),
+    twelfthScore: z
+      .string()
+      .min(1, {
+        message: 'The Twelfth Score must be 1%',
+      })
+      .max(100, {
+        message: 'The Twelfth Score must be 100%',
+      }),
+    twelfthYearOfPassing: z
+      .string()
+      .regex(/^\d{4}$/, 'Twelfth YearOfPassing must contain numbers'),
+    fatherName: z
+      .string()
+      .min(2, {
+        message: 'Father Name must be at least 2 characters.',
+      })
+      .max(30, {
+        message: 'Father Name must not be longer than 30 characters.',
+      }),
+    fatherPhoneNumber: z
+      .string()
+      .min(10, {
+        message: 'The PhoneNumber must be 10 characters',
+      })
+      .max(10, {
+        message: 'The PhoneNumber must be 10 characters',
+      })
+      .regex(/^[6-9]\d{9}$/, 'The PhoneNumber must contain numbers'),
+    city: z.string().min(1, { message: 'City is required.' }),
+    fathersOccupation: z
+      .string()
+      .min(1, { message: "Father's Occupation is required." }),
+    annualIncome: z
+      .number()
+      .int()
+      .min(1, {
+        message: 'Annual Income is required and should be a positive integer.',
+      }),
+  })
+  .refine((value) => value.confirmPassword === value.password, {
+    message: 'Passwords do not match.',
+    path: ['confirmPassword'],
+  });
