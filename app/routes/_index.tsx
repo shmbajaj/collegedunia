@@ -34,13 +34,13 @@ export default function Index() {
           </PageHeaderHeading>
           <div className="w-full flex items-center space-x-4 pb-8 pt-4 md:pb-10">
             <Link
-              to="contact-us"
+              to="/contact-us"
               className={cn(buttonVariants({ className: "text-center" }))}
             >
               Get Started
             </Link>
             <Link
-              to="services"
+              to="/services"
               className={cn(
                 buttonVariants({ variant: "outline", className: "text-center" })
               )}
@@ -49,6 +49,7 @@ export default function Index() {
             </Link>
           </div>
         </PageHeader>
+        {/* TODO: replace image url with own asset url */}
         <div className="absolute w-full h-full top-0 left-0 bg-slate-500 bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit2-scaled.jpg')] bg-no-repeat bg-cover bg-center bg-fixed"></div>
       </section>
       <OurConsultingServices />
@@ -56,7 +57,16 @@ export default function Index() {
       <Testimonials />
       <WhyChooseUs />
       <Stats />
-      <GetInTouch />
+      <GetInTouch>
+        <div className="p-4 lg:p-12 bg-blue-500 border-t-8 border-orange-500 text-white flex flex-col gap-2 text-center font-semibold h-max">
+          <span>
+            COMMERCIA, HINJAWADI BRIDGE,WAKAD, PUNE, MAHARASHTRA 411057
+          </span>
+          <span>CONTACT:</span>
+          <span>+91 77579 20539</span>
+          <span>+91 87673 31852</span>
+        </div>
+      </GetInTouch>
     </div>
   );
 }

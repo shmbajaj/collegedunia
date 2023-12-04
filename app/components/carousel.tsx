@@ -3,43 +3,53 @@ import { Button } from "./ui/button";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { cn } from "~/lib/utils";
 
-interface CarouselProps {
+export function Carousel({
+  children,
+  className,
+}: {
   children: React.ReactElement[];
-}
-
-export function Carousel({ children }: CarouselProps) {
-  const [index, setActiveIndex] = React.useState(0);
+  className?: string;
+}) {
+  const [activeIndex, setActiveSlideIndex] = React.useState(0);
   const slidesCount = children.length;
-  const emptyArray = Array.from({ length: slidesCount });
-  const nextSlide = () =>
-    setActiveIndex((prevIndex) => (prevIndex + 1) % slidesCount);
-  const prevSlide = () =>
-    setActiveIndex((prevIndex) => (prevIndex - 1 + slidesCount) % slidesCount);
-  const setIndex = (index: number) => setActiveIndex(index);
+  function onNext() {
+    setActiveSlideIndex((pi) => (pi + 1) % slidesCount);
+  }
+  function onPrev() {
+    setActiveSlideIndex((pi) => (pi - 1 + slidesCount) % slidesCount);
+  }
   return (
-    <article className="relative p-8 flex flex-col items-center">
-      {/* TODO: add animation, delay and trainsition */}
-      <div className="max-w-xs p-4 md:max-w-sm md:p-6">{children[index]}</div>
-      <div className="absolute top-1/2 left-0 transform -translate-y-2/3 flex justify-between w-full">
-        <Button variant="outline" size="icon" onClick={prevSlide}>
-          <ChevronLeftIcon className="h-4 w-4" />
-        </Button>
-        <Button variant="outline" size="icon" onClick={nextSlide}>
-          <ChevronRightIcon className="h-4 w-4" />
-        </Button>
+    <div
+      className={cn("w-2/3 h-80 max-w-sm relative", className)}
+      data-carousel
+    >
+      <Button
+        size="icon"
+        className="absolute  top-1/2 -translate-y-1/2 z-20 -left-4"
+        onClick={onPrev}
+      >
+        <ChevronLeftIcon data-carousel-button="prev" />
+      </Button>
+      <Button
+        size="icon"
+        className="absolute  top-1/2 -translate-y-1/2 z-20 -right-4"
+        onClick={onNext}
+      >
+        <ChevronRightIcon data-carousel-button="next" />
+      </Button>
+      <div className="relative">
+        <ul className="list-none" data-slides>
+          {children.map((child, index) => (
+            <li
+              className="absolute inset-0 opacity-0 transition-opacity ease-in-out duration-200 delay-200  data-[active=true]:opacity-100 data-[active=true]:z-10 data-[active=true]:delay-0"
+              data-active={index === activeIndex}
+              key={index}
+            >
+              {child}
+            </li>
+          ))}
+        </ul>
       </div>
-      <div className="flex gap-4">
-        {emptyArray.map((_, buttonIndex) => (
-          <Button
-            key={buttonIndex}
-            className={cn("p-0 rounded-full w-2 h-2", {
-              "bg-gray-500": index !== buttonIndex,
-              "bg-black": index === buttonIndex,
-            })}
-            onClick={() => setIndex(buttonIndex)}
-          />
-        ))}
-      </div>
-    </article>
+    </div>
   );
 }

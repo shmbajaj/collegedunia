@@ -5,7 +5,7 @@ export function Testimonials() {
   return (
     <section
       id="clients"
-      className={`sm:py-16 py-6 flex justify-center items-center flex-col relative `}
+      className={`sm:py-16 py-6 flex justify-center items-center flex-col relative mb-8`}
     >
       <div className="w-full flex justify-between items-center md:flex-row flex-col sm:mb-16 mb-6 relative z-[1]">
         <h2
@@ -23,24 +23,27 @@ export function Testimonials() {
           </p>
         </div>
       </div>
-      <Carousel>
+      <Carousel className="h-[356px] md:h-60 w-full">
         <FeedbackCard
           name="Shubham Bajaj"
           title="Developer"
           content="[1] I can't believe it took us this long to make a change. So happy that we did. Numbers don't lie."
           img="https://avatars.githubusercontent.com/u/29247011?v=4"
+          className="w-full max-w-xs m-auto"
         />
         <FeedbackCard
           name="Shubham Bajaj"
           title="Developer"
           content="[2] I can't believe it took us this long to make a change. So happy that we did. Numbers don't lie."
           img="https://avatars.githubusercontent.com/u/29247011?v=4"
+          className="w-full max-w-xs m-auto"
         />
         <FeedbackCard
           name="Shubham Bajaj"
           title="Developer"
           content="[3] I can't believe it took us this long to make a change. So happy that we did. Numbers don't lie."
           img="https://avatars.githubusercontent.com/u/29247011?v=4"
+          className="w-full max-w-xs m-auto"
         />
       </Carousel>
     </section>

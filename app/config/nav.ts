@@ -1,4 +1,4 @@
-import type { MainNavItem, MobileNavItem } from "~/types/nav";
+import type { MainNavItem, MobileNavItem } from '~/types/nav';
 
 interface NavConfig {
   mainNav: Array<MainNavItem>;
@@ -8,45 +8,45 @@ interface NavConfig {
 export const navConfig: NavConfig = {
   mainNav: [
     {
-      to: "direct-admission",
-      title: "Direct Admission",
+      to: '/direct-admission',
+      title: 'Direct Admission',
     },
     {
-      to: "about-us",
-      title: "About Us",
+      to: '/about-us',
+      title: 'About Us',
     },
     {
-      to: "login",
-      title: "Login",
+      to: '/login',
+      title: 'Login',
     },
     {
-      to: "registration",
-      title: "Registration",
+      to: '/registration',
+      title: 'Registration',
     },
     {
-      to: "contact-us",
-      title: "Contact Us",
+      to: '/contact-us',
+      title: 'Contact Us',
     },
     {
-      to: "forum",
-      title: "Forum",
+      to: '/forum',
+      title: 'Forum',
     },
   ],
   mobileNav: [
     {
-      title: "Consultation",
+      title: 'Consultation',
       items: [
         {
-          to: "engineering-admission",
-          title: "Engineering Admission",
+          to: '/engineering-admission',
+          title: 'Engineering Admission',
         },
         {
-          to: "management-admission",
-          title: "Management Admission",
+          to: '/management-admission',
+          title: 'Management Admission',
         },
         {
-          to: "medical-admission",
-          title: "Medical Admission",
+          to: '/medical-admission',
+          title: 'Medical Admission',
         },
       ],
     },
