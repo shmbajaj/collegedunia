@@ -1,12 +1,32 @@
+import type { ActionFunctionArgs } from '@remix-run/node';
+import { json } from '@remix-run/node';
 import type { MetaFunction } from '@remix-run/react';
+import {
+  FormDirectAdmission,
+  type FormDirectAdmissionInput,
+} from '~/components/form-direct-admission';
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
 } from '~/components/page-header';
+import { FormDirectAdmissionSchema } from '~/data/schema';
+import { validationAction } from '~/lib/utils';
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Direct Admission' }];
+};
+
+export const action = async ({ request }: ActionFunctionArgs) => {
+  const { data, errors } = await validationAction<FormDirectAdmissionInput>({
+    request,
+    schema: FormDirectAdmissionSchema,
+  });
+  console.log({ data, errors });
+  if (errors) {
+    return json({ errors });
+  }
+  return json({ data });
 };
 
 export default function DirectAdmission() {
@@ -36,6 +56,7 @@ export default function DirectAdmission() {
           within a short period seems challenging.
         </PageHeaderDescription>
       </PageHeader>
+      <FormDirectAdmission />
     </div>
   );
 }
