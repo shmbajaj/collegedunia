@@ -1,6 +1,6 @@
 import type { MetaFunction } from '@remix-run/react';
-import { Link } from '@remix-run/react';
-import { Carousel } from '~/components/carousel';
+import { Carousel } from '~/components/carousel-old';
+import { Page } from '~/components/page';
 import {
   PageHeader,
   PageHeaderDescription,
@@ -13,16 +13,13 @@ import {
   AccordionTrigger,
 } from '~/components/ui/accordion';
 import { Avatar, AvatarFallback, AvatarImage } from '~/components/ui/avatar';
-import { buttonVariants } from '~/components/ui/button';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
 } from '~/components/ui/card';
-import { cn } from '~/lib/utils';
-import { GetInTouch } from '~/pages/index/components/get-in-touch';
-import { OurConsultingServices } from '~/pages/index/components/our-consulting-services';
+import { medicalAdmission } from '~/data/pages.data';
 
 export const meta: MetaFunction = () => {
   return [
@@ -36,35 +33,7 @@ export const meta: MetaFunction = () => {
 
 export default function MedicalAdmissions() {
   return (
-    <div className=" relative">
-      <section className="relative h-[580px]">
-        <PageHeader className="pb-8 absolute top-16 left-4 md:left-28 z-40 w-full max-w-lg ">
-          <p className="capitalize font-bold">OUR SERVICES</p>
-          <PageHeaderHeading className="capitalize">
-            Medical ADMISSIONS
-          </PageHeaderHeading>
-          <PageHeaderDescription className="text-white">
-            With over 18 Lakh Candidates registering and appearing for the NEET
-            Exam held on July 17, 2022, it is clear that medical courses remain
-            one of the most sought-after options in India. These medical
-            admissions are highly competitive and serve to demonstrate how
-            important a medical career still is in India today.
-          </PageHeaderDescription>
-          <div className="w-full flex items-center space-x-4 pb-8 pt-4 md:pb-10">
-            <Link
-              to="/services"
-              className={cn(
-                buttonVariants({ variant: 'outline', className: 'text-center' })
-              )}
-            >
-              Apply Now
-            </Link>
-          </div>
-        </PageHeader>
-        {/* TODO: replace image url with own asset url */}
-        <div className="w-full h-full bg-[#03467c] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/medical-1-scaled.jpg')] bg-no-repeat bg-cover bg-center bg-fixed bg-blend-screen"></div>
-      </section>
-
+    <Page {...medicalAdmission}>
       <section className="flex flex-col items-center pb-8">
         <PageHeader className="pb-8 items-center">
           <p className="uppercase text-center font-bold text-orange-500">
@@ -363,7 +332,7 @@ export default function MedicalAdmissions() {
           </PageHeaderDescription>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
-        <Carousel className="max-w-[320px] h-[420px] md:h-[320px]">
+        <Carousel>
           {Array.from({ length: 10 }).map((_, index) => (
             <Card className="border-2 border-[#0C71C3] w-full" key={index}>
               <CardHeader className="relative h-44 p-0">
@@ -406,7 +375,7 @@ export default function MedicalAdmissions() {
           </PageHeaderDescription>
         </PageHeader>
         <div className="w-full bg-gradient-to-b from-white via-blue-100 to-blue-500">
-          <Carousel className="max-w-[320px] h-[220px] m-auto mb-16">
+          <Carousel>
             {Array.from({ length: 10 }).map((_, index) => (
               <Card
                 className="border-2 border-[#0C71C3] w-full rounded-br-none rounded-bl-none"
@@ -447,7 +416,7 @@ export default function MedicalAdmissions() {
             </span>
           </PageHeaderDescription>
         </PageHeader>
-        <Carousel className="max-w-[320px] h-[256px] md:h-72">
+        <Carousel>
           {Array.from({ length: 10 }).map((_, index) => (
             <Card className="border-2 border-[#0C71C3] w-full" key={index}>
               <CardHeader className="relative h-44 p-0">
@@ -532,23 +501,6 @@ export default function MedicalAdmissions() {
           </div>
         </div>
       </section>
-
-      <section className="mx-4 my-auto">
-        <OurConsultingServices />
-      </section>
-
-      <section className="mx-4 my-auto mb-4">
-        <GetInTouch>
-          <div className="p-4 lg:p-12 bg-blue-500 border-t-8 border-orange-500 text-white flex flex-col gap-2 text-center font-semibold h-max">
-            <span>
-              COMMERCIA, HINJAWADI BRIDGE,WAKAD, PUNE, MAHARASHTRA 411057
-            </span>
-            <span>CONTACT:</span>
-            <span>+91 77579 20539</span>
-            <span>+91 87673 31852</span>
-          </div>
-        </GetInTouch>
-      </section>
-    </div>
+    </Page>
   );
 }

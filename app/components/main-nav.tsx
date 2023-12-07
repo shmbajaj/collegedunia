@@ -1,15 +1,15 @@
-import { Link, NavLink, useLocation } from "@remix-run/react";
-import { Icons } from "./icons";
-import { cn } from "~/lib/utils";
-import { navConfig } from "~/config/nav";
-import { siteConfig } from "~/config/site";
+import { Link, NavLink, useLocation } from '@remix-run/react';
+import { Icons } from './icons';
+import { cn } from '~/lib/utils';
+import { navConfig } from '~/config/nav';
+import { siteConfig } from '~/config/site';
 import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "./ui/navigation-menu";
+} from './ui/navigation-menu';
 
 export function MainNav() {
   const { pathname } = useLocation();
@@ -17,8 +17,11 @@ export function MainNav() {
   return (
     <div className="m-auto max-w-5xl hidden md:flex container h-14 items-center justify-evenly">
       <Link to="/" className="mr-6 flex items-center space-x-2">
-        <Icons.Logo className="h-6 w-6" />
-        <span className="hidden sm:inline-block font-bold">
+        <Icons.Logo
+          className="h-20 w-20"
+          color={siteConfig.style.primaryColor}
+        />
+        <span className="hidden sm:inline-block font-bold text-primary">
           {siteConfig.name}
         </span>
       </Link>
@@ -28,24 +31,24 @@ export function MainNav() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Consultation</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="border-t-4 border-orange-500"></div>
+                <div className="border-t-4 border-educom"></div>
                 <ul className="grid gap-3 p-4 w-52 ">
                   {consultationLink.items.map((link) => (
-                      <NavLink
-                        to={link.to}
-                        className={({ isActive }) =>
-                          cn(
-                            "transition-colors hover:text-foreground/80",
-                            pathname?.startsWith(`/${link.to}`)
-                              ? "text-foreground"
-                              : "text-foreground/60",
-                            { "text-orange-500": isActive }
-                          )
-                        }
-                        key={link.to}
-                      >
-                        {link.title}
-                      </NavLink>
+                    <NavLink
+                      to={link.to}
+                      className={({ isActive }) =>
+                        cn(
+                          'transition-colors hover:text-foreground/80',
+                          pathname?.startsWith(`/${link.to}`)
+                            ? 'text-foreground'
+                            : 'text-foreground/60',
+                          { 'text-educom': isActive }
+                        )
+                      }
+                      key={link.to}
+                    >
+                      {link.title}
+                    </NavLink>
                   ))}
                 </ul>
               </NavigationMenuContent>
@@ -59,11 +62,11 @@ export function MainNav() {
               to={item.to}
               className={({ isActive }) =>
                 cn(
-                  "transition-colors hover:text-foreground/80",
+                  'transition-colors hover:text-foreground/80',
                   pathname?.startsWith(`/${item.to}`)
-                    ? "text-foreground"
-                    : "text-foreground/60",
-                  { "text-orange-500": isActive }
+                    ? 'text-foreground'
+                    : 'text-foreground/60',
+                  { 'text-educom': isActive }
                 )
               }
             >

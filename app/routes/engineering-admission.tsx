@@ -1,72 +1,39 @@
-import type { MetaFunction } from "@remix-run/react";
-import { Link } from "@remix-run/react";
-import { Carousel } from "~/components/carousel";
+import type { MetaFunction } from '@remix-run/react';
+import { Carousel } from '~/components/carousel-old';
+import { Page } from '~/components/page';
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "~/components/page-header";
+} from '~/components/page-header';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "~/components/ui/accordion";
-import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
-import { buttonVariants } from "~/components/ui/button";
+} from '~/components/ui/accordion';
+import { Avatar, AvatarFallback, AvatarImage } from '~/components/ui/avatar';
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-} from "~/components/ui/card";
-import { cn } from "~/lib/utils";
-import { GetInTouch } from "~/pages/index/components/get-in-touch";
-import { OurConsultingServices } from "~/pages/index/components/our-consulting-services";
+} from '~/components/ui/card';
+import { engineeringAdmission } from '~/data/pages.data';
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Engineering Admissions" },
+    { title: 'Engineering Admissions' },
     {
-      name: "description",
-      content: "Get Admission in Engineering",
+      name: 'description',
+      content: 'Get Admission in Engineering',
     },
   ];
 };
 
-// INFO: using redudant code and static text as content for site not available yet
-// INFO: , and site preview has to be finished fast.
-// TODO: Make content components dynamic
 export default function EngineeringAdmissions() {
   return (
-    <div className="relative">
-      <section className="relative h-[580px]">
-        <PageHeader className="pb-8 absolute top-16 left-4 md:left-28 z-40 w-full max-w-lg ">
-          <p className="capitalize font-bold">
-            PROFESSIONAL EDUCATION CONSULTING
-          </p>
-          <PageHeaderHeading className="capitalize">
-            ENGINEERING ADMISSIONS
-          </PageHeaderHeading>
-          <PageHeaderDescription className="text-white">
-            Engineering is one of the most preferred courses. Around 35-45 lakh
-            people enroll in one or the other B Tech course every year.Know how
-            to apply for engineering admissions.
-          </PageHeaderDescription>
-          <div className="w-full flex items-center space-x-4 pb-8 pt-4 md:pb-10">
-            <Link
-              to="/services"
-              className={cn(
-                buttonVariants({ variant: "outline", className: "text-center" })
-              )}
-            >
-              Apply Now
-            </Link>
-          </div>
-        </PageHeader>
-        {/* TODO: replace image url with own asset url */}
-        <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center bg-fixed bg-blend-screen"></div>
-      </section>
+    <Page {...engineeringAdmission}>
       <section className="flex flex-col items-center pb-8">
         <PageHeader className="pb-8 items-center">
           <p className="uppercase text-center font-bold text-orange-500">
@@ -80,7 +47,7 @@ export default function EngineeringAdmissions() {
           </PageHeaderDescription>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
-        <Carousel className="max-w-[320px] h-[650px] md:h-[612px]">
+        <Carousel>
           {Array.from({ length: 10 }).map((_, index) => (
             <Card className="border-2 border-[#0C71C3] w-full" key={index}>
               <CardHeader className="relative h-44 p-0">
@@ -91,7 +58,7 @@ export default function EngineeringAdmissions() {
                   Telecommunications Engineering {index}
                 </p>
                 <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-black md:my-4" />
-                <p className="leading-8">
+                <p className="leading-8 text-center">
                   Telecommunications engineering is an intersection of
                   electrical and computer engineering, providing students the
                   practical knowledge to work on the interconnections between
@@ -104,6 +71,7 @@ export default function EngineeringAdmissions() {
           ))}
         </Carousel>
       </section>
+
       <section className="flex flex-col items-center pb-8">
         <PageHeader className="pb-8 items-center">
           <p className="uppercase text-center font-bold text-orange-500">
@@ -117,7 +85,7 @@ export default function EngineeringAdmissions() {
           </PageHeaderDescription>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
-        <Carousel className="max-w-[320px] h-[650px] md:h-[612px]">
+        <Carousel>
           {Array.from({ length: 10 }).map((_, index) => (
             <Card className="border-2 border-[#0C71C3] w-full" key={index}>
               <CardHeader className="relative h-44 p-0">
@@ -128,7 +96,7 @@ export default function EngineeringAdmissions() {
                   Telecommunications Engineering {index}
                 </p>
                 <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-black md:my-4" />
-                <p className="leading-8">
+                <p className="leading-8 text-center">
                   Telecommunications engineering is an intersection of
                   electrical and computer engineering, providing students the
                   practical knowledge to work on the interconnections between
@@ -139,8 +107,9 @@ export default function EngineeringAdmissions() {
               </CardContent>
             </Card>
           ))}
-        </Carousel>{" "}
+        </Carousel>{' '}
       </section>
+
       <section className="flex flex-col items-center pb-8">
         <PageHeader className="pb-8 items-center">
           <p className="uppercase text-center font-bold text-orange-500">
@@ -153,7 +122,7 @@ export default function EngineeringAdmissions() {
         </PageHeader>
         <div className="container grid md:gap-4 md:grid-cols-2 max-w-5xl">
           <div>
-            {" "}
+            {' '}
             {Array.from({ length: 3 }).map((_, index) => (
               <Card className="flex-col text-base mb-4" key={index}>
                 <CardContent className="flex gap-4 bg-gray-100/50 text-center p-4 font-semibold">
@@ -301,6 +270,7 @@ export default function EngineeringAdmissions() {
           </div>
         </div>
       </section>
+
       <section className="flex flex-col items-center pb-8">
         <PageHeader className="pb-8 items-center">
           <p className="uppercase text-center font-bold text-orange-500">
@@ -368,21 +338,6 @@ export default function EngineeringAdmissions() {
           </div>
         </div>
       </section>
-      <section className="mx-4 my-auto">
-        <OurConsultingServices />
-      </section>
-      <section className="mx-4 my-auto mb-4">
-        <GetInTouch>
-          <div className="p-4 lg:p-12 bg-blue-500 border-t-8 border-orange-500 text-white flex flex-col gap-2 text-center font-semibold h-max">
-            <span>
-              COMMERCIA, HINJAWADI BRIDGE,WAKAD, PUNE, MAHARASHTRA 411057
-            </span>
-            <span>CONTACT:</span>
-            <span>+91 77579 20539</span>
-            <span>+91 87673 31852</span>
-          </div>
-        </GetInTouch>
-      </section>
-    </div>
+    </Page>
   );
 }

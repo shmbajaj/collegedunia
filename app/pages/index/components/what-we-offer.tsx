@@ -1,15 +1,15 @@
-import { BookTextIcon, LightbulbIcon, MessageCircleIcon } from "lucide-react";
-import { PageHeader, PageHeaderHeading } from "~/components/page-header";
+import { BookTextIcon, LightbulbIcon, MessageCircleIcon } from 'lucide-react';
+import { PageHeader, PageHeaderHeading } from '~/components/page-header';
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/components/ui/card";
+} from '~/components/ui/card';
 
 export function WhatWeOffer() {
   return (
-    <section className="flex flex-col items-center pb-8 bg-blue-500">
+    <section className="flex flex-col items-center pb-8 bg-educom">
       <PageHeader className="pb-8 items-center">
         <p className="uppercase text-center text-orange-300 font-medium">
           Offer
@@ -25,7 +25,7 @@ export function WhatWeOffer() {
             <div className="bg-orange-500 rounded-full p-4 w-20 h-20 pb-4 flex items-center">
               <MessageCircleIcon className="text-white w-12 h-12" />
             </div>
-            <CardTitle className="text-blue-500">GENUINE COUNSELLING</CardTitle>
+            <CardTitle>GENUINE COUNSELLING</CardTitle>
           </CardHeader>
           <CardDescription className="font-medium text-base leading-8">
             Our team of experienced counselors in India have the expertise to
@@ -37,7 +37,7 @@ export function WhatWeOffer() {
             <div className="bg-orange-500 rounded-full p-4 w-24 h-24 pb-4 flex items-center">
               <LightbulbIcon className="text-white w-16 h-16" />
             </div>
-            <CardTitle className="text-blue-500">YOUR KNOWLEDGE BANK</CardTitle>
+            <CardTitle>YOUR KNOWLEDGE BANK</CardTitle>
           </CardHeader>
           <CardDescription className="font-medium text-base leading-8">
             Access to regular and up-to-date notes, lectures, webinars, recorded
@@ -49,9 +49,7 @@ export function WhatWeOffer() {
             <div className="bg-orange-500 rounded-full p-4 w-20 h-20 pb-4 flex items-center">
               <BookTextIcon className="text-white w-12 h-12" />
             </div>
-            <CardTitle className="text-blue-500">
-              ADMISSION & MANAGEMENT QUOTA ASSISTANCE
-            </CardTitle>
+            <CardTitle>ADMISSION & MANAGEMENT QUOTA ASSISTANCE</CardTitle>
           </CardHeader>
           <CardDescription className="font-medium text-base leading-8">
             Hand-holding Services right from Registration to Documentation and

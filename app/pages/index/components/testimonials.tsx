@@ -1,5 +1,5 @@
-import { FeedbackCard } from "../../../components/feedback-card";
-import { Carousel } from "../../../components/carousel";
+import { FeedbackCard } from '../../../components/feedback-card';
+import { Carousel } from '../../../components/carousel-old';
 
 export function Testimonials() {
   return (
@@ -23,7 +23,7 @@ export function Testimonials() {
           </p>
         </div>
       </div>
-      <Carousel className="h-[356px] md:h-60 w-full">
+      <Carousel>
         <FeedbackCard
           name="Shubham Bajaj"
           title="Developer"
