@@ -1,3 +1,4 @@
+import { type ActionFunctionArgs } from '@remix-run/node';
 import type { MetaFunction } from '@remix-run/react';
 import { Carousel } from '~/components/carousel-old';
 import { Page } from '~/components/page';
@@ -20,6 +21,7 @@ import {
   CardHeader,
 } from '~/components/ui/card';
 import { engineeringAdmission } from '~/data/pages.data';
+import { contactUsAction } from '~/lib/common.action';
 
 export const meta: MetaFunction = () => {
   return [
@@ -30,6 +32,8 @@ export const meta: MetaFunction = () => {
     },
   ];
 };
+
+export const action = async (args: ActionFunctionArgs) => contactUsAction(args);
 
 export default function EngineeringAdmissions() {
   return (

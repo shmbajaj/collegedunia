@@ -1,7 +1,7 @@
 import type { MetaFunction } from '@remix-run/react';
+import { type ActionFunctionArgs } from '@remix-run/node';
 import { Carousel } from '~/components/carousel-old';
 import { FAQ } from '~/components/faq';
-import { FAQCard } from '~/components/faq-card';
 import { LearnMoreCard } from '~/components/learn-more-card';
 import { Page } from '~/components/page';
 import {
@@ -11,6 +11,7 @@ import {
 } from '~/components/page-header';
 import { Card, CardContent, CardHeader } from '~/components/ui/card';
 import { managementAdmission } from '~/data/pages.data';
+import { contactUsAction } from '~/lib/common.action';
 
 export const meta: MetaFunction = () => {
   return [
@@ -21,6 +22,8 @@ export const meta: MetaFunction = () => {
     },
   ];
 };
+
+export const action = async (args: ActionFunctionArgs) => contactUsAction(args);
 
 export default function ManagementAdmissions() {
   return (

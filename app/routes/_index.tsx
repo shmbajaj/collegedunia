@@ -49,7 +49,6 @@ export default function Index() {
             </Link>
           </div>
         </PageHeader>
-        {/* TODO: replace image url with own asset url */}
         <div className="absolute w-full h-full top-0 left-0 bg-slate-500 bg-[url('https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom_home_placeholder.jpg')] bg-no-repeat bg-cover bg-center bg-fixed"></div>
       </section>
       <OurConsultingServices />

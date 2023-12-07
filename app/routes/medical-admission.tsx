@@ -1,4 +1,5 @@
 import type { MetaFunction } from '@remix-run/react';
+import { type ActionFunctionArgs } from '@remix-run/node';
 import { Carousel } from '~/components/carousel-old';
 import { FAQ } from '~/components/faq';
 import { Page } from '~/components/page';
@@ -21,6 +22,7 @@ import {
   CardHeader,
 } from '~/components/ui/card';
 import { medicalAdmission } from '~/data/pages.data';
+import { contactUsAction } from '~/lib/common.action';
 
 export const meta: MetaFunction = () => {
   return [
@@ -31,6 +33,8 @@ export const meta: MetaFunction = () => {
     },
   ];
 };
+
+export const action = async (args: ActionFunctionArgs) => contactUsAction(args);
 
 export default function MedicalAdmissions() {
   return (
@@ -375,25 +379,27 @@ export default function MedicalAdmissions() {
             epidemiologists.
           </PageHeaderDescription>
         </PageHeader>
-        <div className="w-full bg-gradient-to-b from-white via-blue-100 to-blue-500">
-          <Carousel>
-            {Array.from({ length: 10 }).map((_, index) => (
-              <Card
-                className="border-2 border-[#0C71C3] w-full rounded-br-none rounded-bl-none"
-                key={index}
-              >
-                <CardHeader className="relative h-44 p-0">
-                  <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center"></div>
-                </CardHeader>
-                <CardContent className="p-2">
-                  <p className="uppercase text-center font-bold text-orange-500">
-                    Biotechnology {index}
-                  </p>
-                </CardContent>
-                <CardFooter className="border-t-8 border-blue-500 p-0"></CardFooter>
-              </Card>
-            ))}
-          </Carousel>
+        <div className="w-full bg-gradient-to-b from-white via-blue-100 to-blue-500 flex items-center">
+          <div className="max-w-lg m-auto">
+            <Carousel>
+              {Array.from({ length: 10 }).map((_, index) => (
+                <Card
+                  className="border-2 border-[#0C71C3] w-full rounded-br-none rounded-bl-none"
+                  key={index}
+                >
+                  <CardHeader className="relative h-44 p-0">
+                    <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center"></div>
+                  </CardHeader>
+                  <CardContent className="p-2">
+                    <p className="uppercase text-center font-bold text-orange-500">
+                      Biotechnology {index}
+                    </p>
+                  </CardContent>
+                  <CardFooter className="border-t-8 border-blue-500 p-0"></CardFooter>
+                </Card>
+              ))}
+            </Carousel>
+          </div>
         </div>
       </section>
 
