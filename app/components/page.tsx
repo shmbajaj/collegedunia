@@ -30,7 +30,7 @@ export function Page({
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & PageInfoProps) {
   // TODO: use prop for background image
-  const bgImageURLProperty = `bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')]`;
+  const bgImageURLProperty = `bg-[url('https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom_page_placeholder.jpg')]`;
   return (
     <div className={cn('relative', className)} {...props}>
       <section className="relative h-[580px]">
