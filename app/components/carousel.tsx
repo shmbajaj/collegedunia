@@ -1,7 +1,7 @@
-import React from "react";
-import { Button } from "./ui/button";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import { cn } from "~/lib/utils";
+import React from 'react';
+import { Button } from './ui/button';
+import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
+import { cn } from '~/lib/utils';
 
 export function Carousel({
   children,
@@ -20,7 +20,7 @@ export function Carousel({
   }
   return (
     <div
-      className={cn("w-2/3 h-80 max-w-sm relative", className)}
+      className={cn('w-2/3 h-80 max-w-sm relative', className)}
       data-carousel
     >
       <Button

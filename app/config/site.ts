@@ -1,16 +1,22 @@
+import { Icons } from '~/components/icons';
+
 export const siteConfig = {
-  name: "collegedunia",
+  name: 'Educom Guidance',
   year: 2023,
   poweredBy: {
-    name: "Shubham Bajaj",
-    link: "#",
+    name: 'Bajaj Technologies',
+    link: '#',
   },
   links: [
-    { to: "/cd-fb", title: "Facebook" },
+    { to: '#', title: 'Facebook', Icon: Icons.Facebook },
     {
-      to: "/cd-ig",
-      title: "Instagram",
+      to: '#',
+      title: 'Instagram',
+      Icon: Icons.Instagram,
     },
   ],
+  style: {
+    primaryColor: '#00ADE6',
+  },
 };
 export type SiteConfig = typeof siteConfig;

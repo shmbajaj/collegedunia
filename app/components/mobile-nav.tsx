@@ -1,14 +1,14 @@
-import React from "react";
-import type { NavLinkProps } from "@remix-run/react";
-import { useNavigate, useLocation, NavLink } from "@remix-run/react";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import { Button } from "./ui/button";
-import { MenuIcon } from "lucide-react";
-import { cn } from "~/lib/utils";
-import { Icons } from "./icons";
-import { ScrollArea } from "./ui/scroll-area";
-import { navConfig } from "~/config/nav";
-import { siteConfig } from "~/config/site";
+import React from 'react';
+import type { NavLinkProps } from '@remix-run/react';
+import { useNavigate, useLocation, NavLink } from '@remix-run/react';
+import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import { Button } from './ui/button';
+import { MenuIcon } from 'lucide-react';
+import { cn } from '~/lib/utils';
+import { Icons } from './icons';
+import { ScrollArea } from './ui/scroll-area';
+import { navConfig } from '~/config/nav';
+import { siteConfig } from '~/config/site';
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
@@ -27,7 +27,10 @@ export function MobileNav() {
       </SheetTrigger>
       <SheetContent side="left" className="pr-0">
         <MobileLink to="/" className="flex items-center" onOpenChange={setOpen}>
-          <Icons.Logo className="mr-2 h-4 w-4" />
+          <Icons.Logo
+            className="mr-2 h-20 w-20"
+            color={siteConfig.style.primaryColor}
+          />
           <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
@@ -41,11 +44,11 @@ export function MobileNav() {
                 to={item.to}
                 className={({ isActive }) =>
                   cn(
-                    "transition-colors hover:text-foreground/80",
+                    'transition-colors hover:text-foreground/80',
                     pathname?.startsWith(`/${item.to}`)
-                      ? "text-foreground"
-                      : "text-foreground/60",
-                    { "text-orange-500": isActive }
+                      ? 'text-foreground'
+                      : 'text-foreground/60',
+                    { 'text-educom': isActive }
                   )
                 }
               >
@@ -64,11 +67,11 @@ export function MobileNav() {
                       onOpenChange={setOpen}
                       className={({ isActive }) =>
                         cn(
-                          "transition-colors hover:text-foreground/80",
+                          'transition-colors hover:text-foreground/80',
                           pathname?.startsWith(`/${item.to}`)
-                            ? "text-foreground"
-                            : "text-foreground/60",
-                          { "text-orange-500": isActive }
+                            ? 'text-foreground'
+                            : 'text-foreground/60',
+                          { 'text-educom': isActive }
                         )
                       }
                     >

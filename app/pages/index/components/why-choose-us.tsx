@@ -11,7 +11,7 @@ import { Link } from "@remix-run/react";
 
 export function WhyChooseUs() {
   return (
-    <section className="flex items-center bg-blue-500 p-4 lg:p-8">
+    <section className="flex items-center bg-educom p-4 lg:p-8">
       <div className="flex flex-col lg:flex-row gap-8 m-auto">
         <Card className="p-2 lg:p-8 items-center lg:max-w-md md:m-auto">
           <CardHeader>

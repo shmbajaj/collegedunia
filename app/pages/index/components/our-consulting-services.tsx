@@ -76,7 +76,7 @@ export function OurConsultingServices() {
             </Link>{' '}
           </CardFooter>
         </Card>
-        <Card className="bg-blue-500 p-10 grid place-items-center text-center shadow-md md:mt-10 md:mb-10 md:max-w-xs">
+        <Card className="bg-educom p-10 grid place-items-center text-center shadow-md md:mt-10 md:mb-10 md:max-w-xs">
           <CardHeader>
             <CardTitle className="text-white">Medical Admission</CardTitle>
           </CardHeader>
