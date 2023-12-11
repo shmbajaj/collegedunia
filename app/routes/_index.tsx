@@ -11,6 +11,7 @@ import { cn, validationAction } from '~/lib/utils';
 import { json, type ActionFunctionArgs } from '@remix-run/node';
 import { GetInTouchFormSchema } from '~/data/schema';
 import type { GetInTouchFormInput } from '~/pages/index/components/get-in-touch-form';
+import { WhatsAppButton } from '~/components/whatsapp-button';
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const { data, errors } = await validationAction<GetInTouchFormInput>({
@@ -57,6 +58,7 @@ export default function Index() {
       <WhyChooseUs />
       <Stats />
       <GetInTouch showContactInfo></GetInTouch>
+      <WhatsAppButton />
     </div>
   );
 }
