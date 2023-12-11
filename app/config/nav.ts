@@ -16,20 +16,8 @@ export const navConfig: NavConfig = {
       title: 'About Us',
     },
     {
-      to: '/login',
-      title: 'Login',
-    },
-    {
-      to: '/registration',
-      title: 'Registration',
-    },
-    {
       to: '/contact-us',
       title: 'Contact Us',
-    },
-    {
-      to: '/forum',
-      title: 'Forum',
     },
   ],
   mobileNav: [
