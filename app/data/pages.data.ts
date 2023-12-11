@@ -1,12 +1,14 @@
 import type { PageInfoProps } from '~/components/page';
+import engineeringAdmissionBGImg from '../images/educom-engg-admission-page-pageheader.jpeg';
+import managementAdmissionBGImg from '../images/educom-management-admission-page-pageheader.jpeg';
+import medicalAdmissionBGImg from '../images/educom-medical-admission-page-pageheader.jpeg';
 
 const engineeringAdmission: PageInfoProps = {
   pageHeaderCaption: 'PROFESSIONAL EDUCATION CONSULTING',
   pageHeaderTitle: 'ENGINEERING ADMISSIONS',
   pageHeaderDescription: `Engineering is one of the most preferred courses. Around 35-45 lakh people enroll in one or the other B Tech course every year.Know how to apply for engineering admissions.`,
   pageHeaderTo: '/services',
-  pageHeaderBackgroundImageURL:
-    'https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg',
+  pageHeaderBackgroundImageURL: engineeringAdmissionBGImg,
   pageHeaderBackgroundFallbackColor: '#0C71C3',
 };
 
@@ -19,8 +21,7 @@ const medicalAdmission: PageInfoProps = {
   admissions are highly competitive and serve to demonstrate how
   important a medical career still is in India today.`,
   pageHeaderTo: '/services',
-  pageHeaderBackgroundImageURL:
-    'https://catalysteducations.com/wp-content/uploads/2022/12/medical-1-scaled.jpg',
+  pageHeaderBackgroundImageURL: managementAdmissionBGImg,
   pageHeaderBackgroundFallbackColor: '#03467c',
 };
 
@@ -32,8 +33,7 @@ const managementAdmission: PageInfoProps = {
   employers are seeking qualified professionals with management
   experience to help navigate their growing operations.`,
   pageHeaderTo: '/services',
-  pageHeaderBackgroundImageURL:
-    'https://catalysteducations.com/wp-content/uploads/2022/12/h123-scaled.jpg',
+  pageHeaderBackgroundImageURL: medicalAdmissionBGImg,
   pageHeaderBackgroundFallbackColor: '#0C71C3',
 };
 

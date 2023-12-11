@@ -24,8 +24,7 @@ export default function AboutUs() {
             educational guidance, learning, and mentorship.
           </PageHeaderDescription>
         </PageHeader>
-        {/* TODO: replace image url with own asset url */}
-        <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center bg-fixed bg-blend-screen"></div>
+        <div className="w-full h-full bg-[#0C71C3] bg-[url('app/images/educom-about-us-page-pageheader.jpeg')] bg-no-repeat bg-cover bg-center bg-fixed bg-blend-screen"></div>
       </section>
 
       <div className="bg-white m-4 flex flex-col md:flex-row gap-4 md:gap-0 md:m-8 border-2 shadow-xl md:absolute md:top-[24rem] md:left-4 md:z-40">
@@ -130,7 +129,7 @@ export default function AboutUs() {
           </PageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
-        <div className="w-full m-auto max-w-2xl md:h-72 bg-transparent bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/Beige-Bar-Chart-Social-Media-Followers-Tier-Infographic-Instagram-Post-1.jpg')] bg-no-repeat bg-contain bg-center"></div>
+        <div className="w-full m-auto max-w-2xl md:h-72 bg-transparent bg-[url('app/images/educom-about-us-page-graph.jpeg')] bg-no-repeat bg-contain bg-center"></div>
       </section>
 
       <section className="bg-blue-500 flex flex-col items-center pb-8">

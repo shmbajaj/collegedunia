@@ -1,13 +1,14 @@
-import { PageHeaderHeading } from "../../../components/page-header";
+import { PageHeaderHeading } from '../../../components/page-header';
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
-} from "../../../components/ui/card";
-import { cn } from "~/lib/utils";
-import { buttonVariants } from "../../../components/ui/button";
-import { Link } from "@remix-run/react";
+} from '../../../components/ui/card';
+import { cn } from '~/lib/utils';
+import { buttonVariants } from '../../../components/ui/button';
+import { Link } from '@remix-run/react';
+import thumbnail from '~/images/educom-home-page-article.jpeg';
 
 export function WhyChooseUs() {
   return (
@@ -35,7 +36,7 @@ export function WhyChooseUs() {
               to="/about-us"
               className={cn(
                 buttonVariants({
-                  variant: "default",
+                  variant: 'default',
                 })
               )}
             >
@@ -44,10 +45,7 @@ export function WhyChooseUs() {
           </CardFooter>
         </Card>
         <div className="lg:max-w-md">
-          <img
-            src="https://catalysteducations.com/wp-content/uploads/2022/12/edit-2-scaled.jpg"
-            alt="article thumbnail"
-          />
+          <img src={thumbnail} alt="Why Choose Us Article Thumbnail" />
         </div>
       </div>
     </section>

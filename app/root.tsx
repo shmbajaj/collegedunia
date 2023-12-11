@@ -1,5 +1,5 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import { cssBundleHref } from '@remix-run/css-bundle';
+import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -7,24 +7,24 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
+} from '@remix-run/react';
 
-import styles from "./tailwind.css";
-import { SiteHeader } from "./components/site-header";
-import { SiteFooter } from "./components/site-footer";
-import { Toaster } from "./components/ui/toaster";
+import styles from './tailwind.css';
+import { SiteHeader } from './components/site-header';
+import { SiteFooter } from './components/site-footer';
+import { Toaster } from './components/ui/toaster';
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: styles },
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+  { rel: 'stylesheet', href: styles },
+  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
 ];
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "CollegeDunia" },
+    { title: 'CollegeDunia' },
     {
-      name: "description",
-      content: "Welcome to CollegeDunia!",
+      name: 'description',
+      content: 'Welcome to CollegeDunia!',
     },
   ];
 };
