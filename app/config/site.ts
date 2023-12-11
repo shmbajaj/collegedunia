@@ -5,12 +5,12 @@ export const siteConfig = {
   year: 2023,
   poweredBy: {
     name: 'Bajaj Technologies',
-    link: '#',
+    link: '/',
   },
   links: [
-    { to: '#', title: 'Facebook', Icon: Icons.Facebook },
+    { to: '/educom-fb', title: 'Facebook', Icon: Icons.Facebook },
     {
-      to: '#',
+      to: '/educom-ig',
       title: 'Instagram',
       Icon: Icons.Instagram,
     },

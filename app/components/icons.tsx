@@ -184,7 +184,7 @@ const Facebook = (props: IconProps) => (
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="16"
-    fill="#0c0c0d"
+    fill="currentColor"
     viewBox="0 0 256 256"
     {...props}
   >
@@ -197,7 +197,7 @@ const Instagram = (props: IconProps) => (
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="16"
-    fill="#0c0c0d"
+    fill="currentColor"
     viewBox="0 0 256 256"
     {...props}
   >
