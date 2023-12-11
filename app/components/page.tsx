@@ -54,7 +54,7 @@ export function Page({
         <div className="w-full h-full relative">
           <img
             src={pageHeaderBackgroundImageURL}
-            alt=""
+            alt="PageHeader Background"
             className={cn(
               'w-full h-full object-cover object-center absolute top-0 left-0'
             )}

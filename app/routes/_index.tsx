@@ -12,6 +12,7 @@ import { json, type ActionFunctionArgs } from '@remix-run/node';
 import { GetInTouchFormSchema } from '~/data/schema';
 import type { GetInTouchFormInput } from '~/pages/index/components/get-in-touch-form';
 import { WhatsAppButton } from '~/components/whatsapp-button';
+import homePageHeader from 'app/images/educom-home-page-pageheader.jpeg';
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const { data, errors } = await validationAction<GetInTouchFormInput>({
@@ -50,7 +51,14 @@ export default function Index() {
             </Link>
           </div>
         </PageHeader>
-        <div className="absolute w-full h-full top-0 left-0 bg-slate-500 bg-[url('app/images/educom-home-page-pageheader.jpeg')] bg-no-repeat bg-cover bg-center bg-fixed"></div>
+        <div className="relative w-full h-full">
+          <img
+            src={homePageHeader}
+            alt="Page Header Background"
+            className="w-full h-full object-cover object-center absolute top-0 left-0"
+          />
+          <div className="w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-30 bg-slate-500"></div>
+        </div>
       </section>
       <OurConsultingServices />
       <WhatWeOffer />

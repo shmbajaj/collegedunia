@@ -6,6 +6,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from '~/components/page-header';
+import aboutPageHeader from 'app/images/educom-about-us-page-pageheader.jpeg';
 
 export const meta: MetaFunction = () => {
   return [{ title: 'About Us' }];
@@ -24,7 +25,14 @@ export default function AboutUs() {
             educational guidance, learning, and mentorship.
           </PageHeaderDescription>
         </PageHeader>
-        <div className="w-full h-full bg-[#0C71C3] bg-[url('app/images/educom-about-us-page-pageheader.jpeg')] bg-no-repeat bg-cover bg-center bg-fixed bg-blend-screen"></div>
+        <div className="relative w-full h-full">
+          <img
+            src={aboutPageHeader}
+            alt="Page Header Background"
+            className="w-full h-full object-cover object-center absolute top-0 left-0"
+          />
+          <div className="w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-30 bg-[#0C71C3]"></div>
+        </div>
       </section>
 
       <div className="bg-white m-4 flex flex-col md:flex-row gap-4 md:gap-0 md:m-8 border-2 shadow-xl md:absolute md:top-[24rem] md:left-4 md:z-40">
