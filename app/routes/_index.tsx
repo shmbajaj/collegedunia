@@ -49,7 +49,7 @@ export default function Index() {
             </Link>
           </div>
         </PageHeader>
-        <div className="absolute w-full h-full top-0 left-0 bg-slate-500 bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit2-scaled.jpg')] bg-no-repeat bg-cover bg-center bg-fixed"></div>
+        <div className="absolute w-full h-full top-0 left-0 bg-slate-500 bg-[url('app/images/educom-home-page-pageheader.jpeg')] bg-no-repeat bg-cover bg-center bg-fixed"></div>
       </section>
       <OurConsultingServices />
       <WhatWeOffer />

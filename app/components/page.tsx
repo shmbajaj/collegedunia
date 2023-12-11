@@ -29,8 +29,6 @@ export function Page({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & PageInfoProps) {
-  // TODO: use prop for background image
-  const bgImageURLProperty = `bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg)]`;
   return (
     <div className={cn('relative', className)} {...props}>
       <section className="relative h-[580px]">
@@ -53,12 +51,21 @@ export function Page({
             </Link>
           </div>
         </PageHeader>
-        <div
-          className={cn(
-            `w-full h-full bg-[${pageHeaderBackgroundFallbackColor}]  bg-no-repeat bg-cover bg-center bg-fixed bg-blend-screen`,
-            bgImageURLProperty
-          )}
-        ></div>
+        <div className="w-full h-full relative">
+          <img
+            src={pageHeaderBackgroundImageURL}
+            alt=""
+            className={cn(
+              'w-full h-full object-cover object-center absolute top-0 left-0'
+            )}
+          />
+          <div
+            className={cn(
+              'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50',
+              `bg-[${pageHeaderBackgroundFallbackColor}]`
+            )}
+          ></div>
+        </div>
       </section>
 
       {children}
