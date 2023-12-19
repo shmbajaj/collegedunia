@@ -1,8 +1,14 @@
+import type { FeedbackCardProps } from '../../../components/feedback-card';
 import { FeedbackCard } from '../../../components/feedback-card';
 import { Carousel } from '../../../components/carousel-old';
-import { testimonials } from '~/data/testimonials.data';
 
-export function Testimonials() {
+type Testimonial = FeedbackCardProps & { key: string };
+
+export interface TestimonialsProps {
+  testimonials: Array<Testimonial>;
+}
+
+export function Testimonials({ testimonials }: TestimonialsProps) {
   return (
     <section
       id="clients"
@@ -25,7 +31,7 @@ export function Testimonials() {
         </div>
       </div>
       <Carousel>
-        {testimonials.map((testimonial) => (
+        {testimonials.map((testimonial: Testimonial) => (
           <FeedbackCard
             {...testimonial}
             key={testimonial.key}

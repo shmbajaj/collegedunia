@@ -13,6 +13,7 @@ import styles from './tailwind.css';
 import { SiteHeader } from './components/site-header';
 import { SiteFooter } from './components/site-footer';
 import { Toaster } from './components/ui/toaster';
+import { WhatsAppButton } from './components/whatsapp-button';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles },
@@ -40,8 +41,9 @@ export default function App() {
       </head>
       <body className="relative min-h-screen bg-background flex flex-col font-sans">
         <SiteHeader />
-        <div className="flex-1">
+        <div className="relative flex-1">
           <Outlet />
+          <WhatsAppButton />
         </div>
         <SiteFooter />
         <Toaster />

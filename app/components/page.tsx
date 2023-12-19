@@ -8,14 +8,18 @@ import { buttonVariants } from '~/components/ui/button';
 import { cn } from '~/lib/utils';
 import { GetInTouch } from '~/pages/index/components/get-in-touch';
 import { OurConsultingServices } from '~/pages/index/components/our-consulting-services';
+import type { TestimonialsProps } from '~/pages/index/components/testimonials';
+import { Testimonials } from '~/pages/index/components/testimonials';
+import { WhyChooseUs } from '~/pages/index/components/why-choose-us';
 
-export interface PageInfoProps {
+export interface PageInfoProps extends TestimonialsProps {
   pageHeaderCaption: string;
   pageHeaderTitle: string;
   pageHeaderDescription: string;
   pageHeaderTo: string;
   pageHeaderBackgroundImageURL: string;
   pageHeaderBackgroundFallbackColor: string;
+  showDescription?: boolean;
 }
 
 export function Page({
@@ -27,6 +31,8 @@ export function Page({
   pageHeaderBackgroundFallbackColor,
   children,
   className,
+  testimonials,
+  showDescription = false,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & PageInfoProps) {
   return (
@@ -71,7 +77,15 @@ export function Page({
       {children}
 
       <section className="mx-4 my-auto">
-        <OurConsultingServices />
+        <WhyChooseUs />
+      </section>
+
+      <section className="mx-4 my-auto">
+        <Testimonials testimonials={testimonials} />
+      </section>
+
+      <section className="mx-4 my-auto">
+        <OurConsultingServices showDescription={showDescription} />
       </section>
 
       <section className="mx-4 my-auto mb-4">

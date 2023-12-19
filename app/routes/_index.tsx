@@ -11,8 +11,8 @@ import { cn, validationAction } from '~/lib/utils';
 import { json, type ActionFunctionArgs } from '@remix-run/node';
 import { GetInTouchFormSchema } from '~/data/schema';
 import type { GetInTouchFormInput } from '~/pages/index/components/get-in-touch-form';
-import { WhatsAppButton } from '~/components/whatsapp-button';
 import homePageHeader from 'app/images/educom-home-page-pageheader.jpeg';
+import { homePageTestimonials } from '~/data/testimonials.data';
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const { data, errors } = await validationAction<GetInTouchFormInput>({
@@ -62,13 +62,12 @@ export default function Index() {
           <div className="w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-30 bg-slate-500"></div>
         </div>
       </section>
-      <OurConsultingServices />
+      <OurConsultingServices showDescription />
       <WhatWeOffer />
-      <Testimonials />
+      <Testimonials testimonials={homePageTestimonials} />
       <WhyChooseUs />
       <Stats />
       <GetInTouch showContactInfo></GetInTouch>
-      <WhatsAppButton />
     </div>
   );
 }

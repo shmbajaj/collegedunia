@@ -1,7 +1,7 @@
 import { cn } from '~/lib/utils';
 import { Card, CardContent, CardHeader } from './ui/card';
 
-interface FeedbackCardProps {
+export interface FeedbackCardProps {
   className?: string;
   name: string;
   title: string;

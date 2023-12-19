@@ -12,6 +12,7 @@ import {
 import { Card, CardContent, CardHeader } from '~/components/ui/card';
 import { managementAdmission } from '~/data/pages.data';
 import { contactUsAction } from '~/lib/common.action';
+import { WalletIcon } from 'lucide-react';
 
 export const meta: MetaFunction = () => {
   return [
@@ -104,7 +105,7 @@ export default function ManagementAdmissions() {
         </Carousel>{' '}
       </section>
 
-      {/* <section className="flex flex-col items-center pb-8">
+      <section className="flex flex-col items-center pb-8">
         <PageHeader className="pb-8 items-center">
           <p className="uppercase text-center font-bold text-orange-500">
             SCOPE
@@ -113,7 +114,7 @@ export default function ManagementAdmissions() {
             Scope of Management
           </PageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
-          <PageHeaderDescription className="flex flex-col gap-4">
+          <PageHeaderDescription className="flex flex-col gap-4 text-center">
             <span>
               When it comes to career options after pursuing these courses,
               there’s really no limit! An MBA can open up many doors for
@@ -126,31 +127,39 @@ export default function ManagementAdmissions() {
               India – your career prospects are truly limitless!
             </span>
             <span>
-              An estimate of the average salaries in the top managerial fields
-              are mentioned below: –
+              Here are some of the top profiles that MBA graduates often pursue:
             </span>
           </PageHeaderDescription>
         </PageHeader>
-      </section> */}
+      </section>
 
-      {/* <section className="bg-blue-100 p-8 flex flex-col md:flex-row flex-wrap gap-8">
-        <div className="cursor-pointer group perspective bg-white w-52 h-52 p-4">
-          <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
-            <div className="absolute backface-hidden w-full h-full">
-              <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center"></div>
-              <p className="capitalize text-center font-medium text-base text-orange-500">
-                Marketing Management
-              </p>
+      <section className="bg-educom/50 p-8">
+        <div className="flex flex-wrap max-w-4xl gap-4 m-auto">
+          {managementAdmission.scope.map((item, index) => (
+            <div className="flip-card m-auto" key={index}>
+              <div className="flip-card-inner">
+                <div className="flip-card-front flex flex-col justify-center items-center gap-4">
+                  <img
+                    src="https://github.com/shadcn.png"
+                    alt="Avatar"
+                    className="w-28 h-2w-28"
+                  />
+                  <hr className="mx-1 h-1 w-12 rounded border-0 bg-black md:mx-4" />
+                  <p className="text-orange-500 font-semibold">
+                    {item.designation}
+                  </p>
+                </div>
+                <div className="flex flex-col items-center justify-center flip-card-back">
+                  <WalletIcon className="w-16 h-16" />
+                  <span className="uppercase text-center font-bold">
+                    {item.averagePackage}
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="absolute my-rotate-y-180 backface-hidden w-full h-full overflow-hidden flex flex-col items-center justify-center">
-              <WalletIcon />
-              <span className="uppercase text-center font-bold">
-                Rs. 354,123
-              </span>
-            </div>
-          </div>
+          ))}
         </div>
-      </section> */}
+      </section>
 
       <section className="flex flex-col items-center pb-8">
         <PageHeader className="pb-8 items-center">

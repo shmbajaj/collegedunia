@@ -1,4 +1,4 @@
-export const testimonials = [
+const homePageTestimonials = [
   {
     key: 'deepakMane',
     name: 'Deepak Mane',
@@ -21,3 +21,36 @@ export const testimonials = [
       'I successfully secured admission to my dream Engineering College with the exceptional support of Educom Guidance, a renowned education consultants. Thank you for helping me turn my aspirations into reality!',
   },
 ];
+
+const managementPageTestimonials = [
+  {
+    key: 'rohitSwami',
+    name: 'Rohit Swami',
+    title: 'Student',
+    content:
+      "Exceptional service! The MBA admission consultations exceeded my expectations. The team's commitment and expertise were evident in every step, ensuring a successful admission to my desired program.",
+  },
+  {
+    key: 'richaWadhwani',
+    name: 'Richa Wadhwani',
+    title: 'Student',
+    content:
+      'Highly recommend these MBA consultants! Their strategic advice and unwavering support were crucial in my successful MBA admission. Trustworthy partners in achieving academic milestones.',
+  },
+  {
+    key: 'gauravGandhi',
+    name: 'Gaurav Gandhi',
+    title: 'Student',
+    content:
+      'The MBA admission process seemed daunting, but with the expert guidance of Educom Guidance consultants, it became a smooth and rewarding experience. Their commitment to success is truly commendable, turning my aspirations into achievements.',
+  },
+  {
+    key: 'rajivSharma',
+    name: 'Rajiv Sharma',
+    title: 'Student',
+    content:
+      "As parents, we're grateful for Educom Guidance's role in our son's MBA admission success. Their knowledgeable consultants provided the guidance he needed to secure a spot in his desired program. Highly recommend their services.",
+  },
+];
+
+export { homePageTestimonials, managementPageTestimonials };
