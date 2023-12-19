@@ -7,6 +7,11 @@ export const siteConfig = {
     name: 'Bajaj Technologies',
     link: '/',
   },
+  contact: {
+    email: 'educomguidance@gmail.com',
+    primaryNumber: '8188808878',
+    secondaryNumber: '8103158082',
+  },
   links: [
     { to: '/educom-fb', title: 'Facebook', Icon: Icons.Facebook },
     {

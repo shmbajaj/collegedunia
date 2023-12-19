@@ -18,18 +18,19 @@ export function WhyChooseUs() {
           <CardHeader>
             <p className="uppercase text-orange-300 font-medium">WHY US</p>
             <PageHeaderHeading className="capitalize">
-              Why choose us?
+              Why choose Educom Guidance?
             </PageHeaderHeading>
             <hr className="my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
           </CardHeader>
           <CardDescription className="font-medium text-base leading-8 p-4 md:p-8">
-            At Catalyst, we strive to make the admissions process as smooth and
-            easy as possible. Our counsellors are available 24/7 to provide
-            personalized guidance, while our handholding services cover
-            everything from registration to visa applications, ticketing, and
-            departure. We can also help with educational loan assistance if
-            required. Also, when making payments, you will not need to go
-            through any intermediaries.
+            Choose Educom Guidance for our 14 years of extensive education
+            consulting experience. Our expertise ensures accurate advice,
+            keeping up with industry trends and admission requirements.
+            Connected to 100+ top Indian colleges, we provide diverse
+            opportunities. Success-driven strategies enhance your application,
+            interview skills, and admission prospects. Collaborate with our
+            consultants to join successful clients in prestigious programs. Your
+            Educom Guidance journey begins your success story.
           </CardDescription>
           <CardFooter className="pt-6">
             <Link

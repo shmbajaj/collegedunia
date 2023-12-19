@@ -23,14 +23,15 @@ export function SiteFooter() {
 
           <p className="flex flex-col gap-4 text-white  mb-4">
             <span className="leading-6">
-              Innovative Technomics Pvt. Ltd. is a company dedicated to
-              enterprenual research and innovation.
+              {`${siteConfig.name} Pvt. Ltd. is a company dedicated to education consultants for personalized guidance.`}
             </span>
             <span className="leading-6">
-              It specializes in Motor Starting Applications using self-developed
-              unique FCMA Technology ensuring smooth and harmonic Free starting
-              of Squirrel cage and Slip Ring Induction motors and Induction
-              Start-sychronous motors.
+              We specialize in providing expert guidance with a rich legacy of
+              14 years of experience. Our focus areas include MBA consultation,
+              engineering consultation, and medical admission consultation. We
+              understand that navigating the educational landscape can be
+              complex, and that's where our experienced education consultants
+              come in to simplify the process and guide you towards success.
             </span>
           </p>
 
@@ -48,13 +49,13 @@ export function SiteFooter() {
               <span>
                 <MailIcon className="w-4 h-4 text-educom" />
               </span>
-              <span>marketing@itechnomics.com</span>
+              <span>{siteConfig.contact.email}</span>
             </p>
             <p className="flex gap-2 items-center">
               <span>
                 <PhoneIcon className="w-4 h-4 text-educom" />
               </span>
-              <span>+91 94235 78196</span>
+              <span>{siteConfig.contact.primaryNumber}</span>
             </p>
           </div>
 

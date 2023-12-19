@@ -1,5 +1,6 @@
 import { FeedbackCard } from '../../../components/feedback-card';
 import { Carousel } from '../../../components/carousel-old';
+import { testimonials } from '~/data/testimonials.data';
 
 export function Testimonials() {
   return (
@@ -24,27 +25,13 @@ export function Testimonials() {
         </div>
       </div>
       <Carousel>
-        <FeedbackCard
-          name="Shubham Bajaj"
-          title="Developer"
-          content="[1] I can't believe it took us this long to make a change. So happy that we did. Numbers don't lie."
-          img="https://avatars.githubusercontent.com/u/29247011?v=4"
-          className="w-full max-w-xs m-auto"
-        />
-        <FeedbackCard
-          name="Shubham Bajaj"
-          title="Developer"
-          content="[2] I can't believe it took us this long to make a change. So happy that we did. Numbers don't lie."
-          img="https://avatars.githubusercontent.com/u/29247011?v=4"
-          className="w-full max-w-xs m-auto"
-        />
-        <FeedbackCard
-          name="Shubham Bajaj"
-          title="Developer"
-          content="[3] I can't believe it took us this long to make a change. So happy that we did. Numbers don't lie."
-          img="https://avatars.githubusercontent.com/u/29247011?v=4"
-          className="w-full max-w-xs m-auto"
-        />
+        {testimonials.map((testimonial) => (
+          <FeedbackCard
+            {...testimonial}
+            key={testimonial.key}
+            className="w-full max-w-xs m-auto"
+          />
+        ))}
       </Carousel>
     </section>
   );

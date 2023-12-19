@@ -1,12 +1,12 @@
-import { cn } from "~/lib/utils";
-import { Card, CardContent, CardHeader } from "./ui/card";
+import { cn } from '~/lib/utils';
+import { Card, CardContent, CardHeader } from './ui/card';
 
 interface FeedbackCardProps {
   className?: string;
   name: string;
   title: string;
   content: string;
-  img: string;
+  img?: string;
 }
 
 // INFO[source-for-css]: https://medium.com/@ryaddev/building-a-testimonials-carousel-with-react-nuka-carousel-and-tailwind-css-b34686d61880
@@ -18,9 +18,9 @@ export function FeedbackCard({
   className,
 }: FeedbackCardProps) {
   return (
-    <Card className={cn("p-4 shadow-md hover:shadow-inner", className)}>
+    <Card className={cn('p-4 shadow-md hover:shadow-inner', className)}>
       <img
-        src={"https://i.imgur.com/rx3eOUo.png"}
+        src={'https://i.imgur.com/rx3eOUo.png'}
         alt="double_quotes"
         className="w-[42.6px] h-[27.6px] object-contain"
       />
@@ -28,7 +28,9 @@ export function FeedbackCard({
         <blockquote>{content}</blockquote>
       </CardHeader>
       <CardContent className="flex items-center flex-wrap sm:flex-nowrap">
-        <img src={img} alt="User" className="w-10 h-10 rounded-full mr-4" />
+        {img && (
+          <img src={img} alt="User" className="w-10 h-10 rounded-full mr-4" />
+        )}
         <span>
           <span className="font-semibold text-[20px] leading-[32px]">
             {name}

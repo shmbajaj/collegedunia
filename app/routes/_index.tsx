@@ -30,7 +30,9 @@ export default function Index() {
     <div className="container relative mb-8">
       <section className="relative h-[580px]">
         <PageHeader className="pb-8 absolute top-16 right-1 z-40 w-full max-w-lg ">
-          <p className="capitalize">PROFESSIONAL EDUCATION CONSULTING</p>
+          <p className="capitalize">
+            Explore expert education consultants for personalized guidance
+          </p>
           <PageHeaderHeading className="capitalize">
             TAKE YOUR FUTURE TO NEW HEIGHTS
           </PageHeaderHeading>

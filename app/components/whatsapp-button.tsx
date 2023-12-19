@@ -1,11 +1,11 @@
 import { Button } from './ui/button';
 import { Icons } from './icons';
+import { siteConfig } from '~/config/site';
+
+const whatsappUrl = `https://api.whatsapp.com/send?phone=${siteConfig.contact.primaryNumber}`;
 
 export const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
-    // TODO: Replace 'your-whatsapp-url' with the actual WhatsApp chat URL
-    const whatsappUrl = 'https://api.whatsapp.com/send?phone=your-phone-number';
-
     window.open(whatsappUrl, '_blank');
   };
 
