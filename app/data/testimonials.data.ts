@@ -84,8 +84,40 @@ const engineeringPageTestimonials = [
   },
 ];
 
+const medicalPageTestimonials = [
+  {
+    key: 'poojaPatel',
+    name: 'Pooja Patel',
+    title: 'Student',
+    content:
+      'Navigating the complexities of medical admissions can be overwhelming, but with the guidance of these consultants, the path became clearer. Their insights, attention to detail, and genuine commitment to my success made the entire MBBS admission experience a positive and enriching one.',
+  },
+  {
+    key: 'prathmesh',
+    name: 'Prathmesh',
+    title: 'Student',
+    content:
+      'The journey to medical school is undoubtedly challenging, but the guidance from these MBBS consultants turned challenges into opportunities. Their strategic approach, from application crafting to interview preparation, played a pivotal role in my successful MBBS admission. Highly recommend their services.',
+  },
+  {
+    key: 'vikram',
+    name: 'Vikram',
+    title: 'Student',
+    content:
+      'Exceptional guidance from the medical admission consultants made my MBBS journey seamless.',
+  },
+  {
+    key: 'krishnaP',
+    name: 'Krishna P',
+    title: 'Student',
+    content:
+      "I was at a crossroads in my MBBS application, and these consultants provided the guidance I needed. Their expertise turned the tide, and I'm now on my way to realizing my medical ambitions.",
+  },
+];
+
 export {
   homePageTestimonials,
   managementPageTestimonials,
   engineeringPageTestimonials,
+  medicalPageTestimonials,
 };

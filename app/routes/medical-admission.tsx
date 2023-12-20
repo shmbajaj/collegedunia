@@ -48,7 +48,7 @@ export default function MedicalAdmissions() {
             Types of Medical Courses
           </PageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
-          <PageHeaderDescription>
+          <PageHeaderDescription className="text-center">
             If you’re looking to pursue a career in the medical field, then
             you’ll need to know about the four most popular and useful courses.
             These are the ones that will give you the best chance at having a
@@ -362,29 +362,19 @@ export default function MedicalAdmissions() {
       <section className="flex flex-col items-center pb-4 ">
         <PageHeader className="pb-8 items-center">
           <p className="uppercase text-center font-bold text-orange-500">
-            SCOPE
+            EXAMS
           </p>
           <PageHeaderHeading className="capitalize text-center md:text-left">
-            Scope of Medical in India
+            Medical Entrance Exams
           </PageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
-          <PageHeaderDescription className="flex flex-col gap-4 text-center">
-            In India, the medical field has a wide scope of opportunities and
-            specialisations. From traditional doctors, nurses, and surgeons to
-            pharmacists, alternative medicine practitioners, medical
-            researchers, and medical educators there is something for everyone.
-            The number of careers in the medical sector are too numerous to
-            list, but some of the most popular include general practitioners,
-            anaesthetists, gynaecologists, pathologists, radiographers and
-            epidemiologists.
-          </PageHeaderDescription>
         </PageHeader>
         <div className="w-full bg-gradient-to-b from-white via-blue-100 to-blue-500 flex items-center">
           <div className="max-w-lg m-auto">
             <Carousel>
-              {Array.from({ length: 10 }).map((_, index) => (
+              {medicalAdmission.medicalEntrances.map((entrance, index) => (
                 <Card
-                  className="border-2 border-[#0C71C3] w-full rounded-br-none rounded-bl-none"
+                  className="border-2 border-[#0C71C3] w-full rounded-br-none rounded-bl-none min-w-[256px]"
                   key={index}
                 >
                   <CardHeader className="relative h-44 p-0">
@@ -392,7 +382,7 @@ export default function MedicalAdmissions() {
                   </CardHeader>
                   <CardContent className="p-2">
                     <p className="uppercase text-center font-bold text-orange-500">
-                      Biotechnology {index}
+                      {entrance.examName}
                     </p>
                   </CardContent>
                   <CardFooter className="border-t-8 border-blue-500 p-0"></CardFooter>
@@ -413,7 +403,6 @@ export default function MedicalAdmissions() {
           </PageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
           <PageHeaderDescription className="text-center">
-            Section Under Development
             <span className="mt-4 leading-8">
               This is perhaps the endgame that medical candidates have in mind
               when they choose to pursue some or the other medical course. It’s
@@ -424,24 +413,23 @@ export default function MedicalAdmissions() {
           </PageHeaderDescription>
         </PageHeader>
         <Carousel>
-          {Array.from({ length: 10 }).map((_, index) => (
-            <Card className="border-2 border-[#0C71C3] w-full" key={index}>
+          {medicalAdmission.medicalColleges.map((college, index) => (
+            <Card
+              className="border-2 border-[#0C71C3] w-full  min-w-[256px]"
+              key={index}
+            >
               <CardHeader className="relative h-44 p-0">
                 <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center"></div>
               </CardHeader>
               <CardContent className="p-2 text-center">
                 <p className="uppercase text-center font-bold text-orange-500">
-                  Hindu Insititue of Medical Sciences (HIMS) {index}
+                  {college.collegeName}
                 </p>
-                <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-black md:my-4" />
-                <p className="leading-8 text-center">Agra</p>
               </CardContent>
             </Card>
           ))}
         </Carousel>
       </section>
-
-      <FAQ />
     </Page>
   );
 }

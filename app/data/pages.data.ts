@@ -5,6 +5,7 @@ import medicalAdmissionBGImg from '../images/educom-medical-admission-page-pageh
 import {
   engineeringPageTestimonials,
   managementPageTestimonials,
+  medicalPageTestimonials,
 } from './testimonials.data';
 import type { EngineeringExam } from '~/types';
 
@@ -281,6 +282,65 @@ const engineeringAllExam: Array<EngineeringExam> = [
   },
 ];
 
+const medicalColleges = [
+  { collegeName: 'MIT WPU', imageSource: 'path/to/mit_wpu_image.jpg' },
+  { collegeName: 'DY Patil', imageSource: 'path/to/dy_patil_image.jpg' },
+  {
+    collegeName: 'Symbiosis Pune',
+    imageSource: 'path/to/symbiosis_pune_image.jpg',
+  },
+  { collegeName: 'SRM Chennai', imageSource: 'path/to/srm_chennai_image.jpg' },
+  { collegeName: 'NIMS Jaipur', imageSource: 'path/to/nims_jaipur_image.jpg' },
+  { collegeName: 'RIMS Raipur', imageSource: 'path/to/rims_raipur_image.jpg' },
+  { collegeName: 'BVP', imageSource: 'path/to/bvp_image.jpg' },
+  { collegeName: 'MIMER', imageSource: 'path/to/mimer_image.jpg' },
+  { collegeName: 'Vedanta', imageSource: 'path/to/vedanta_image.jpg' },
+  {
+    collegeName: 'Akash Medical',
+    imageSource: 'path/to/akash_medical_image.jpg',
+  },
+  { collegeName: 'M S Ramiah', imageSource: 'path/to/ms_ramiah_image.jpg' },
+  {
+    collegeName: 'Sri Lakshmi Narayana Institute',
+    imageSource: 'path/to/sri_lakshmi_narayana_institute_image.jpg',
+  },
+  {
+    collegeName: 'Geetanjali Medical College',
+    imageSource: 'path/to/geetanjali_medical_college_image.jpg',
+  },
+  {
+    collegeName: 'Teerthanker Mahaveer University',
+    imageSource: 'path/to/teerthanker_mahaveer_university_image.jpg',
+  },
+  {
+    collegeName: 'Mahatma Gandhi Medical College, Mumbai',
+    imageSource: 'path/to/mgmc_mumbai_image.jpg',
+  },
+  {
+    collegeName: 'Oxford Medical College Bangalore',
+    imageSource: 'path/to/oxford_medical_college_bangalore_image.jpg',
+  },
+  {
+    collegeName: 'East Point College of Medical',
+    imageSource: 'path/to/east_point_college_of_medical_image.jpg',
+  },
+  {
+    collegeName: 'Vydehi Medical College',
+    imageSource: 'path/to/vydehi_medical_college_image.jpg',
+  },
+  {
+    collegeName: 'Siddhartha Medical College',
+    imageSource: 'path/to/siddhartha_medical_college_image.jpg',
+  },
+];
+
+const medicalEntrances = [
+  { examName: 'NEET', imageSource: 'path/to/neet_image.jpg' },
+  { examName: 'AIIMS-MBBS', imageSource: 'path/to/aiims_mbbs_image.jpg' },
+  { examName: 'JIPMER', imageSource: 'path/to/jipmer_image.jpg' },
+  { examName: 'AFMC MBBS', imageSource: 'path/to/afmc_mbbs_image.jpg' },
+];
+
 const engineeringAdmission: PageInfoProps & {
   engineeringBranches: Array<
     Record<'branch' | 'overview' | 'imageSource', string>
@@ -300,18 +360,21 @@ const engineeringAdmission: PageInfoProps & {
   engineeringAllExam,
 };
 
-const medicalAdmission: PageInfoProps = {
+const medicalAdmission: PageInfoProps & {
+  medicalColleges: Array<Record<'collegeName' | 'imageSource', string>>;
+  medicalEntrances: Array<Record<'examName' | 'imageSource', string>>;
+} = {
   pageHeaderCaption: 'OUR SERVICES',
-  pageHeaderTitle: ' Medical ADMISSIONS',
-  pageHeaderDescription: `            With over 18 Lakh Candidates registering and appearing for the NEET
-  Exam held on July 17, 2022, it is clear that medical courses remain
-  one of the most sought-after options in India. These medical
-  admissions are highly competitive and serve to demonstrate how
-  important a medical career still is in India today.`,
+  pageHeaderTitle:
+    ' Expert Medical Admission Consultants Elevate Your MBBS Admission Experience!',
+  pageHeaderDescription: `Unlock success in MBBS admissions with expert guidance from top medical consultants. Your pathway to triumph begins here!
+  `,
   pageHeaderTo: '/services',
   pageHeaderBackgroundImageURL: managementAdmissionBGImg,
   pageHeaderBackgroundFallbackColor: '#03467c',
-  testimonials: [],
+  testimonials: medicalPageTestimonials,
+  medicalColleges,
+  medicalEntrances,
 };
 
 const managementAdmission: PageInfoProps & {
