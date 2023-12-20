@@ -630,7 +630,7 @@ const engineeringAdmission: PageInfoProps & {
     ' Get Free Consultation For Engineering Admission in dream College!  ',
   pageHeaderDescription: `Ensure Engineering Admission success with expert consultation. Unlock doors to your dream college and future in engineering!
   `,
-  pageHeaderTo: '/services',
+  pageHeaderTo: '#get-in-touch-form',
   pageHeaderBackgroundImageURL: engineeringAdmissionBGImg,
   pageHeaderBackgroundFallbackColor: '#0C71C3',
   testimonials: engineeringPageTestimonials,
@@ -648,7 +648,7 @@ const medicalAdmission: PageInfoProps & {
     ' Expert Medical Admission Consultants Elevate Your MBBS Admission Experience!',
   pageHeaderDescription: `Unlock success in MBBS admissions with expert guidance from top medical consultants. Your pathway to triumph begins here!
   `,
-  pageHeaderTo: '/services',
+  pageHeaderTo: '#get-in-touch-form',
   pageHeaderBackgroundImageURL: managementAdmissionBGImg,
   pageHeaderBackgroundFallbackColor: '#03467c',
   testimonials: medicalPageTestimonials,
@@ -668,7 +668,7 @@ const managementAdmission: PageInfoProps & {
     'Claim Your Free MBA Admission Consultation for Top-Tier Institutes Instantly!',
   pageHeaderDescription: `Unlock your potential with India's premier MBA consultants. Secure dream college admissions and ace your MBA admission journey with expert guidance.
   `,
-  pageHeaderTo: '/services',
+  pageHeaderTo: '#get-in-touch-form',
   pageHeaderBackgroundImageURL: medicalAdmissionBGImg,
   pageHeaderBackgroundFallbackColor: '#0C71C3',
   testimonials: managementPageTestimonials,

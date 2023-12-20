@@ -376,8 +376,8 @@ export default function EngineeringAdmissions() {
           <p className="uppercase text-center font-bold text-orange-500">
             TOP ENGINEERING COLLEGES
           </p>
-          <PageHeaderHeading className="capitalize text-center md:text-left">
-            Best Engineering Colleges in India
+          <PageHeaderHeading className="capitalize text-center">
+            We are Connected with Top Engineering Colleges in India
           </PageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>

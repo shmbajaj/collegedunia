@@ -11,6 +11,8 @@ export const siteConfig = {
     email: 'educomguidance@gmail.com',
     primaryNumber: '8188808878',
     secondaryNumber: '8103158082',
+    address:
+      '5th Floor, Dhananjay Plaza, near Chellaram Diabetes Hospital, Bavdhan, Pune, Maharashtra 411021',
   },
   links: [
     { to: '/educom-fb', title: 'Facebook', Icon: Icons.Facebook },

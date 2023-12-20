@@ -408,7 +408,7 @@ export default function MedicalAdmissions() {
       <section className="flex flex-col items-center pb-8">
         <PageHeader className="pb-8 items-center">
           <p className="uppercase text-center font-bold text-orange-500">
-            TOP UNIVERSITIES
+            We are Connected With
           </p>
           <PageHeaderHeading className="capitalize text-center">
             Top Medical Colleges & Universities In India

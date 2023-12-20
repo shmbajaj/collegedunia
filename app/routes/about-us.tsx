@@ -20,7 +20,6 @@ export default function AboutUs() {
     <div className="relative">
       <section className="relative h-[580px]">
         <PageHeader className="pb-8 absolute top-16 left-4 md:left-28 z-40 w-full max-w-lg ">
-          <p className="capitalize font-bold">About</p>
           <PageHeaderHeading className="capitalize">About us</PageHeaderHeading>
           <PageHeaderDescription className="text-white">
             As Education Consultants, we are the guiding force that empowers
@@ -235,18 +234,7 @@ export default function AboutUs() {
         <OurConsultingServices />
       </section>
 
-      <section className="mx-4 my-auto mb-4">
-        <GetInTouch>
-          <div className="p-4 lg:p-12 bg-blue-500 border-t-8 border-orange-500 text-white flex flex-col gap-2 text-center font-semibold h-max">
-            <span>
-              COMMERCIA, HINJAWADI BRIDGE,WAKAD, PUNE, MAHARASHTRA 411057
-            </span>
-            <span>CONTACT:</span>
-            <span>{siteConfig.contact.primaryNumber}</span>
-            <span>{siteConfig.contact.secondaryNumber}</span>
-          </div>
-        </GetInTouch>
-      </section>
+      <GetInTouch showContactInfo />
     </div>
   );
 }

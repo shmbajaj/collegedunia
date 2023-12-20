@@ -1,10 +1,11 @@
-import type { MetaFunction } from "@remix-run/react";
-import { MapPinIcon, Clock3Icon, MessageCircleIcon } from "lucide-react";
-import { Card, CardContent, CardDescription } from "~/components/ui/card";
-import { GetInTouch } from "~/pages/index/components/get-in-touch";
+import type { MetaFunction } from '@remix-run/react';
+import { MapPinIcon, Clock3Icon, MessageCircleIcon } from 'lucide-react';
+import { Card, CardContent, CardDescription } from '~/components/ui/card';
+import { siteConfig } from '~/config/site';
+import { GetInTouch } from '~/pages/index/components/get-in-touch';
 
 export const meta: MetaFunction = () => {
-  return [{ title: "Contact Us" }];
+  return [{ title: 'Contact Us' }];
 };
 
 export default function ContactUs() {
@@ -29,7 +30,7 @@ export default function ContactUs() {
               <CardDescription className="flex flex-col flex-1 gap-2">
                 <span className="uppercase text-sm">Visit Us</span>
                 <span className="text-black text-base leading-6">
-                  COMMERCIA, HINJAWADI BRIDGE,WAKAD, PUNE, MAHARASHTRA 411057
+                  {siteConfig.contact.address}
                 </span>
               </CardDescription>
             </CardContent>
@@ -42,9 +43,9 @@ export default function ContactUs() {
               <CardDescription className="flex flex-col flex-1 gap-2">
                 <span className="uppercase text-sm">Contact Us</span>
                 <span className="text-black text-base leading-6 flex flex-col gap-1 text-center">
-                  <span>+91 77579 20539</span>
-                  <span>+91 87673 31852</span>
-                  <span>contact@catalysteducations.com</span>
+                  <span>{siteConfig.contact.primaryNumber}</span>
+                  <span>{siteConfig.contact.secondaryNumber}</span>
+                  <span>{siteConfig.contact.email}</span>
                 </span>
               </CardDescription>
             </CardContent>

@@ -40,10 +40,7 @@ export function SiteFooter() {
               <span>
                 <MapPinIcon className="w-4 h-4 text-educom" />
               </span>
-              <span>
-                Plot No 1A/9, Sector 10, PCNTDA, Bhosari, Near Vishweshwar
-                Chowk, PUNE 411026, Maharashtra
-              </span>
+              <span>{siteConfig.contact.address}</span>
             </p>
             <p className="flex gap-2 items-center">
               <span>
