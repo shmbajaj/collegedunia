@@ -1,7 +1,6 @@
 import type { MetaFunction } from '@remix-run/react';
 import { type ActionFunctionArgs } from '@remix-run/node';
 import { Carousel } from '~/components/carousel-old';
-import { FAQ } from '~/components/faq';
 import { LearnMoreCard } from '~/components/learn-more-card';
 import { Page } from '~/components/page';
 import {
@@ -13,6 +12,7 @@ import { Card, CardContent, CardHeader } from '~/components/ui/card';
 import { managementAdmission } from '~/data/pages.data';
 import { contactUsAction } from '~/lib/common.action';
 import { WalletIcon } from 'lucide-react';
+import { cn } from '~/lib/utils';
 
 export const meta: MetaFunction = () => {
   return [
@@ -29,37 +29,74 @@ export const action = async (args: ActionFunctionArgs) => contactUsAction(args);
 export default function ManagementAdmissions() {
   return (
     <Page {...managementAdmission}>
-      <section className="flex flex-col items-center pb-8">
+      <section className="flex flex-col items-center text-center">
+        <PageHeader className="pb-8 items-center">
+          <PageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
+            What Sets Us Apart?
+          </PageHeaderHeading>
+          <PageHeaderDescription className="flex flex-col gap-2">
+            <span>14+ Experience</span>
+            <span>Connected With 100+ Top Colleges</span>
+            <span>5000+ Successful Consultation</span>
+          </PageHeaderDescription>
+        </PageHeader>
+      </section>
+
+      <section className="flex flex-col items-center pb-8 text-center">
         <PageHeader className="pb-8 items-center">
           <p className="uppercase text-center font-bold text-orange-500">
-            Branches
+            TOP COLLEGES
           </p>
           <PageHeaderHeading className="capitalize text-center md:text-left">
-            Streams Of Specialization in Management
+            Top Management Colleges
           </PageHeaderHeading>
-          <PageHeaderDescription>
-            Section Under Development
+          <PageHeaderDescription className="flex flex-col gap-2">
+            <span>
+              Choosing an MBA offers a dynamic skill set, fostering leadership
+              and effective communication. The program provides extensive
+              networking opportunities, connecting individuals with industry
+              leaders globally. In terms of career scope, an MBA opens doors to
+              diverse opportunities, from corporate leadership to
+              entrepreneurship, with widespread recognition and value among
+              employers. Ultimately, opting for an MBA is a strategic investment
+              in professional growth, offering transformative experiences that
+              propel individuals toward leadership roles and fulfilling careers.
+            </span>
+            <span>
+              Our expert consultants are dedicated to guiding you every step of
+              the way. We assist in selecting the finest institutes and provide
+              support to secure admission to your dream college.
+            </span>
+            <span>
+              We have an expert team specialized in management consultation,
+              <strong>engineering consultation</strong>, and{' '}
+              <strong>medical & pharma consultation</strong> in India.
+            </span>
           </PageHeaderDescription>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
         <Carousel>
-          {Array.from({ length: 10 }).map((_, index) => (
-            <Card className="border-2 border-[#0C71C3] w-full" key={index}>
+          {managementAdmission.managementColleges.map((college, index) => (
+            <Card className="border-2 border-[#0C71C3] w-60" key={index}>
               <CardHeader className="relative h-44 p-0">
-                <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center"></div>
+                <div className="w-full h-full relative">
+                  <img
+                    src={college.imageSource}
+                    alt="PageHeader Background"
+                    className={cn(
+                      'w-full h-full object-cover object-center absolute top-0 left-0'
+                    )}
+                  />
+                  <div
+                    className={
+                      'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-[#0C71C3]'
+                    }
+                  ></div>
+                </div>
               </CardHeader>
               <CardContent className="p-2">
                 <p className="uppercase text-center font-bold text-orange-500">
-                  Telecommunications Engineering {index}
-                </p>
-                <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-black md:my-4" />
-                <p className="leading-8">
-                  Telecommunications engineering is an intersection of
-                  electrical and computer engineering, providing students the
-                  practical knowledge to work on the interconnections between
-                  networks, telecom systems and cyberspace. With learning about
-                  these components, graduates of telecommunications engineering
-                  are capable of working in a variety of fields.
+                  {college.collegeName}
                 </p>
               </CardContent>
             </Card>
@@ -67,42 +104,28 @@ export default function ManagementAdmissions() {
         </Carousel>
       </section>
 
-      <section className="flex flex-col items-center pb-8 bg-gray-100">
+      <section className="flex flex-col items-center pb-8">
         <PageHeader className="pb-8 items-center">
           <p className="uppercase text-center font-bold text-orange-500">
-            Courses
+            Entrance Exams
           </p>
           <PageHeaderHeading className="capitalize text-center md:text-left">
-            Types of Management Courses
+            Management Entrance Exams
           </PageHeaderHeading>
-          <PageHeaderDescription>
-            Section Under Development
-          </PageHeaderDescription>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
-        <Carousel>
-          {Array.from({ length: 10 }).map((_, index) => (
-            <Card className="border-2 border-[#0C71C3] w-full" key={index}>
-              <CardHeader className="relative h-44 p-0">
-                <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center"></div>
-              </CardHeader>
-              <CardContent className="p-2">
-                <p className="uppercase text-center font-bold text-orange-500">
-                  Telecommunications Engineering {index}
-                </p>
-                <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-black md:my-4" />
-                <p className="leading-8">
-                  Telecommunications engineering is an intersection of
-                  electrical and computer engineering, providing students the
-                  practical knowledge to work on the interconnections between
-                  networks, telecom systems and cyberspace. With learning about
-                  these components, graduates of telecommunications engineering
-                  are capable of working in a variety of fields.
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </Carousel>{' '}
+        <div className="container grid md:gap-4 md:grid-cols-2 max-w-5xl">
+          <div>
+            {Array.from({ length: 3 }).map((_, index) => (
+              <LearnMoreCard index={index} key={index} />
+            ))}
+          </div>
+          <div>
+            {Array.from({ length: 3 }).map((_, index) => (
+              <LearnMoreCard index={index} key={index} />
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="flex flex-col items-center pb-8">
@@ -140,8 +163,8 @@ export default function ManagementAdmissions() {
               <div className="flip-card-inner">
                 <div className="flip-card-front flex flex-col justify-center items-center gap-4">
                   <img
-                    src="https://github.com/shadcn.png"
-                    alt="Avatar"
+                    src={item.imageSource}
+                    alt={item.designation}
                     className="w-28 h-2w-28"
                   />
                   <hr className="mx-1 h-1 w-12 rounded border-0 bg-black md:mx-4" />
@@ -151,7 +174,7 @@ export default function ManagementAdmissions() {
                 </div>
                 <div className="flex flex-col items-center justify-center flip-card-back">
                   <WalletIcon className="w-16 h-16" />
-                  <span className="uppercase text-center font-bold">
+                  <span className="uppercase text-center font-normal text-sm">
                     {item.averagePackage}
                   </span>
                 </div>
@@ -164,66 +187,45 @@ export default function ManagementAdmissions() {
       <section className="flex flex-col items-center pb-8">
         <PageHeader className="pb-8 items-center">
           <p className="uppercase text-center font-bold text-orange-500">
-            TOP COLLEGES
+            Branches
           </p>
           <PageHeaderHeading className="capitalize text-center md:text-left">
-            Best Management Colleges In India
+            Streams Of Specialization in Management
           </PageHeaderHeading>
-          <PageHeaderDescription>
-            Section Under Development
-          </PageHeaderDescription>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
         <Carousel>
-          {Array.from({ length: 10 }).map((_, index) => (
-            <Card className="border-2 border-[#0C71C3] w-full" key={index}>
-              <CardHeader className="relative h-44 p-0">
-                <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center"></div>
-              </CardHeader>
-              <CardContent className="p-2">
-                <p className="uppercase text-center font-bold text-orange-500">
-                  Telecommunications Engineering {index}
-                </p>
-                <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-black md:my-4" />
-                <p className="leading-8">
-                  Telecommunications engineering is an intersection of
-                  electrical and computer engineering, providing students the
-                  practical knowledge to work on the interconnections between
-                  networks, telecom systems and cyberspace. With learning about
-                  these components, graduates of telecommunications engineering
-                  are capable of working in a variety of fields.
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+          {managementAdmission.managementSpecialization.map(
+            (specialization, index) => (
+              <Card className="border-2 border-[#0C71C3] w-full" key={index}>
+                <CardHeader className="relative h-44 p-0">
+                  <div className="w-full h-full relative">
+                    <img
+                      src={specialization.imageSource}
+                      alt="PageHeader Background"
+                      className={cn(
+                        'w-full h-full object-cover object-center absolute top-0 left-0'
+                      )}
+                    />
+                    <div
+                      className={
+                        'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-[#0C71C3]'
+                      }
+                    ></div>
+                  </div>
+                </CardHeader>
+                <CardContent className="p-2">
+                  <p className="uppercase text-center font-bold text-orange-500">
+                    {specialization.title}
+                  </p>
+                  <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-black md:my-4" />
+                  <p className="leading-8">{specialization.subtitle}</p>
+                </CardContent>
+              </Card>
+            )
+          )}
         </Carousel>
       </section>
-
-      <section className="flex flex-col items-center pb-8">
-        <PageHeader className="pb-8 items-center">
-          <p className="uppercase text-center font-bold text-orange-500">
-            Entrance Exams
-          </p>
-          <PageHeaderHeading className="capitalize text-center md:text-left">
-            Management Entrance Exams
-          </PageHeaderHeading>
-          <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
-        </PageHeader>
-        <div className="container grid md:gap-4 md:grid-cols-2 max-w-5xl">
-          <div>
-            {Array.from({ length: 3 }).map((_, index) => (
-              <LearnMoreCard index={index} key={index} />
-            ))}
-          </div>
-          <div>
-            {Array.from({ length: 3 }).map((_, index) => (
-              <LearnMoreCard index={index} key={index} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <FAQ />
     </Page>
   );
 }

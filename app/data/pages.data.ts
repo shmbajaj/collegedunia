@@ -15,35 +15,40 @@ const managementScope = [
     averagePackage: 'Rs. 8-14 lakhs per annum',
     roles:
       'Roles in marketing involve developing and implementing marketing strategies, product management, and brand promotion.',
-    imageSrc: 'marketing_manager_image.jpg',
+    imageSource:
+      ' https://catalysteducations.com/wp-content/uploads/2022/12/marketing.jpg',
   },
   {
     designation: 'Finance Manager',
     averagePackage: 'Rs. 8-16 lakhs per annum',
     roles:
       'MBA graduates specializing in finance may take up roles in financial management, investment banking, or corporate finance.',
-    imageSrc: 'finance_manager_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/finance.jpg',
   },
   {
     designation: 'Information Technology (IT) Manager',
     averagePackage: 'Rs. 8-16 lakhs per annum',
     roles:
       'MBA graduates with a focus on IT management may work in roles related to technology strategy, project management, and IT consulting.',
-    imageSrc: 'it_manager_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Artboard-1-copy.jpg',
   },
   {
     designation: 'Human Resources Manager',
     averagePackage: 'Rs. 7-14 lakhs per annum',
     roles:
       'MBA graduates in HR often take up roles in recruitment, talent management, and organizational development.',
-    imageSrc: 'hr_manager_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/hr.jpg',
   },
   {
     designation: 'Operations Manager',
     averagePackage: 'Rs. 8-15 lakhs per annum',
     roles:
       'Responsible for overseeing the efficiency of business operations, supply chain management, and process optimization.',
-    imageSrc: 'operations_manager_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Artboard-1-copy.jpg',
   },
   {
     designation: 'Investment Banker',
@@ -51,7 +56,8 @@ const managementScope = [
     roles:
       'MBA graduates entering investment banking may work in roles related to mergers and acquisitions, risk management, and financial analysis.',
 
-    imageSrc: 'investment_banker_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/banking.jpg',
   },
   {
     designation: 'Supply Chain Manager',
@@ -59,7 +65,8 @@ const managementScope = [
     roles:
       'Focus on managing the end-to-end supply chain process, including procurement, logistics, and distribution.',
 
-    imageSrc: 'supply_chain_manager_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/production.jpg',
   },
   {
     designation: 'Product Manager',
@@ -67,7 +74,8 @@ const managementScope = [
     roles:
       'Responsible for the development and management of a product throughout its lifecycle.',
 
-    imageSrc: 'product_manager_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Artboard-1.jpg',
   },
   {
     designation: 'Entrepreneur / Business Owner',
@@ -76,7 +84,167 @@ const managementScope = [
     roles:
       'Some MBA graduates choose to start their own businesses, and their earnings can be highly variable.',
 
-    imageSrc: 'entrepreneur_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/personal-1.jpg',
+  },
+];
+
+const managementColleges = [
+  {
+    collegeName: 'Symbiosis Institute of Business Management',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Symbiosis-Institute-of-International-Business-SIIB.jpg',
+  },
+  {
+    collegeName: 'NMIMS',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Great-Lakes-Institute-Of-Management-GLIM.jpg',
+  },
+  {
+    collegeName: 'N. L. Dalmia',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/International-Management-InstituteIMI.png',
+  },
+  {
+    collegeName: 'We School',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/bharati-vidyapeeth.jpg',
+  },
+  {
+    collegeName: 'Indira',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Birla-Institute-Of-Management-Technology-BIMTECH.png',
+  },
+  {
+    collegeName: 'PIBM',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Symbiosis-Institute-of-International-Business-SIIB.jpg',
+  },
+  {
+    collegeName: 'RIIM',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/International-Management-InstituteIMI.png',
+  },
+  {
+    collegeName: 'Lexicon Management Institutes',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Symbiosis-Institute-of-International-Business-SIIB.jpg',
+  },
+  {
+    collegeName: 'Mitcon Institu Of Management',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Great-Lakes-Institute-Of-Management-GLIM.jpg',
+  },
+  {
+    collegeName: 'DPU',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/International-Management-InstituteIMI.png',
+  },
+  {
+    collegeName: 'ITM',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/bharati-vidyapeeth.jpg',
+  },
+  {
+    collegeName: 'IIBS',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Birla-Institute-Of-Management-Technology-BIMTECH.png',
+  },
+  {
+    collegeName: 'Pune Business School',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Symbiosis-Institute-of-International-Business-SIIB.jpg',
+  },
+  {
+    collegeName: 'Atlas Skillset University',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/International-Management-InstituteIMI.png',
+  },
+  {
+    collegeName: 'Jaipuria Institute of Management',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Symbiosis-Institute-of-International-Business-SIIB.jpg',
+  },
+  {
+    collegeName: 'IMI Bhubaneswar',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Great-Lakes-Institute-Of-Management-GLIM.jpg',
+  },
+  {
+    collegeName: 'Parul University',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/International-Management-InstituteIMI.png',
+  },
+  {
+    collegeName: 'Alliance University',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/bharati-vidyapeeth.jpg',
+  },
+];
+
+const managementSpecialization = [
+  {
+    title: 'Product Manager',
+    subtitle:
+      'A product manager, also known as a PM, oversees the development and growth of an organization’s products. This involves planning, leading and executing tasks related to creating and delivering products that meet business goals and customer needs.',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/two-asian-young-woman-working-together-sme-project-young-owner-people-startup-business-online-sme-delivery-project-online-business-small-business-concept-scaled.jpg',
+  },
+  {
+    title: 'Operations Manager',
+    subtitle:
+      'An operations manager is responsible for managing, planning and implementing production processes. They oversee the production process to ensure that goods and services are produced efficiently and in accordance with the specified quality standards. They also work to reduce costs, improve quality, analyze production losses, and optimize resources.',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/teamwork-brainstorming-meeting-new-startup-project-workplace-scaled.jpg',
+  },
+  {
+    title: 'IT Manager',
+    subtitle:
+      "An IT Manager is responsible for the implementation and maintenance of a company's technological structure. This role involves overseeing technical processes, troubleshooting any computer issues that may arise, and ensuring the smooth running of digital operations.",
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/business-man-examines-data-financial-documents-company-financial-reports-graphics-showing-financial-numerical-growth-data-concept-financial-management-grow-be-profitable-scaled.jpg',
+  },
+  {
+    title: 'Investment Banker',
+    subtitle:
+      'An investment banker is a finance specialist who helps organizations and companies raise capital. Investment bankers usually collaborate with financial institutions such as banks, insurance companies, and credit unions in order to achieve their goals.',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/house-bills-elements-arrangement-scaled.jpg',
+  },
+  {
+    title: 'Business Analyst',
+    subtitle:
+      'Business analysts are responsible for understanding the needs of an organization and coming up with technical solutions to meet those needs in an efficient and cost-effective way. They work with computer processes to deliver these solutions.',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/businesspeople-working-finance-accounting-analyze-financi-scaled.jpg',
+  },
+  {
+    title: 'Marketing Manager',
+    subtitle:
+      "The role of a marketing manager is to manage the operations and strategies of a company's marketing department. This includes planning, developing, and carrying out promotional activities to raise awareness of the company and its products or services amongst their target audience.",
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/businesspeople-meeting-plan-analysis-graph-company-finance-strat-scaled.jpg',
+  },
+  {
+    title: 'Management Consultant',
+    subtitle:
+      'Management consultants are professionals who help companies and organizations with their efficiency and performance. Through detailed analyses of the issues that the business is facing, management consultants devise creative solutions to improve the effectiveness of a company.',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/two-content-business-partners-discussing-issue-scaled.jpg',
+  },
+  {
+    title: 'Financial Advisor',
+    subtitle:
+      'Financial advisors are experts who provide their clients with guidance, support, and education when it comes to managing and investing money. They act as partners in helping their clients to organize and prioritize their financial goals and ensure that the decisions made will bring beneficial results for them.',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/investment-manager-with-credit-card-document-finance-with-client-investing-trading-stock-market-office-professional-finance-advisor-consulting-profit-amount-bank-with-customer-scaled.jpg',
+  },
+  {
+    title: 'Administrative Manager',
+    subtitle:
+      'Administrative managers are responsible for the smooth running of a business or organization. They supervise staff and oversee the planning, organizing, and implementation of various administrative systems and procedures.',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/businessmen-reviewing-business-performance-target-planning-new-budget-year-scaled.jpg',
   },
 ];
 
@@ -379,6 +547,10 @@ const medicalAdmission: PageInfoProps & {
 
 const managementAdmission: PageInfoProps & {
   scope: Array<Record<string, string>>;
+  managementColleges: Array<Record<'collegeName' | 'imageSource', string>>;
+  managementSpecialization: Array<
+    Record<'title' | 'imageSource' | 'subtitle', string>
+  >;
 } = {
   pageHeaderCaption: 'OUR SERVICES',
   pageHeaderTitle:
@@ -390,6 +562,8 @@ const managementAdmission: PageInfoProps & {
   pageHeaderBackgroundFallbackColor: '#0C71C3',
   testimonials: managementPageTestimonials,
   scope: managementScope,
+  managementColleges,
+  managementSpecialization,
 };
 
 export { engineeringAdmission, medicalAdmission, managementAdmission };

@@ -374,7 +374,7 @@ export default function MedicalAdmissions() {
             <Carousel>
               {medicalAdmission.medicalEntrances.map((entrance, index) => (
                 <Card
-                  className="border-2 border-[#0C71C3] w-full rounded-br-none rounded-bl-none min-w-[256px]"
+                  className="border-2 border-[#0C71C3] w-56 rounded-br-none rounded-bl-none"
                   key={index}
                 >
                   <CardHeader className="relative h-44 p-0">
@@ -415,7 +415,7 @@ export default function MedicalAdmissions() {
         <Carousel>
           {medicalAdmission.medicalColleges.map((college, index) => (
             <Card
-              className="border-2 border-[#0C71C3] w-full  min-w-[256px]"
+              className="border-2 border-[#0C71C3] w-full  min-w-[220px]"
               key={index}
             >
               <CardHeader className="relative h-44 p-0">
