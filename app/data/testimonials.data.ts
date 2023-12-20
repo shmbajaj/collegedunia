@@ -53,4 +53,39 @@ const managementPageTestimonials = [
   },
 ];
 
-export { homePageTestimonials, managementPageTestimonials };
+const engineeringPageTestimonials = [
+  {
+    key: 'shreekantSalunkhe',
+    name: 'Shreekant Salunkhe',
+    title: 'Student',
+    content:
+      'Enrolling in a prestigious engineering program became a reality, thanks to the invaluable assistance from these Engineering Consultants. Their expertise, coupled with a personalized touch, made all the difference in securing my admission. Highly recommended for aspiring engineers!',
+  },
+  {
+    key: 'pradeep',
+    name: 'Pradeep',
+    title: 'Student',
+    content:
+      'I successfully secured admission to my dream Engineering College with the exceptional support of Educom Guidance, a renowned education consultants. Thank you for helping me turn my aspirations into reality!',
+  },
+  {
+    key: 'narayanReddy',
+    name: 'Narayan Reddy',
+    title: 'Parent',
+    content:
+      "As parents, we appreciate the unwavering support and guidance provided by the Engineering Consultants. Their expertise and personalized approach were instrumental in our child's successful journey to Engineering Admission.",
+  },
+  {
+    key: 'shubhamPatil',
+    name: 'Shubham Patil',
+    title: 'Student',
+    content:
+      'Thanks to the expert guidance of Engineering Consultants, I secured admission to my dream college. Their personalized approach made the entire Engineering Admission process smooth and stress-free.',
+  },
+];
+
+export {
+  homePageTestimonials,
+  managementPageTestimonials,
+  engineeringPageTestimonials,
+};

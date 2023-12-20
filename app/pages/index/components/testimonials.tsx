@@ -9,6 +9,7 @@ export interface TestimonialsProps {
 }
 
 export function Testimonials({ testimonials }: TestimonialsProps) {
+  if (testimonials.length < 1) return null;
   return (
     <section
       id="clients"
