@@ -10,7 +10,22 @@ import { buttonVariants } from '../../../components/ui/button';
 import { Link } from '@remix-run/react';
 import thumbnail from '~/images/educom-home-page-article.jpeg';
 
-export function WhyChooseUs() {
+const defaultDescription = `Choose Educom Guidance for our 14 years of extensive education
+consulting experience. Our expertise ensures accurate advice,
+keeping up with industry trends and admission requirements.
+Connected to 100+ top Indian colleges, we provide diverse
+opportunities. Success-driven strategies enhance your application,
+interview skills, and admission prospects. Collaborate with our
+consultants to join successful clients in prestigious programs. Your
+Educom Guidance journey begins your success story.`;
+
+export function WhyChooseUs({
+  description,
+  children,
+}: {
+  description?: string;
+  children?: Array<React.ReactElement> | React.ReactElement;
+}) {
   return (
     <section className="flex items-center bg-educom p-4 lg:p-8">
       <div className="flex flex-col lg:flex-row gap-8 m-auto">
@@ -23,14 +38,8 @@ export function WhyChooseUs() {
             <hr className="my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
           </CardHeader>
           <CardDescription className="font-medium text-base leading-8 p-4 md:p-8">
-            Choose Educom Guidance for our 14 years of extensive education
-            consulting experience. Our expertise ensures accurate advice,
-            keeping up with industry trends and admission requirements.
-            Connected to 100+ top Indian colleges, we provide diverse
-            opportunities. Success-driven strategies enhance your application,
-            interview skills, and admission prospects. Collaborate with our
-            consultants to join successful clients in prestigious programs. Your
-            Educom Guidance journey begins your success story.
+            {description ? description : !children ? defaultDescription : null}
+            {children}
           </CardDescription>
           <CardFooter className="pt-6">
             <Link

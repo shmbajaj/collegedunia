@@ -7,6 +7,9 @@ import {
   PageHeaderHeading,
 } from '~/components/page-header';
 import aboutPageHeader from 'app/images/educom-about-us-page-pageheader.jpeg';
+import { siteConfig } from '~/config/site';
+import { WhyChooseUs } from '~/pages/index/components/why-choose-us';
+import { StyledHeading2 } from '~/components/typography';
 
 export const meta: MetaFunction = () => {
   return [{ title: 'About Us' }];
@@ -20,9 +23,12 @@ export default function AboutUs() {
           <p className="capitalize font-bold">About</p>
           <PageHeaderHeading className="capitalize">About us</PageHeaderHeading>
           <PageHeaderDescription className="text-white">
-            Your go-to source for secure admissions in universities in India and
-            abroad. Catalyst Education helps you with the most genuine
-            educational guidance, learning, and mentorship.
+            As Education Consultants, we are the guiding force that empowers
+            students to shape their academic destinies. Committed to
+            facilitating educational excellence, we provide comprehensive
+            services that extend beyond traditional norms. Our team comprises
+            seasoned professionals with a wealth of experience in navigating the
+            complexities of the landscape.
           </PageHeaderDescription>
         </PageHeader>
         <div className="relative w-full h-full">
@@ -43,8 +49,8 @@ export default function AboutUs() {
             <span>STRATEGIC</span>
           </h2>
           <p className="max-w-[750px] text-lg  sm:text-xl leading-8 text-muted-foreground">
-            We at Catalyst Educations use strategic methods to train our
-            students to get into their dream colleges.
+            {`We at ${siteConfig.name} use strategic methods to train our
+            students to get into their dream colleges.`}
           </p>
         </div>
 
@@ -80,24 +86,35 @@ export default function AboutUs() {
             PROVEN SUCCESS
           </p>
           <PageHeaderHeading className="capitalize text-center md:text-left">
-            Who We Are ?
+            What Sets Us Apart?
           </PageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
           <PageHeaderDescription className="leading-8 text-center flex flex-col gap-4">
             <span>
-              {' '}
-              Catalyst Educations understands the value of your dream of what
-              you want to be. We are the leading educational recruiters in
-              India, and happy to share that we have traveled the journey to be
-              a professional with 5000+ students. We understand the importance
-              of high-quality education for the students.
+              <strong>Expert Guidance:</strong> Our consultants are experts in
+              their respective fields, offering insights and advice rooted in a
+              deep understanding of the evolving educational landscape.
             </span>
             <span>
-              Studying abroad is the new trend in town and getting popular among
-              Indian aspirants for the last few years. Affordable Fees,
-              experienced faculties, and international working opportunities are
-              key features of choosing education in abroad in the top
-              universities of the world.
+              <strong>Personalized Approach:</strong> Recognizing the uniqueness
+              of each student, we tailor our guidance to individual strengths,
+              aspirations, and academic goals, ensuring a personalized and
+              effective strategy.
+            </span>
+            <span>
+              <strong>Holistic Support:</strong> We go beyond the conventional
+              by providing holistic support throughout the educational journey.
+              From academic planning to career counseling, we are committed to
+              nurturing every aspect of a student's growth.
+            </span>
+            <span>
+              <strong>Industry Knowledge:</strong> With our finger on the pulse
+              of educational trends, we offer up-to-date information and
+              strategies, keeping students ahead of the curve in a competitive
+              academic environment. Success Stories: Our track record of success
+              speaks for itself. Many students have realized their academic
+              dreams under our guidance, securing admissions to prestigious
+              institutions and excelling in their chosen fields.
             </span>
           </PageHeaderDescription>
         </PageHeader>
@@ -157,8 +174,12 @@ export default function AboutUs() {
               <span>VISION</span>
             </h2>
             <p className="max-w-[750px] text-lg  sm:text-xl leading-8 text-muted-foreground">
-              To offer end-to-end services to help students to get admissions in
-              their dream college.
+              Our vision is to be a beacon of transformative education,
+              inspiring a global community of learners to reach new heights of
+              knowledge and innovation. We envision a future where education
+              transcends boundaries, empowers diverse perspectives, and becomes
+              the catalyst for positive change, creating a world where every
+              individual can contribute meaningfully to society.
             </p>
           </div>
 
@@ -169,12 +190,45 @@ export default function AboutUs() {
               <span>MISSION</span>
             </h2>
             <p className="max-w-[750px] text-lg  sm:text-xl leading-8 text-muted-foreground">
-              To provide support to help you find the right
-              college/institute/university in the right country that offers
-              topical courses to provide the best opportunity for success.
+              Our mission is to empower individuals, fostering academic
+              excellence and a lifelong love for learning. We provide
+              personalized guidance and holistic support, aiming to equip
+              students with the tools they need to surpass their potential and
+              succeed in their academic endeavors, preparing them for a future
+              of continuous growth and achievement
             </p>
           </div>
         </div>
+      </section>
+
+      <WhyChooseUs>
+        <span className="flex flex-col gap-2">
+          <span>14+ Experience</span>
+          <span>Connected With 100+ Top Colleges</span>
+          <span>5000+ Success Stories</span>
+          <span>Various Courses</span>
+        </span>
+      </WhyChooseUs>
+
+      <section className="md:mt-[8rem] lg:mt-[4rem] flex flex-col items-center pb-8 text-center container m-auto">
+        <StyledHeading2 className="uppercase text-center">
+          How We Can Help You
+        </StyledHeading2>
+        <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
+        <PageHeaderDescription className="flex flex-col gap-4">
+          <span>
+            Whether you're navigating college admissions, seeking career
+            guidance, or exploring opportunities for further education, we are
+            here to simplify the process. Our commitment is to empower you to
+            make informed decisions that align with your aspirations and lead to
+            a successful and fulfilling academic journey.
+          </span>
+          <span>
+            In essence, as Education Consultants, we are your partners in
+            educational empowerment, dedicated to guiding you toward a future of
+            academic excellence and personal growth.
+          </span>
+        </PageHeaderDescription>
       </section>
 
       <section className="mx-4 my-auto">
@@ -188,8 +242,8 @@ export default function AboutUs() {
               COMMERCIA, HINJAWADI BRIDGE,WAKAD, PUNE, MAHARASHTRA 411057
             </span>
             <span>CONTACT:</span>
-            <span>+91 77579 20539</span>
-            <span>+91 87673 31852</span>
+            <span>{siteConfig.contact.primaryNumber}</span>
+            <span>{siteConfig.contact.secondaryNumber}</span>
           </div>
         </GetInTouch>
       </section>
