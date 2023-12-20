@@ -182,6 +182,104 @@ const managementColleges = [
   },
 ];
 
+const engineeringColleges = [
+  {
+    collegeName: 'Symbiosis International University',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Symbiosis-Institute-of-International-Business-SIIB.jpg',
+  },
+  {
+    collegeName: 'D.Y. Patil',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Manipal-University-manipal.jpg',
+  },
+  {
+    collegeName: 'Cummins',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Ajeenkya-DY-Patil-University.jpeg',
+  },
+  {
+    collegeName: 'INDRA',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/VIT-Univerisy.jpg',
+  },
+  {
+    collegeName: 'VIT',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/AMITY.jpg',
+  },
+  {
+    collegeName: 'JSPM',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/mit-world-peace-university-mitwpu-pune-7604.jpg',
+  },
+  {
+    collegeName: 'NMIMS',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/KIET.jpg',
+  },
+  {
+    collegeName: 'MIT World Peace University',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/mit-world-peace-university-mitwpu-pune-7604.jpg',
+  },
+  {
+    collegeName: 'Amity University',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/AMITY.jpg',
+  },
+  {
+    collegeName: 'Bhartiya Vidya Peeth',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Vishkarma-Institute.jpg',
+  },
+  {
+    collegeName: 'Manipal University',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Manipal-University-manipal.jpg',
+  },
+  {
+    collegeName: 'Ajinkya DY Patil University',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Ajeenkya-DY-Patil-University.jpeg',
+  },
+  {
+    collegeName: 'Teerthanker Mahaveer College',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Teerthanker-Mahaveer-College.jpg',
+  },
+  {
+    collegeName: 'Wadia',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Wadia-College-Pune.jpg',
+  },
+  {
+    collegeName: 'Modern College',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Modern-College.jpg',
+  },
+  {
+    collegeName: 'Vidyalankar Institute',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Vidyalankar-Institute.jpg',
+  },
+  {
+    collegeName: 'AISSMS',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/AISSMS.jpg',
+  },
+  {
+    collegeName: 'Vishwakarma Institute',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Vishwakarma-Institute.jpg',
+  },
+  {
+    collegeName: 'SIET Graduate School',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/SIET-Graduate-School.jpg',
+  },
+];
+
 const managementSpecialization = [
   {
     title: 'Product Manager',
@@ -253,67 +351,78 @@ const engineeringBranches = [
     branch: 'Computer Science and Engineering (CSE)',
     overview:
       'Focuses on computer systems, programming, and software development. Around INR 6-10 lakhs per annum.',
-    imageSource: 'your_image_source_url_here',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/18-1.jpg',
   },
   {
     branch: 'Mechanical Engineering',
     overview:
       'Deals with design, manufacturing, and maintenance of mechanical systems. Approximately INR 5-8 lakhs per annum.',
-    imageSource: 'your_image_source_url_here',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/9-1.jpg',
   },
   {
     branch: 'Electrical Engineering',
     overview:
       'Encompasses electrical systems, electronics, and power generation. Ranges from INR 4-7 lakhs per annum.',
-    imageSource: 'your_image_source_url_here',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/7-1.jpg',
   },
   {
     branch: 'Civil Engineering',
     overview:
       'Involves the design and construction of infrastructure and buildings. Typically around INR 4-6 lakhs per annum.',
-    imageSource: 'your_image_source_url_here',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/10-1.jpg',
   },
   {
     branch: 'Electronics and Communication Engineering (ECE)',
     overview:
       'Focuses on electronic circuits, communication systems, and signal processing. Averages between INR 5-9 lakhs per annum.',
-    imageSource: 'your_image_source_url_here',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/1-1.jpg',
   },
   {
     branch: 'Chemical Engineering',
     overview:
       'Deals with the design and optimization of chemical processes. Ranges from INR 4-7 lakhs per annum.',
-    imageSource: 'your_image_source_url_here',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/10-1.jpg',
   },
   {
     branch: 'Aerospace Engineering',
     overview:
       'Involves the design and development of aircraft and spacecraft. Typically around INR 6-12 lakhs per annum.',
-    imageSource: 'your_image_source_url_here',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/17-1.jpg',
   },
   {
     branch: 'Biotechnology Engineering',
     overview:
       'Applies biological principles to develop technology and products. Averages between INR 5-9 lakhs per annum.',
-    imageSource: 'your_image_source_url_here',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/3-1.jpg',
   },
   {
     branch: 'Environmental Engineering',
     overview:
       'Addresses environmental issues by applying engineering principles to develop sustainable solutions. With several years of experience, mid-level environmental engineers can earn between INR 6 to 10 lakhs per annum.',
-    imageSource: 'your_image_source_url_here',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/2-1.jpg',
   },
   {
     branch: 'Industrial Engineering',
     overview:
       'Optimizes complex processes and systems to improve efficiency and productivity. Entry-level industrial engineers can expect an average starting salary ranging from INR 4 to 7 lakhs per annum.',
-    imageSource: 'your_image_source_url_here',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/4-1.jpg',
   },
   {
     branch: 'Materials Engineering',
     overview:
       'Focuses on the development and study of materials with specific properties for various applications. Entry-level materials engineers may receive a starting salary ranging from INR 3.5 to 6 lakhs per annum.',
-    imageSource: 'your_image_source_url_here',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/13-1.jpg',
   },
 ];
 
@@ -514,6 +623,7 @@ const engineeringAdmission: PageInfoProps & {
     Record<'branch' | 'overview' | 'imageSource', string>
   >;
   engineeringAllExam: Array<EngineeringExam>;
+  engineeringColleges: Array<Record<'imageSource' | 'collegeName', string>>;
 } = {
   pageHeaderCaption: 'PROFESSIONAL EDUCATION CONSULTING',
   pageHeaderTitle:
@@ -526,6 +636,7 @@ const engineeringAdmission: PageInfoProps & {
   testimonials: engineeringPageTestimonials,
   engineeringBranches,
   engineeringAllExam,
+  engineeringColleges,
 };
 
 const medicalAdmission: PageInfoProps & {

@@ -1,7 +1,6 @@
 import type { MetaFunction } from '@remix-run/react';
 import { type ActionFunctionArgs } from '@remix-run/node';
 import { Carousel } from '~/components/carousel-old';
-import { FAQ } from '~/components/faq';
 import { Page } from '~/components/page';
 import {
   PageHeader,
@@ -23,6 +22,7 @@ import {
 } from '~/components/ui/card';
 import { medicalAdmission } from '~/data/pages.data';
 import { contactUsAction } from '~/lib/common.action';
+import { StyledHeading2 } from '~/components/typography';
 
 export const meta: MetaFunction = () => {
   return [
@@ -39,6 +39,53 @@ export const action = async (args: ActionFunctionArgs) => contactUsAction(args);
 export default function MedicalAdmissions() {
   return (
     <Page {...medicalAdmission}>
+      <section className="flex flex-col items-center text-center">
+        <PageHeader className="pb-8 items-center">
+          <PageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
+            What Sets Us Apart?
+          </PageHeaderHeading>
+          <PageHeaderDescription className="flex flex-col gap-2">
+            <span>14+ Experience</span>
+            <span>Connected With 100+ Top Colleges</span>
+            <span>5000+ Success Stories</span>
+          </PageHeaderDescription>
+        </PageHeader>
+      </section>
+
+      <section className="md:mt-[8rem] lg:mt-[4rem] flex flex-col items-center pb-8 text-center container m-auto">
+        <StyledHeading2 className="uppercase text-center">
+          Few Words about us
+        </StyledHeading2>
+        <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
+        <PageHeaderDescription className="flex flex-col gap-4">
+          <span>
+            Embark on a transformative journey to medical success by decoding
+            the intricacies of <strong>MBBS admissions</strong> with our expert
+            guidance. Visualize having seasoned{' '}
+            <strong>medical consultants</strong> as your trusted allies,
+            lighting the way through the competitive world of medical
+            admissions.
+          </span>
+          <span>
+            In this nuanced landscape, our guidance becomes the empowering key,
+            allowing you to navigate the process with confidence. Beyond
+            academic excellence, our consultants offer personalized advice,
+            tailored to your unique strengths and aspirations, from selecting
+            the ideal path to meticulously crafting your application. With a
+            commitment to your success, our dedicated team provides
+            comprehensive support throughout the admission journey, offering
+            insights and unwavering assistance to make you stand out.
+          </span>
+          <span>
+            Benefit from the extensive experience of our consultants, rooted in
+            industry knowledge, and join the ranks of successful medical
+            enthusiasts who've entrusted us to guide them to their dream paths.
+            Explore the gateway to your medical dreams today and open the door
+            to your entry into the realm of healing!
+          </span>
+        </PageHeaderDescription>
+      </section>
+
       <section className="flex flex-col items-center pb-8">
         <PageHeader className="pb-8 items-center">
           <p className="uppercase text-center font-bold text-orange-500">
@@ -322,41 +369,6 @@ export default function MedicalAdmissions() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="flex flex-col items-center md:pb-4">
-        <PageHeader className="pb-8 items-center">
-          <p className="uppercase text-center font-bold text-orange-500">
-            COURSES WITHOUT NEET
-          </p>
-          <PageHeaderHeading className="capitalize text-center md:text-left">
-            Top Medical Courses Without NEET
-          </PageHeaderHeading>
-          <PageHeaderDescription>
-            Section Under Development
-          </PageHeaderDescription>
-          <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
-        </PageHeader>
-        <Carousel>
-          {Array.from({ length: 10 }).map((_, index) => (
-            <Card className="border-2 border-[#0C71C3] w-full" key={index}>
-              <CardHeader className="relative h-44 p-0">
-                <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center"></div>
-              </CardHeader>
-              <CardContent className="p-2">
-                <p className="uppercase text-center font-bold text-orange-500">
-                  Biotechnology {index}
-                </p>
-                <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-black md:my-4" />
-                <p className="leading-8">
-                  Technically, a B.Sc in Biotechnology is considered an
-                  engineering-level course and hence, doesn’t require NEET
-                  scores.
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </Carousel>
       </section>
 
       <section className="flex flex-col items-center pb-4 ">

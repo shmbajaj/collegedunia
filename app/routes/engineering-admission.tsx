@@ -7,6 +7,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from '~/components/page-header';
+import { StyledHeading2 } from '~/components/typography';
 import {
   Accordion,
   AccordionContent,
@@ -44,6 +45,43 @@ export default function EngineeringAdmissions() {
     engineeringAdmission.engineeringAllExam.slice(rightHalfStartIndex);
   return (
     <Page {...engineeringAdmission}>
+      <section className="flex flex-col items-center text-center">
+        <PageHeader className="pb-8 items-center">
+          <PageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
+            What Sets Us Apart?
+          </PageHeaderHeading>
+          <PageHeaderDescription className="flex flex-col gap-2">
+            <span>14+ Experience</span>
+            <span>Connected With 100+ Top Colleges</span>
+            <span>5000+ Successful Stories</span>
+          </PageHeaderDescription>
+        </PageHeader>
+      </section>
+
+      <section className="md:mt-[8rem] lg:mt-[4rem] flex flex-col items-center pb-8 text-center container m-auto">
+        <StyledHeading2 className="uppercase text-center">
+          Few Words about us
+        </StyledHeading2>
+        <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
+        <PageHeaderDescription className="flex flex-col gap-4">
+          <span>
+            Welcome to Educom Guidance, we’re specialized Engineering Admission
+            Consultation! Our skilled Engineering Consultants are here to
+            expertly navigate you through the intricate process of securing
+            admission to premier engineering colleges. Whether it's crafting a
+            compelling application or mastering entrance exams, our personalized
+            support maximizes your chances of success. Let our Engineering
+            Consultants assist you in unlocking the doors to your promising
+            future in engineering – reach out to us today!
+          </span>
+          <span>
+            We have Dedicated expert team specialized in management
+            consultation, engineering consultation, medical consultation, and
+            other Courses in India.
+          </span>
+        </PageHeaderDescription>
+      </section>
+
       <section className="flex flex-col items-center pb-8">
         <PageHeader className="pb-8 items-center">
           <p className="uppercase text-center font-bold text-orange-500">
@@ -63,7 +101,20 @@ export default function EngineeringAdmissions() {
           {engineeringAdmission.engineeringBranches.map((branch, index) => (
             <Card className="border-2 border-[#0C71C3] w-full" key={index}>
               <CardHeader className="relative h-44 p-0">
-                <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center"></div>
+                <div className="w-full h-full relative">
+                  <img
+                    src={branch.imageSource}
+                    alt="PageHeader Background"
+                    className={
+                      'w-full h-full object-cover object-center absolute top-0 left-0'
+                    }
+                  />
+                  <div
+                    className={
+                      'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-[#0C71C3]'
+                    }
+                  ></div>
+                </div>
               </CardHeader>
               <CardContent className="p-2">
                 <p className="uppercase text-center font-bold text-orange-500">
@@ -328,29 +379,30 @@ export default function EngineeringAdmissions() {
           <PageHeaderHeading className="capitalize text-center md:text-left">
             Best Engineering Colleges in India
           </PageHeaderHeading>
-          <PageHeaderDescription>
-            Section Under Development
-          </PageHeaderDescription>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
         <Carousel>
-          {Array.from({ length: 10 }).map((_, index) => (
-            <Card className="border-2 border-[#0C71C3] w-full" key={index}>
+          {engineeringAdmission.engineeringColleges.map((college, index) => (
+            <Card className="border-2 border-[#0C71C3] w-56" key={index}>
               <CardHeader className="relative h-44 p-0">
-                <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center"></div>
+                <div className="w-full h-full relative">
+                  <img
+                    src={college.imageSource}
+                    alt="PageHeader Background"
+                    className={
+                      'w-full h-full object-cover object-center absolute top-0 left-0'
+                    }
+                  />
+                  <div
+                    className={
+                      'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-[#0C71C3]'
+                    }
+                  ></div>
+                </div>
               </CardHeader>
               <CardContent className="p-2">
                 <p className="uppercase text-center font-bold text-orange-500">
-                  Telecommunications Engineering {index}
-                </p>
-                <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-black md:my-4" />
-                <p className="leading-8 text-center">
-                  Telecommunications engineering is an intersection of
-                  electrical and computer engineering, providing students the
-                  practical knowledge to work on the interconnections between
-                  networks, telecom systems and cyberspace. With learning about
-                  these components, graduates of telecommunications engineering
-                  are capable of working in a variety of fields.
+                  {college.collegeName}
                 </p>
               </CardContent>
             </Card>
