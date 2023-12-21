@@ -182,6 +182,16 @@ const managementColleges = [
   },
 ];
 
+const managementEntranceExams = [
+  'CAT',
+  'XAT',
+  'GMAT',
+  'CMAT',
+  'MAH CET',
+  'SNAP',
+  'NMAT',
+];
+
 const engineeringColleges = [
   {
     collegeName: 'Symbiosis International University',
@@ -622,7 +632,7 @@ const engineeringAdmission: PageInfoProps & {
   engineeringBranches: Array<
     Record<'branch' | 'overview' | 'imageSource', string>
   >;
-  engineeringAllExam: Array<EngineeringExam>;
+  engineeringAllExam?: Array<EngineeringExam>;
   engineeringColleges: Array<Record<'imageSource' | 'collegeName', string>>;
 } = {
   pageHeaderCaption: 'PROFESSIONAL EDUCATION CONSULTING',
@@ -635,7 +645,6 @@ const engineeringAdmission: PageInfoProps & {
   pageHeaderBackgroundFallbackColor: '#0C71C3',
   testimonials: engineeringPageTestimonials,
   engineeringBranches,
-  engineeringAllExam,
   engineeringColleges,
 };
 
@@ -662,6 +671,7 @@ const managementAdmission: PageInfoProps & {
   managementSpecialization: Array<
     Record<'title' | 'imageSource' | 'subtitle', string>
   >;
+  managementEntranceExams: Array<string>
 } = {
   pageHeaderCaption: 'OUR SERVICES',
   pageHeaderTitle:
@@ -675,6 +685,7 @@ const managementAdmission: PageInfoProps & {
   scope: managementScope,
   managementColleges,
   managementSpecialization,
+  managementEntranceExams
 };
 
 export { engineeringAdmission, medicalAdmission, managementAdmission };

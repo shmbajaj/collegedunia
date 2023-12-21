@@ -1,18 +1,19 @@
 import type { MetaFunction } from '@remix-run/react';
 import { type ActionFunctionArgs } from '@remix-run/node';
 import { Carousel } from '~/components/carousel-old';
-import { LearnMoreCard } from '~/components/learn-more-card';
 import { Page } from '~/components/page';
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
 } from '~/components/page-header';
-import { Card, CardContent, CardHeader } from '~/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card';
 import { managementAdmission } from '~/data/pages.data';
 import { contactUsAction } from '~/lib/common.action';
 import { WalletIcon } from 'lucide-react';
 import { cn } from '~/lib/utils';
+import { managementPageAlbums } from '~/data/album.data';
+import { AlbumArtWork } from '~/components/album-card';
 
 export const meta: MetaFunction = () => {
   return [
@@ -27,18 +28,24 @@ export const meta: MetaFunction = () => {
 export const action = async (args: ActionFunctionArgs) => contactUsAction(args);
 
 export default function ManagementAdmissions() {
+  const {
+    managementColleges,
+    managementSpecialization,
+    managementEntranceExams,
+    ...props
+  } = managementAdmission;
   return (
-    <Page {...managementAdmission}>
+    <Page {...props}>
       <section className="flex flex-col items-center text-center">
         <PageHeader className="pb-8 items-center">
           <PageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
             What Sets Us Apart?
           </PageHeaderHeading>
-          <PageHeaderDescription className="flex flex-col gap-2">
-            <span>14+ Experience</span>
-            <span>Connected With 100+ Top Colleges</span>
-            <span>5000+ Successful Consultation</span>
-          </PageHeaderDescription>
+          <AlbumArtWork
+            albums={managementPageAlbums.whatSetUsApart}
+            className="max-w-2xl"
+          />
+          .
         </PageHeader>
       </section>
 
@@ -114,17 +121,18 @@ export default function ManagementAdmissions() {
           </PageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
-        <div className="container grid md:gap-4 md:grid-cols-2 max-w-5xl">
-          <div>
-            {Array.from({ length: 3 }).map((_, index) => (
-              <LearnMoreCard index={index} key={index} />
-            ))}
-          </div>
-          <div>
-            {Array.from({ length: 3 }).map((_, index) => (
-              <LearnMoreCard index={index} key={index} />
-            ))}
-          </div>
+      </section>
+
+      <section className="bg-educom/90 p-8">
+        <div className="flex flex-wrap max-w-4xl gap-4 m-auto">
+          {managementAdmission.managementEntranceExams.map((exam, index) => (
+            <div
+              className="w-24 h-24 bg-white m-auto shadow-sm text-center text-orange-500 font-semibold text-xl flex items-center justify-center"
+              key={index}
+            >
+              <p>{exam}</p>
+            </div>
+          ))}
         </div>
       </section>
 

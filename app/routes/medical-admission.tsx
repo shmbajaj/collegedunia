@@ -8,13 +8,6 @@ import {
   PageHeaderHeading,
 } from '~/components/page-header';
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '~/components/ui/accordion';
-import { Avatar, AvatarFallback, AvatarImage } from '~/components/ui/avatar';
-import {
   Card,
   CardContent,
   CardFooter,
@@ -23,6 +16,17 @@ import {
 import { medicalAdmission } from '~/data/pages.data';
 import { contactUsAction } from '~/lib/common.action';
 import { StyledHeading2 } from '~/components/typography';
+import { AlbumArtWork } from '~/components/album-card';
+import { medicalPageAlbums } from '~/data/album.data';
+const medicinePrograms = [
+  'Medicine (MBBS): Bachelor of Medicine, Bachelor of Surgery',
+  'Ayurveda (BAMS): Bachelor of Ayurvedic Medicine and Surgery',
+  'Homeopathy (BHMS): Bachelor of Homeopathic Medicine and Surgery',
+  'Pharmacy (BPharm): Bachelor of Pharmacy',
+  'Dentistry (BDS): Bachelor of Dental Surgery',
+  'Nursing (BSc Nursing): Bachelor of Science in Nursing',
+  'Medical Laboratory Technology (BMLT): Bachelor of Medical Laboratory Technology',
+];
 
 export const meta: MetaFunction = () => {
   return [
@@ -44,11 +48,11 @@ export default function MedicalAdmissions() {
           <PageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
             What Sets Us Apart?
           </PageHeaderHeading>
-          <PageHeaderDescription className="flex flex-col gap-2">
-            <span>14+ Experience</span>
-            <span>Connected With 100+ Top Colleges</span>
-            <span>5000+ Success Stories</span>
-          </PageHeaderDescription>
+          <AlbumArtWork
+            albums={medicalPageAlbums.whatSetUsApart}
+            className="max-w-2xl"
+          />
+          .
         </PageHeader>
       </section>
 
@@ -103,271 +107,18 @@ export default function MedicalAdmissions() {
             in the medical industry.
           </PageHeaderDescription>
         </PageHeader>
+      </section>
 
-        <div className="mb-4">
-          <h2 className="text-xl font-bold leading-tight tracking-tighter md:text-2xl lg:leading-[1.1] mb-8 text-center">
-            <span className="text-orange-500">Undergraduate&nbsp;</span>
-            <span>Medical&nbsp;Courses</span>
-          </h2>
-          <div className="container grid md:gap-4 md:grid-cols-2 max-w-5xl">
-            <div>
-              <Card className="flex-col text-base mb-4">
-                <CardContent className="flex gap-4 bg-gray-100/50 text-center p-4 font-semibold">
-                  <Avatar className="md:h-20 md:w-20 lg:h-36 lg:w-36 md:rounded-none">
-                    <AvatarImage
-                      src="https://github.com/shadcn.png"
-                      alt="@shadcn"
-                    />
-                    <AvatarFallback>CN</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="font-bold text-orange-500 capitalize">
-                      MBBS
-                    </div>
-                    <div className="text-gray-500 leading-8">
-                      MBBS is often considered the primary medical degree course
-                      in India. MBBS stands for Bachelor of Medicine and
-                      Bachelor of Surgery and is a professional medical degree
-                      awarded by universities and medical institutes around
-                      India.
-                    </div>
-                  </div>
-                </CardContent>
-                <CardFooter className="bg-white w-full px-6 py-0">
-                  <Accordion
-                    type="single"
-                    collapsible
-                    className="w-full border-b-0"
-                  >
-                    <AccordionItem value={'MBBS'} className="border-b-0">
-                      <AccordionTrigger>Learn More</AccordionTrigger>
-                      <AccordionContent className="grid gap-4 text-base text-gray-500">
-                        <p>
-                          MBBS (Bachelor of Medicine, Bachelor of Surgery) is a
-                          five to six year undergraduate medical course that
-                          focuses on training candidates to become efficient
-                          medical professionals in the future.
-                        </p>
-                        <p>What you will achieve by getting MBBS Admission?</p>
-                        <p>
-                          The programme entails learning about the diagnosis and
-                          treatment of various illnesses, as well as staying
-                          up-to-date with all National and International health
-                          standards and policies. It also includes developing
-                          research skills for newly mutating diseases and being
-                          aware of medical ethics for research work, patient
-                          care and day-to-day service.
-                        </p>
-                        <p>
-                          Additionally, students learn good oral and written
-                          communication skills which are vital for successful
-                          medical practice in the future. Overall, with this
-                          programme candidates gain basic knowledge that will
-                          help them choose their specialization once completing
-                          their studies.
-                        </p>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                </CardFooter>
-              </Card>
+      <section className="bg-educom/90 p-8">
+        <div className="flex flex-wrap max-w-4xl gap-4 m-auto">
+          {medicinePrograms.map((program, index) => (
+            <div
+              className="w-64 h-64 bg-white m-auto shadow-sm text-center text-orange-500 font-semibold text-xl flex items-center justify-center"
+              key={index}
+            >
+              <p>{program}</p>
             </div>
-            <div>
-              <Card className="flex-col text-base mb-4">
-                <CardContent className="flex gap-4 bg-gray-100/50 text-center p-4 font-semibold">
-                  <Avatar className="md:h-20 md:w-20 lg:h-36 lg:w-36 md:rounded-none">
-                    <AvatarImage
-                      src="https://github.com/shadcn.png"
-                      alt="@shadcn"
-                    />
-                    <AvatarFallback>CN</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="font-bold text-orange-500 capitalize">
-                      BDS
-                    </div>
-                    <div className="text-gray-500 leading-8">
-                      MBBS is often considered the primary medical degree course
-                      in India. MBBS stands for Bachelor of Medicine and
-                      Bachelor of Surgery and is a professional medical degree
-                      awarded by universities and medical institutes around
-                      India.
-                    </div>
-                  </div>
-                </CardContent>
-                <CardFooter className="bg-white w-full px-6 py-0">
-                  <Accordion
-                    type="single"
-                    collapsible
-                    className="w-full border-b-0"
-                  >
-                    <AccordionItem value={'BDS'} className="border-b-0">
-                      <AccordionTrigger>Learn More</AccordionTrigger>
-                      <AccordionContent className="grid gap-4 text-base text-gray-500">
-                        <p>
-                          MBBS (Bachelor of Medicine, Bachelor of Surgery) is a
-                          five to six year undergraduate medical course that
-                          focuses on training candidates to become efficient
-                          medical professionals in the future.
-                        </p>
-                        <p>What you will achieve by getting MBBS Admission?</p>
-                        <p>
-                          The programme entails learning about the diagnosis and
-                          treatment of various illnesses, as well as staying
-                          up-to-date with all National and International health
-                          standards and policies. It also includes developing
-                          research skills for newly mutating diseases and being
-                          aware of medical ethics for research work, patient
-                          care and day-to-day service.
-                        </p>
-                        <p>
-                          Additionally, students learn good oral and written
-                          communication skills which are vital for successful
-                          medical practice in the future. Overall, with this
-                          programme candidates gain basic knowledge that will
-                          help them choose their specialization once completing
-                          their studies.
-                        </p>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                </CardFooter>
-              </Card>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h2 className="text-xl font-bold leading-tight tracking-tighter md:text-2xl lg:leading-[1.1] mb-8 text-center">
-            <span className="text-orange-500">Postgraduate&nbsp;</span>
-            <span>Medical&nbsp;Courses</span>
-          </h2>
-          <div className="container grid md:gap-4 md:grid-cols-2 max-w-5xl">
-            <div>
-              <Card className="flex-col text-base mb-4">
-                <CardContent className="flex gap-4 bg-gray-100/50 text-center p-4 font-semibold">
-                  <Avatar className="md:h-20 md:w-20 lg:h-36 lg:w-36 md:rounded-none">
-                    <AvatarImage
-                      src="https://github.com/shadcn.png"
-                      alt="@shadcn"
-                    />
-                    <AvatarFallback>CN</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="font-bold text-orange-500 capitalize">
-                      MBBS
-                    </div>
-                    <div className="text-gray-500 leading-8">
-                      MBBS is often considered the primary medical degree course
-                      in India. MBBS stands for Bachelor of Medicine and
-                      Bachelor of Surgery and is a professional medical degree
-                      awarded by universities and medical institutes around
-                      India.
-                    </div>
-                  </div>
-                </CardContent>
-                <CardFooter className="bg-white w-full px-6 py-0">
-                  <Accordion
-                    type="single"
-                    collapsible
-                    className="w-full border-b-0"
-                  >
-                    <AccordionItem value={'MBBS'} className="border-b-0">
-                      <AccordionTrigger>Learn More</AccordionTrigger>
-                      <AccordionContent className="grid gap-4 text-base text-gray-500">
-                        <p>
-                          MBBS (Bachelor of Medicine, Bachelor of Surgery) is a
-                          five to six year undergraduate medical course that
-                          focuses on training candidates to become efficient
-                          medical professionals in the future.
-                        </p>
-                        <p>What you will achieve by getting MBBS Admission?</p>
-                        <p>
-                          The programme entails learning about the diagnosis and
-                          treatment of various illnesses, as well as staying
-                          up-to-date with all National and International health
-                          standards and policies. It also includes developing
-                          research skills for newly mutating diseases and being
-                          aware of medical ethics for research work, patient
-                          care and day-to-day service.
-                        </p>
-                        <p>
-                          Additionally, students learn good oral and written
-                          communication skills which are vital for successful
-                          medical practice in the future. Overall, with this
-                          programme candidates gain basic knowledge that will
-                          help them choose their specialization once completing
-                          their studies.
-                        </p>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                </CardFooter>
-              </Card>
-            </div>
-            <div>
-              <Card className="flex-col text-base mb-4">
-                <CardContent className="flex gap-4 bg-gray-100/50 text-center p-4 font-semibold">
-                  <Avatar className="md:h-20 md:w-20 lg:h-36 lg:w-36 md:rounded-none">
-                    <AvatarImage
-                      src="https://github.com/shadcn.png"
-                      alt="@shadcn"
-                    />
-                    <AvatarFallback>CN</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="font-bold text-orange-500 capitalize">
-                      BDS
-                    </div>
-                    <div className="text-gray-500 leading-8">
-                      MBBS is often considered the primary medical degree course
-                      in India. MBBS stands for Bachelor of Medicine and
-                      Bachelor of Surgery and is a professional medical degree
-                      awarded by universities and medical institutes around
-                      India.
-                    </div>
-                  </div>
-                </CardContent>
-                <CardFooter className="bg-white w-full px-6 py-0">
-                  <Accordion
-                    type="single"
-                    collapsible
-                    className="w-full border-b-0"
-                  >
-                    <AccordionItem value={'BDS'} className="border-b-0">
-                      <AccordionTrigger>Learn More</AccordionTrigger>
-                      <AccordionContent className="grid gap-4 text-base text-gray-500">
-                        <p>
-                          MBBS (Bachelor of Medicine, Bachelor of Surgery) is a
-                          five to six year undergraduate medical course that
-                          focuses on training candidates to become efficient
-                          medical professionals in the future.
-                        </p>
-                        <p>What you will achieve by getting MBBS Admission?</p>
-                        <p>
-                          The programme entails learning about the diagnosis and
-                          treatment of various illnesses, as well as staying
-                          up-to-date with all National and International health
-                          standards and policies. It also includes developing
-                          research skills for newly mutating diseases and being
-                          aware of medical ethics for research work, patient
-                          care and day-to-day service.
-                        </p>
-                        <p>
-                          Additionally, students learn good oral and written
-                          communication skills which are vital for successful
-                          medical practice in the future. Overall, with this
-                          programme candidates gain basic knowledge that will
-                          help them choose their specialization once completing
-                          their studies.
-                        </p>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                </CardFooter>
-              </Card>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 

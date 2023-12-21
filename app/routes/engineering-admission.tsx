@@ -1,5 +1,6 @@
 import { type ActionFunctionArgs } from '@remix-run/node';
 import type { MetaFunction } from '@remix-run/react';
+import { AlbumArtWork } from '~/components/album-card';
 import { Carousel } from '~/components/carousel-old';
 import { Page } from '~/components/page';
 import {
@@ -8,19 +9,8 @@ import {
   PageHeaderHeading,
 } from '~/components/page-header';
 import { StyledHeading2 } from '~/components/typography';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '~/components/ui/accordion';
-import { Avatar, AvatarFallback, AvatarImage } from '~/components/ui/avatar';
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from '~/components/ui/card';
+import { Card, CardContent, CardHeader } from '~/components/ui/card';
+import { engineeringPageAlbums } from '~/data/album.data';
 import { engineeringAdmission } from '~/data/pages.data';
 import { contactUsAction } from '~/lib/common.action';
 
@@ -37,24 +27,20 @@ export const meta: MetaFunction = () => {
 export const action = async (args: ActionFunctionArgs) => contactUsAction(args);
 
 export default function EngineeringAdmissions() {
-  const mid = engineeringAdmission.engineeringAllExam.length / 2;
-  const rightHalfStartIndex = mid - (mid % 1);
-  const engineeringAllExamLeftHalf =
-    engineeringAdmission.engineeringAllExam.slice(0, rightHalfStartIndex);
-  const engineeringAllExamRightHalf =
-    engineeringAdmission.engineeringAllExam.slice(rightHalfStartIndex);
+  const {
+    engineeringBranches,
+    engineeringColleges,
+    engineeringAllExam,
+    ...props
+  } = engineeringAdmission;
   return (
-    <Page {...engineeringAdmission}>
+    <Page {...props}>
       <section className="flex flex-col items-center text-center">
         <PageHeader className="pb-8 items-center">
           <PageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
             What Sets Us Apart?
           </PageHeaderHeading>
-          <PageHeaderDescription className="flex flex-col gap-2">
-            <span>14+ Experience</span>
-            <span>Connected With 100+ Top Colleges</span>
-            <span>5000+ Successful Stories</span>
-          </PageHeaderDescription>
+          <AlbumArtWork albums={engineeringPageAlbums.whatSetUsApart} className='max-w-2xl' />.
         </PageHeader>
       </section>
 
@@ -138,236 +124,11 @@ export default function EngineeringAdmissions() {
           </PageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
-        <div className="container grid md:gap-4 md:grid-cols-2 max-w-5xl">
-          <div>
-            {engineeringAllExamLeftHalf.map((exam, index) => (
-              <Card className="flex-col text-base mb-4" key={index}>
-                <CardContent className="flex gap-4 bg-gray-100/50 text-center p-4 font-semibold">
-                  <Avatar>
-                    <AvatarImage src={exam.imageSource} alt={exam.name} />
-                    <AvatarFallback>CN</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="font-bold text-blue-500 capitalize">
-                      {exam.name}
-                    </div>
-                    <div className="text-gray-500 leading-8">
-                      {exam.description}
-                    </div>
-                  </div>
-                </CardContent>
-                <CardFooter className="bg-white w-full px-6 py-0">
-                  <Accordion
-                    type="single"
-                    collapsible
-                    className="w-full border-b-0"
-                  >
-                    <AccordionItem
-                      value={`item-${index}`}
-                      className="border-b-0"
-                    >
-                      <AccordionTrigger>Learn More</AccordionTrigger>
-                      <AccordionContent className="grid gap-4 text-base text-gray-500">
-                        <p>{exam.learnMore.content}</p>
-                        <p>
-                          <strong>Age:&nbsp;</strong>
-                          {exam.learnMore?.age ??
-                            exam.learnMore.eligibility?.age}
-                        </p>
-                        <p>
-                          <strong>Qualification:&nbsp;</strong>
-                          {exam.learnMore?.qualification}
-                          {exam.learnMore.eligibility?.qualification && (
-                            <p className="flex flex-col gap-4">
-                              {Object.entries(
-                                exam.learnMore.eligibility?.qualification ?? {}
-                              ).map(([key, value], index) => (
-                                <span key={index}>
-                                  {key}:&nbsp; {value}
-                                </span>
-                              ))}
-                            </p>
-                          )}
-                        </p>
-                        {exam.learnMore.compulsorySubjects && (
-                          <p>
-                            <strong>Compulsory Subjects:&nbsp;</strong>
-                            {exam.learnMore.compulsorySubjects}
-                          </p>
-                        )}
-                        {exam.learnMore.lateralEntryAvailableFor && (
-                          <>
-                            <p>
-                              <strong>
-                                Lateral Entry Available for:&nbsp;
-                              </strong>
-                            </p>
-                            <p className="flex flex-col gap-4">
-                              {exam.learnMore.lateralEntryAvailableFor.map(
-                                (item, index) => (
-                                  <span key={index}>{item}</span>
-                                )
-                              )}
-                            </p>
-                          </>
-                        )}
-                        {exam.learnMore.numberOfAttempts && (
-                          <p>
-                            <strong>Number Of Attempts:&nbsp;</strong>
-                            {exam.learnMore.numberOfAttempts}
-                          </p>
-                        )}
-                        {exam.learnMore.collegesCovered && (
-                          <>
-                            <p>
-                              <strong>Colleges Covered:&nbsp;</strong>
-                            </p>
-                            <p className="flex flex-col gap-4">
-                              {exam.learnMore.collegesCovered.map(
-                                (item, index) => (
-                                  <span key={index}>{item}</span>
-                                )
-                              )}
-                            </p>
-                          </>
-                        )}
-                        <p>
-                          <strong>Subjects In Paper:&nbsp;</strong>
-                          {exam.learnMore.subjectsInPaper}
-                        </p>
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-          <div>
-            {engineeringAllExamRightHalf.map((exam, index) => (
-              <Card className="flex-col text-base mb-4" key={index}>
-                <CardContent className="flex gap-4 bg-gray-100/50 text-center p-4 font-semibold">
-                  <Avatar>
-                    <AvatarImage src={exam.imageSource} alt={exam.name} />
-                    <AvatarFallback>CN</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="font-bold text-blue-500 capitalize">
-                      {exam.name}
-                    </div>
-                    <div className="text-gray-500 leading-8">
-                      {exam.description}
-                    </div>
-                  </div>
-                </CardContent>
-                <CardFooter className="bg-white w-full px-6 py-0">
-                  <Accordion
-                    type="single"
-                    collapsible
-                    className="w-full border-b-0"
-                  >
-                    <AccordionItem
-                      value={`item-${index}`}
-                      className="border-b-0"
-                    >
-                      <AccordionTrigger>Learn More</AccordionTrigger>
-                      <AccordionContent className="grid gap-4 text-base text-gray-500">
-                        <p>{exam.learnMore.content}</p>
-                        {(exam.learnMore?.age ||
-                          exam.learnMore?.eligibility?.age) && (
-                          <p>
-                            <strong>Age:&nbsp;</strong>
-                            {exam.learnMore?.age ??
-                              exam.learnMore.eligibility?.age}
-                          </p>
-                        )}
-                        {(exam.learnMore.qualification ||
-                          exam.learnMore.eligibility?.qualification) && (
-                          <p>
-                            <strong>Qualification:&nbsp;</strong>
-                            {exam.learnMore?.qualification}
-                            {Array.isArray(
-                              exam.learnMore.eligibility?.qualification
-                            ) &&
-                              exam.learnMore.eligibility?.qualification && (
-                                <p className="flex flex-col gap-4">
-                                  {Object.entries(
-                                    exam.learnMore.eligibility?.qualification ??
-                                      {}
-                                  ).map(([key, value], index) => (
-                                    <span key={index}>
-                                      {key}:&nbsp; {value}
-                                    </span>
-                                  ))}
-                                </p>
-                              )}
-
-                            {!Array.isArray(
-                              exam.learnMore.eligibility?.qualification
-                            ) && (
-                              <span>
-                                {
-                                  exam.learnMore.eligibility
-                                    ?.qualification as String
-                                }
-                              </span>
-                            )}
-                          </p>
-                        )}
-                        {exam.learnMore.compulsorySubjects && (
-                          <p>
-                            <strong>Compulsory Subjects:&nbsp;</strong>
-                            {exam.learnMore.compulsorySubjects}
-                          </p>
-                        )}
-                        {exam.learnMore.lateralEntryAvailableFor && (
-                          <>
-                            <p>
-                              <strong>
-                                Lateral Entry Available for:&nbsp;
-                              </strong>
-                            </p>
-                            <p className="flex flex-col gap-4">
-                              {exam.learnMore.lateralEntryAvailableFor.map(
-                                (item, index) => (
-                                  <span key={index}>{item}</span>
-                                )
-                              )}
-                            </p>
-                          </>
-                        )}
-                        {exam.learnMore.numberOfAttempts && (
-                          <p>
-                            <strong>Number Of Attempts:&nbsp;</strong>
-                            {exam.learnMore.numberOfAttempts}
-                          </p>
-                        )}
-                        {exam.learnMore.collegesCovered && (
-                          <>
-                            <p>
-                              <strong>Colleges Covered:&nbsp;</strong>
-                            </p>
-                            <p className="flex flex-col gap-4">
-                              {exam.learnMore.collegesCovered.map(
-                                (item, index) => (
-                                  <span key={index}>{item}</span>
-                                )
-                              )}
-                            </p>
-                          </>
-                        )}
-                        {exam.learnMore.subjectsInPaper && (
-                          <p>
-                            <strong>Subjects In Paper:&nbsp;</strong>
-                            {exam.learnMore.subjectsInPaper}
-                          </p>
-                        )}
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
+        <div className="container grid md:gap-4  max-w-2xl">
+          <AlbumArtWork
+            albums={engineeringPageAlbums.exams}
+            className="m-auto text-center"
+          />
         </div>
       </section>
 

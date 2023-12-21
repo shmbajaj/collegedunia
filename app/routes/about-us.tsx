@@ -10,6 +10,7 @@ import aboutPageHeader from 'app/images/educom-about-us-page-pageheader.jpeg';
 import { siteConfig } from '~/config/site';
 import { WhyChooseUs } from '~/pages/index/components/why-choose-us';
 import { StyledHeading2 } from '~/components/typography';
+import { aboutUsPageWhyChooseUsAlbums } from '~/data/album.data';
 
 export const meta: MetaFunction = () => {
   return [{ title: 'About Us' }];
@@ -200,14 +201,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <WhyChooseUs>
-        <span className="flex flex-col gap-2">
-          <span>14+ Experience</span>
-          <span>Connected With 100+ Top Colleges</span>
-          <span>5000+ Success Stories</span>
-          <span>Various Courses</span>
-        </span>
-      </WhyChooseUs>
+      <WhyChooseUs albums={aboutUsPageWhyChooseUsAlbums} />
 
       <section className="md:mt-[8rem] lg:mt-[4rem] flex flex-col items-center pb-8 text-center container m-auto">
         <StyledHeading2 className="uppercase text-center">
