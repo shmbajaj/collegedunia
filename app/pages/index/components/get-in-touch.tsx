@@ -22,7 +22,7 @@ export function GetInTouch({
         GET IN TOUCH
       </PageHeaderHeading>
       <div className="flex flex-col md:flex-row gap-4">
-        <GetInTouchForm className="flex-1" id="get-in-touch-form" />
+        <GetInTouchForm className="flex-1" />
         {showContactInfo && (
           <div className="flex-1">
             <div className="p-4 lg:p-12 bg-educom border-t-8 border-orange-500 text-white flex flex-col gap-2 text-center font-semibold h-max">

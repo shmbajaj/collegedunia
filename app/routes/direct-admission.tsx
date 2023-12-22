@@ -36,13 +36,14 @@ export default function DirectAdmission() {
         <p className="capitalize font-bold text-orange-500">
           DON’T SETTLE FOR LESS
         </p>
-        <PageHeaderHeading className="capitalize">
+        <PageHeaderHeading className="capitalize text-center">
           Free Admission Consultation
         </PageHeaderHeading>
         <PageHeaderDescription className="leading-8 text-center">
           <span className="leading-6">
             {`${siteConfig.name} Pvt. Ltd. is a company dedicated to education consultants for personalized guidance.`}
-          </span>&nbsp;
+          </span>
+          &nbsp;
           <span className="leading-6">
             We specialize in providing expert guidance with a rich legacy of 14
             years of experience. Our focus areas include MBA consultation,

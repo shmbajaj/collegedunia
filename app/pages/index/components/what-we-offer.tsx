@@ -1,10 +1,3 @@
-import {
-  BookTextIcon,
-  HeartHandshakeIcon,
-  HelpCircleIcon,
-  LightbulbIcon,
-  MessageCircleIcon,
-} from 'lucide-react';
 import { PageHeader, PageHeaderHeading } from '~/components/page-header';
 import {
   Card,
@@ -12,6 +5,11 @@ import {
   CardHeader,
   CardTitle,
 } from '~/components/ui/card';
+import admissionSupport from '~/images/what-we-offer-admission-support.jpeg';
+import carrerCounseling from '~/images/what-we-offer-carrer-counseling.jpeg';
+import continuousSupport from '~/images/what-we-offer-continuous-support.jpeg';
+import personalizedCounseling from '~/images/what-we-offer-personalized-counseling.jpeg';
+import admissionAssitance from '~/images/what-we-offer-post-admission-assitance.jpeg';
 
 export function WhatWeOffer() {
   return (
@@ -28,8 +26,18 @@ export function WhatWeOffer() {
       <article className="grid lg:grid-cols-2 max-w-lg gap-4 p-4 lg:max-w-5xl">
         <Card className="p-4 flex flex-col text-center shadow-md lg:p-6">
           <CardHeader className="items-center gap-4">
-            <div className="bg-orange-500 rounded-full p-4 w-20 h-20 pb-4 flex items-center">
-              <MessageCircleIcon className="text-white w-12 h-12" />
+            <div className="rounded-full w-20 h-20 pb-4 flex items-center">
+              <div className="overflow-hidden rounded-md">
+                <img
+                  src={carrerCounseling}
+                  alt={'Career Counseling'}
+                  width={150}
+                  height={150}
+                  className={
+                    'h-auto w-auto object-cover transition-all hover:scale-105 m-auto aspect-square'
+                  }
+                />
+              </div>
             </div>
             <CardTitle className="uppercase">​Career Counseling</CardTitle>
           </CardHeader>
@@ -42,8 +50,18 @@ export function WhatWeOffer() {
         </Card>
         <Card className="p-4 flex flex-col text-center shadow-xl lg:p-6">
           <CardHeader className="items-center gap-4">
-            <div className="bg-orange-500 rounded-full p-4 w-24 h-24 pb-4 flex items-center">
-              <LightbulbIcon className="text-white w-16 h-16" />
+            <div className="rounded-full w-20 h-20 pb-4 flex items-center">
+              <div className="overflow-hidden rounded-md">
+                <img
+                  src={personalizedCounseling}
+                  alt={'Personalized Consultation'}
+                  width={150}
+                  height={150}
+                  className={
+                    'h-auto w-auto object-cover transition-all hover:scale-105 m-auto aspect-square'
+                  }
+                />
+              </div>
             </div>
             <CardTitle className="uppercase">
               Personalized Consultation
@@ -59,8 +77,18 @@ export function WhatWeOffer() {
         </Card>
         <Card className="p-4 flex flex-col text-center shadow-md lg:p-6">
           <CardHeader className="items-center gap-4">
-            <div className="bg-orange-500 rounded-full p-4 w-20 h-20 pb-4 flex items-center">
-              <BookTextIcon className="text-white w-12 h-12" />
+            <div className="rounded-full w-20 h-20 pb-4 flex items-center">
+              <div className="overflow-hidden rounded-md">
+                <img
+                  src={admissionSupport}
+                  alt={'ADMISSION Support'}
+                  width={150}
+                  height={150}
+                  className={
+                    'h-auto w-auto object-cover transition-all hover:scale-105 m-auto aspect-square'
+                  }
+                />
+              </div>
             </div>
             <CardTitle className="uppercase">ADMISSION Support</CardTitle>
           </CardHeader>
@@ -73,8 +101,18 @@ export function WhatWeOffer() {
         </Card>
         <Card className="p-4 flex flex-col text-center shadow-md lg:p-6">
           <CardHeader className="items-center gap-4">
-            <div className="bg-orange-500 rounded-full p-4 w-20 h-20 pb-4 flex items-center">
-              <HelpCircleIcon className="text-white w-12 h-12" />
+            <div className="rounded-full w-20 h-20 pb-4 flex items-center">
+              <div className="overflow-hidden rounded-md">
+                <img
+                  src={admissionAssitance}
+                  alt={' Post-Admission Assistance'}
+                  width={150}
+                  height={150}
+                  className={
+                    'h-auto w-auto object-cover transition-all hover:scale-105 m-auto aspect-square'
+                  }
+                />
+              </div>
             </div>
             <CardTitle className="uppercase">
               Post-Admission Assistance
@@ -87,8 +125,18 @@ export function WhatWeOffer() {
         </Card>
         <Card className="p-4 flex flex-col text-center shadow-md lg:p-6 lg:col-span-2">
           <CardHeader className="items-center gap-4">
-            <div className="bg-orange-500 rounded-full p-4 w-20 h-20 pb-4 flex items-center">
-              <HeartHandshakeIcon className="text-white w-12 h-12" />
+            <div className="rounded-full w-20 h-20 pb-4 flex items-center">
+              <div className="overflow-hidden rounded-md">
+                <img
+                  src={continuousSupport}
+                  alt={'Continuous Support'}
+                  width={150}
+                  height={150}
+                  className={
+                    'h-auto w-auto object-cover transition-all hover:scale-105 m-auto aspect-square'
+                  }
+                />
+              </div>
             </div>
             <CardTitle className="uppercase">Continuous Support</CardTitle>
           </CardHeader>

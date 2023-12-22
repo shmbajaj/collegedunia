@@ -16,7 +16,7 @@ import { GetInTouchFormSchema } from '~/data/schema';
 import type { GetInTouchFormInput } from '~/pages/index/components/get-in-touch-form';
 import homePageHeader from 'app/images/educom-home-page-pageheader.jpeg';
 import { homePageTestimonials } from '~/data/testimonials.data';
-import thumbnail from '~/images/educom-home-page-article.jpeg';
+import thumbnail from '~/images/about-us.jpeg';
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const { data, errors } = await validationAction<GetInTouchFormInput>({
@@ -44,14 +44,6 @@ export default function Index() {
               className={cn(buttonVariants({ className: 'text-center' }))}
             >
               Get Started
-            </Link>
-            <Link
-              to="/services"
-              className={cn(
-                buttonVariants({ variant: 'outline', className: 'text-center' })
-              )}
-            >
-              Learn More
             </Link>
           </div>
         </PageHeader>
@@ -98,7 +90,11 @@ export default function Index() {
           </PageHeaderDescription>
         </PageHeader>
         <div className="lg:max-w-md">
-          <img src={thumbnail} alt="Why Choose Us Article Thumbnail" />
+          <img
+            src={thumbnail}
+            alt="Why Choose Us Article Thumbnail"
+            className="aspect-square"
+          />
         </div>
       </section>
       <WhatWeOffer />

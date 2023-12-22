@@ -41,18 +41,20 @@ export const meta: MetaFunction = () => {
 export const action = async (args: ActionFunctionArgs) => contactUsAction(args);
 
 export default function MedicalAdmissions() {
+  const { medicalColleges, medicalEntrances, ...props } = medicalAdmission;
   return (
-    <Page {...medicalAdmission}>
+    <Page {...props}>
       <section className="flex flex-col items-center text-center">
         <PageHeader className="pb-8 items-center">
           <PageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
             What Sets Us Apart?
           </PageHeaderHeading>
-          <AlbumArtWork
-            albums={medicalPageAlbums.whatSetUsApart}
-            className="max-w-2xl"
-          />
-          .
+          <div className="max-w-2xl">
+            <AlbumArtWork
+              albums={medicalPageAlbums.whatSetUsApart}
+              className="w-full"
+            />
+          </div>
         </PageHeader>
       </section>
 
@@ -141,7 +143,20 @@ export default function MedicalAdmissions() {
                   key={index}
                 >
                   <CardHeader className="relative h-44 p-0">
-                    <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center"></div>
+                    <div className="w-full h-full relative">
+                      <img
+                        src={entrance.imageSource}
+                        alt="PageHeader Background"
+                        className={
+                          'w-full h-full object-cover object-center absolute top-0 left-0'
+                        }
+                      />
+                      <div
+                        className={
+                          'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
+                        }
+                      ></div>
+                    </div>
                   </CardHeader>
                   <CardContent className="p-2">
                     <p className="uppercase text-center font-bold text-orange-500">
@@ -182,7 +197,20 @@ export default function MedicalAdmissions() {
               key={index}
             >
               <CardHeader className="relative h-44 p-0">
-                <div className="w-full h-full bg-[#0C71C3] bg-[url('https://catalysteducations.com/wp-content/uploads/2022/12/edit-3-1-scaled.jpg')] bg-no-repeat bg-cover bg-center"></div>
+                <div className="w-full h-full relative">
+                  <img
+                    src={college.imageSource}
+                    alt="PageHeader Background"
+                    className={
+                      'w-full h-full object-cover object-center absolute top-0 left-0'
+                    }
+                  />
+                  <div
+                    className={
+                      'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
+                    }
+                  ></div>
+                </div>
               </CardHeader>
               <CardContent className="p-2 text-center">
                 <p className="uppercase text-center font-bold text-orange-500">

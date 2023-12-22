@@ -1,10 +1,12 @@
 import { Link } from '@remix-run/react';
+import React from 'react';
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
 } from '~/components/page-header';
 import { buttonVariants } from '~/components/ui/button';
+import { useIsVisible } from '~/hooks/useIsVisible';
 import { cn } from '~/lib/utils';
 import { GetInTouch } from '~/pages/index/components/get-in-touch';
 import { OurConsultingServices } from '~/pages/index/components/our-consulting-services';
@@ -35,6 +37,8 @@ export function Page({
   showDescription = false,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & PageInfoProps) {
+  const getInTouchFormRef = React.useRef<HTMLElement | null>(null);
+  const isGetInTouchFormVisible = useIsVisible(getInTouchFormRef);
   return (
     <div className={cn('relative', className)} {...props}>
       <section className="relative h-[580px]">
@@ -50,10 +54,13 @@ export function Page({
             <Link
               to={pageHeaderTo}
               className={cn(
-                buttonVariants({ variant: 'outline', className: 'text-center' })
+                buttonVariants({
+                  variant: 'outline',
+                  className: 'text-center scroll-smooth',
+                })
               )}
             >
-              Apply Now
+              Click to Claim Your Free Admission Consult Now!
             </Link>
           </div>
         </PageHeader>
@@ -88,7 +95,14 @@ export function Page({
         <OurConsultingServices showDescription={showDescription} />
       </section>
 
-      <section className="mx-4 my-auto mb-4">
+      <section
+        ref={getInTouchFormRef}
+        className={cn('mx-4 my-auto mb-4 transition ease-in duration-700', {
+          'opacity-0': !isGetInTouchFormVisible,
+          'opacity-100': isGetInTouchFormVisible,
+        })}
+        id="get-in-touch-form"
+      >
         <GetInTouch showContactInfo></GetInTouch>
       </section>
     </div>

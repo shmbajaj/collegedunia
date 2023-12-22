@@ -130,7 +130,7 @@ export function SiteFooter() {
                 title="catalysteducations"
                 width="100%"
                 height="100%"
-                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Catalyst%20Education%20Consultancy,%20Hinjawadi%20Rd,%20Shankar%20Kalat%20Nagar,%20Wakad,%20Pune,%20Pimpri-Chinchwad,%20Maharashtra%20411057+(Catalyst%20Education%20Consultancy%20)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=5th%20Floor,%20Dhananjay%20Plaza,%20near%20Chellaram%20Diabetes%20Hospital,%20Bavdhan,%20Pune,%20Maharashtra%20411021)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
               ></iframe>
             </div>
           </div>
@@ -138,8 +138,8 @@ export function SiteFooter() {
 
         <div className="col-span-full">
           <p className="text-center leading-loose md:text-left">
-            {`Copyright © ${siteConfig.year}`}{' '}
-            <span className="font-medium">{siteConfig.name}</span> | Powered by{' '}
+            {`Copyright © ${siteConfig.year}`}
+            <span className="font-medium">{siteConfig.name}</span> | Powered by
             <a
               href={siteConfig.poweredBy.link}
               target="_blank"

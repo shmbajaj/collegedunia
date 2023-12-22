@@ -36,11 +36,17 @@ export default function EngineeringAdmissions() {
   return (
     <Page {...props}>
       <section className="flex flex-col items-center text-center">
-        <PageHeader className="pb-8 items-center">
+        <PageHeader className="pb-6 items-center">
           <PageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
             What Sets Us Apart?
           </PageHeaderHeading>
-          <AlbumArtWork albums={engineeringPageAlbums.whatSetUsApart} className='max-w-2xl' />.
+          <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
+          <div className="max-w-2xl">
+            <AlbumArtWork
+              albums={engineeringPageAlbums.whatSetUsApart}
+              className="w-full"
+            />
+          </div>
         </PageHeader>
       </section>
 
@@ -97,7 +103,7 @@ export default function EngineeringAdmissions() {
                   />
                   <div
                     className={
-                      'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-[#0C71C3]'
+                      'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
                     }
                   ></div>
                 </div>
@@ -156,7 +162,7 @@ export default function EngineeringAdmissions() {
                   />
                   <div
                     className={
-                      'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-[#0C71C3]'
+                      'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
                     }
                   ></div>
                 </div>

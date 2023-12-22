@@ -10,7 +10,11 @@ import aboutPageHeader from 'app/images/educom-about-us-page-pageheader.jpeg';
 import { siteConfig } from '~/config/site';
 import { WhyChooseUs } from '~/pages/index/components/why-choose-us';
 import { StyledHeading2 } from '~/components/typography';
-import { aboutUsPageWhyChooseUsAlbums } from '~/data/album.data';
+import {
+  aboutUsStudentsPlaced,
+  aboutUsWhatSetusApart,
+} from '~/data/album.data';
+import { AlbumArtWork } from '~/components/album-card';
 
 export const meta: MetaFunction = () => {
   return [{ title: 'About Us' }];
@@ -80,7 +84,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <section className="md:mt-[8rem] lg:mt-[4rem] flex flex-col items-center pb-8">
+      <section className="md:mt-[8rem] lg:mt-[4rem] flex flex-col items-center">
         <PageHeader className="pb-8 items-center">
           <p className="uppercase text-center text-orange-500">
             PROVEN SUCCESS
@@ -89,61 +93,26 @@ export default function AboutUs() {
             What Sets Us Apart?
           </PageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
-          <PageHeaderDescription className="leading-8 text-center flex flex-col gap-4">
-            <span>
-              <strong>Expert Guidance:</strong> Our consultants are experts in
-              their respective fields, offering insights and advice rooted in a
-              deep understanding of the evolving educational landscape.
-            </span>
-            <span>
-              <strong>Personalized Approach:</strong> Recognizing the uniqueness
-              of each student, we tailor our guidance to individual strengths,
-              aspirations, and academic goals, ensuring a personalized and
-              effective strategy.
-            </span>
-            <span>
-              <strong>Holistic Support:</strong> We go beyond the conventional
-              by providing holistic support throughout the educational journey.
-              From academic planning to career counseling, we are committed to
-              nurturing every aspect of a student's growth.
-            </span>
-            <span>
-              <strong>Industry Knowledge:</strong> With our finger on the pulse
-              of educational trends, we offer up-to-date information and
-              strategies, keeping students ahead of the curve in a competitive
-              academic environment. Success Stories: Our track record of success
-              speaks for itself. Many students have realized their academic
-              dreams under our guidance, securing admissions to prestigious
-              institutions and excelling in their chosen fields.
-            </span>
-          </PageHeaderDescription>
+          <div className="max-w-2xl">
+            <AlbumArtWork albums={aboutUsWhatSetusApart} className="w-full" />
+          </div>
         </PageHeader>
-        <article className="flex flex-col lg:flex-row gap-4">
-          <div className="flex flex-col items-center justify-center gap-4">
-            <div className="w-44 h-44 flex items-center justify-center border-orange-500 border-4 rounded-full">
-              <p className="text-xl font-bold text-blue-500">1234</p>
-            </div>
-            <p className="text-xl font-bold text-blue-500">
-              MANAGEMENT STUDENTS
-            </p>
-          </div>
+      </section>
 
-          <div className="flex flex-col items-center justify-center gap-4">
-            <div className="w-44 h-44 md:w-32 md:h-32 flex items-center justify-center border-orange-500 border-4 rounded-full">
-              <p className="text-xl font-bold text-blue-500">1203</p>
-            </div>
-            <p className="text-xl font-bold text-blue-500">MEDICAL STUDENTS </p>
+      <section className="md:mt-[8rem] lg:mt-[4rem] flex flex-col items-center pb-8">
+        <PageHeader className="pb-8 items-center">
+          <PageHeaderHeading className="capitalize text-center md:text-left">
+            Students Placed
+          </PageHeaderHeading>
+          <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
+          <div className="max-w-2xl">
+            <AlbumArtWork
+              albums={aboutUsStudentsPlaced}
+              hasAutoLayout
+              className="w-full"
+            />
           </div>
-
-          <div className="flex flex-col items-center justify-center gap-4">
-            <div className="w-44 h-44 flex items-center justify-center border-orange-500 border-4 rounded-full">
-              <p className="text-xl font-bold text-blue-500">1203</p>
-            </div>
-            <p className="text-xl font-bold text-blue-500">
-              ENGINEERING STUDENTS{' '}
-            </p>
-          </div>
-        </article>
+        </PageHeader>
       </section>
 
       <section className="hidden md:flex flex-col items-center pb-8">
@@ -201,7 +170,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <WhyChooseUs albums={aboutUsPageWhyChooseUsAlbums} />
+      <WhyChooseUs />
 
       <section className="md:mt-[8rem] lg:mt-[4rem] flex flex-col items-center pb-8 text-center container m-auto">
         <StyledHeading2 className="uppercase text-center">

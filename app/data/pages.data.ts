@@ -570,62 +570,124 @@ const engineeringAllExam: Array<EngineeringExam> = [
 ];
 
 const medicalColleges = [
-  { collegeName: 'MIT WPU', imageSource: 'path/to/mit_wpu_image.jpg' },
-  { collegeName: 'DY Patil', imageSource: 'path/to/dy_patil_image.jpg' },
+  {
+    collegeName: 'MIT WPU',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/RajshreeMedicalResearchInstituteHospitalBareilly-Bareilly-UP.jpeg',
+  },
+  {
+    collegeName: 'DY Patil',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/hind-institute.jpeg',
+  },
   {
     collegeName: 'Symbiosis Pune',
-    imageSource: 'path/to/symbiosis_pune_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/shri-ram-murti-smarak-institute-of-medical-sciences-srms-ims-bareilly.jpg',
   },
-  { collegeName: 'SRM Chennai', imageSource: 'path/to/srm_chennai_image.jpg' },
-  { collegeName: 'NIMS Jaipur', imageSource: 'path/to/nims_jaipur_image.jpg' },
-  { collegeName: 'RIMS Raipur', imageSource: 'path/to/rims_raipur_image.jpg' },
-  { collegeName: 'BVP', imageSource: 'path/to/bvp_image.jpg' },
-  { collegeName: 'MIMER', imageSource: 'path/to/mimer_image.jpg' },
-  { collegeName: 'Vedanta', imageSource: 'path/to/vedanta_image.jpg' },
+  {
+    collegeName: 'SRM Chennai',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Kanti-Devi-Medical-College.jpg',
+  },
+  {
+    collegeName: 'NIMS Jaipur',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/FHMC-Agra-1.jpg',
+  },
+  {
+    collegeName: 'RIMS Raipur',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/RajshreeMedicalResearchInstituteHospitalBareilly-Bareilly-UP.jpeg',
+  },
+  {
+    collegeName: 'BVP',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/hind-institute.jpeg',
+  },
+  {
+    collegeName: 'MIMER',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/shri-ram-murti-smarak-institute-of-medical-sciences-srms-ims-bareilly.jpg',
+  },
+  {
+    collegeName: 'Vedanta',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Kanti-Devi-Medical-College.jpg',
+  },
   {
     collegeName: 'Akash Medical',
-    imageSource: 'path/to/akash_medical_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/FHMC-Agra-1.jpg',
   },
-  { collegeName: 'M S Ramiah', imageSource: 'path/to/ms_ramiah_image.jpg' },
+  {
+    collegeName: 'M S Ramiah',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/RajshreeMedicalResearchInstituteHospitalBareilly-Bareilly-UP.jpeg',
+  },
   {
     collegeName: 'Sri Lakshmi Narayana Institute',
-    imageSource: 'path/to/sri_lakshmi_narayana_institute_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/hind-institute.jpeg',
   },
   {
     collegeName: 'Geetanjali Medical College',
-    imageSource: 'path/to/geetanjali_medical_college_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/shri-ram-murti-smarak-institute-of-medical-sciences-srms-ims-bareilly.jpg',
   },
   {
     collegeName: 'Teerthanker Mahaveer University',
-    imageSource: 'path/to/teerthanker_mahaveer_university_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Kanti-Devi-Medical-College.jpg',
   },
   {
     collegeName: 'Mahatma Gandhi Medical College, Mumbai',
-    imageSource: 'path/to/mgmc_mumbai_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/FHMC-Agra-1.jpg',
   },
   {
     collegeName: 'Oxford Medical College Bangalore',
-    imageSource: 'path/to/oxford_medical_college_bangalore_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/RajshreeMedicalResearchInstituteHospitalBareilly-Bareilly-UP.jpeg',
   },
   {
     collegeName: 'East Point College of Medical',
-    imageSource: 'path/to/east_point_college_of_medical_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/hind-institute.jpeg',
   },
   {
     collegeName: 'Vydehi Medical College',
-    imageSource: 'path/to/vydehi_medical_college_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/shri-ram-murti-smarak-institute-of-medical-sciences-srms-ims-bareilly.jpg',
   },
   {
     collegeName: 'Siddhartha Medical College',
-    imageSource: 'path/to/siddhartha_medical_college_image.jpg',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/Kanti-Devi-Medical-College.jpg',
   },
 ];
 
 const medicalEntrances = [
-  { examName: 'NEET', imageSource: 'path/to/neet_image.jpg' },
-  { examName: 'AIIMS-MBBS', imageSource: 'path/to/aiims_mbbs_image.jpg' },
-  { examName: 'JIPMER', imageSource: 'path/to/jipmer_image.jpg' },
-  { examName: 'AFMC MBBS', imageSource: 'path/to/afmc_mbbs_image.jpg' },
+  {
+    examName: 'NEET',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/first-aid-kit.png',
+  },
+  {
+    examName: 'AIIMS-MBBS',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/stethoscope-2.png',
+  },
+  {
+    examName: 'JIPMER',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/surgery.png',
+  },
+  {
+    examName: 'AFMC MBBS',
+    imageSource:
+      'https://catalysteducations.com/wp-content/uploads/2022/12/doctor-1.png',
+  },
 ];
 
 const engineeringAdmission: PageInfoProps & {
@@ -658,8 +720,8 @@ const medicalAdmission: PageInfoProps & {
   pageHeaderDescription: `Unlock success in MBBS admissions with expert guidance from top medical consultants. Your pathway to triumph begins here!
   `,
   pageHeaderTo: '#get-in-touch-form',
-  pageHeaderBackgroundImageURL: managementAdmissionBGImg,
-  pageHeaderBackgroundFallbackColor: '#03467c',
+  pageHeaderBackgroundImageURL: medicalAdmissionBGImg,
+  pageHeaderBackgroundFallbackColor: '#0C71C3',
   testimonials: medicalPageTestimonials,
   medicalColleges,
   medicalEntrances,
@@ -671,7 +733,7 @@ const managementAdmission: PageInfoProps & {
   managementSpecialization: Array<
     Record<'title' | 'imageSource' | 'subtitle', string>
   >;
-  managementEntranceExams: Array<string>
+  managementEntranceExams: Array<string>;
 } = {
   pageHeaderCaption: 'OUR SERVICES',
   pageHeaderTitle:
@@ -679,13 +741,13 @@ const managementAdmission: PageInfoProps & {
   pageHeaderDescription: `Unlock your potential with India's premier MBA consultants. Secure dream college admissions and ace your MBA admission journey with expert guidance.
   `,
   pageHeaderTo: '#get-in-touch-form',
-  pageHeaderBackgroundImageURL: medicalAdmissionBGImg,
+  pageHeaderBackgroundImageURL: managementAdmissionBGImg,
   pageHeaderBackgroundFallbackColor: '#0C71C3',
   testimonials: managementPageTestimonials,
   scope: managementScope,
   managementColleges,
   managementSpecialization,
-  managementEntranceExams
+  managementEntranceExams,
 };
 
 export { engineeringAdmission, medicalAdmission, managementAdmission };
