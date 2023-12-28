@@ -87,7 +87,7 @@ export default function ManagementAdmissions() {
           {managementAdmission.managementColleges.map((college, index) => (
             <Card className="border-2 border-[#0C71C3]" key={index}>
               <CardHeader className="relative h-44 p-0">
-                <div className="w-full h-full relative">
+                <div className="w-full h-full relative bg-blend-screen bg-opacity-50 bg-educom/5">
                   <img
                     src={college.imageSource}
                     alt="PageHeader Background"
@@ -95,11 +95,6 @@ export default function ManagementAdmissions() {
                       'w-full h-full object-cover object-center absolute top-0 left-0'
                     )}
                   />
-                  <div
-                    className={
-                      'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
-                    }
-                  ></div>
                 </div>
               </CardHeader>
               <CardContent className="p-2">
@@ -171,11 +166,16 @@ export default function ManagementAdmissions() {
             <div className="flip-card m-auto" key={index}>
               <div className="flip-card-inner">
                 <div className="flip-card-front flex flex-col justify-center items-center gap-4">
-                  <img
-                    src={item.imageSource}
-                    alt={item.designation}
-                    className="w-28 h-2w-28"
-                  />
+                  <div className="relative w-28 h-28 bg-blend-screen bg-opacity-50 bg-educom/5">
+                    <img
+                      src={item.imageSource}
+                      alt={item.designation}
+                      className={cn(
+                        'w-full h-full object-cover object-center absolute top-0 left-0'
+                      )}
+                      loading="lazy"
+                    />
+                  </div>
                   <hr className="mx-1 h-1 w-12 rounded border-0 bg-black md:mx-4" />
                   <p className="text-orange-500 font-semibold">
                     {item.designation}
