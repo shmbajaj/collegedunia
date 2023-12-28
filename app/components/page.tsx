@@ -65,20 +65,20 @@ export function Page({
             </Link>
           </div>
         </PageHeader>
-        <div className="w-full h-full relative">
+        <div
+          className={cn(
+            'w-full h-full relative bg-blend-screen bg-opacity-50',
+            `bg-[${pageHeaderBackgroundFallbackColor}]`
+          )}
+        >
           <img
             src={pageHeaderBackgroundImageURL}
             alt="PageHeader Background"
             className={cn(
               'w-full h-full object-cover object-center absolute top-0 left-0'
             )}
+            loading="eager"
           />
-          <div
-            className={cn(
-              'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50',
-              `bg-[${pageHeaderBackgroundFallbackColor}]`
-            )}
-          ></div>
         </div>
       </section>
 
