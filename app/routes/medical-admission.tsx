@@ -143,7 +143,7 @@ export default function MedicalAdmissions() {
                   key={index}
                 >
                   <CardHeader className="relative h-44 p-0">
-                    <div className="w-full h-full relative">
+                    <div className="w-full h-full relative bg-blend-screen bg-opacity-50 bg-educom/5">
                       <img
                         src={entrance.imageSource}
                         alt="PageHeader Background"
@@ -151,11 +151,6 @@ export default function MedicalAdmissions() {
                           'w-full h-full object-cover object-center absolute top-0 left-0'
                         }
                       />
-                      <div
-                        className={
-                          'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
-                        }
-                      ></div>
                     </div>
                   </CardHeader>
                   <CardContent className="p-2">
