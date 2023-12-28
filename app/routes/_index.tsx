@@ -59,63 +59,13 @@ export default function Index() {
           <div className="w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-30 bg-slate-500"></div>
         </div>
       </section>
-      <section className="flex flex-col items-center lg:flex-row gap-8">
-        <div className="bg-educom p-8 m-8  grid grid-rows-2 grid-cols-2 gap-4">
-          <div className="w-full h-full relative">
-            <img
-              src={thumbnail}
-              alt="Why Choose Us Article Thumbnail"
-              className="aspect-auto w-full h-full object-cover object-center"
-            />
-            <div
-              className={
-                'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
-              }
-            ></div>
-          </div>
-          <div className="w-full h-full relative">
-            <img
-              src={thumbnail}
-              alt="Why Choose Us Article Thumbnail"
-              className="aspect-auto w-full h-full object-cover object-center"
-            />
-            <div
-              className={
-                'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
-              }
-            ></div>
-          </div>
-          <div className="w-full h-full relative">
-            <img
-              src={thumbnail}
-              alt="Why Choose Us Article Thumbnail"
-              className="aspect-auto w-full h-full object-cover object-center"
-            />
-            <div
-              className={
-                'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
-              }
-            ></div>
-          </div>
-          <div className="w-full h-full relative">
-            <img
-              src={thumbnail}
-              alt="Why Choose Us Article Thumbnail"
-              className="aspect-auto w-full h-full object-cover object-center"
-            />
-            <div
-              className={
-                'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
-              }
-            ></div>
-          </div>
-        </div>
-        <PageHeader className="pb-8 items-center">
+      <section className="flex flex-col items-center md:flex-row pt-4 pb-8 m-auto">
+        <PageHeader className="items-center">
           <PageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
             About Us
           </PageHeaderHeading>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
-          <PageHeaderDescription className="flex flex-col gap-2 leadin-8 text-center">
+          <PageHeaderDescription className="flex flex-col gap-2 leading-8 text-center">
             <span>
               Educom Guidance is a leading education consultancy, dedicated to
               personalized guidance with a rich 14-year legacy. Specializing in
@@ -154,6 +104,18 @@ export default function Index() {
             </span>
           </PageHeaderDescription>
         </PageHeader>
+        <div className="w-full h-full md:max-w-md relative">
+          <img
+            src={thumbnail}
+            alt="Why Choose Us Article Thumbnail"
+            className="aspect-auto w-full h-full object-cover object-center"
+          />
+          <div
+            className={
+              'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
+            }
+          ></div>
+        </div>
       </section>
       <WhatWeOffer />
       <Testimonials testimonials={homePageTestimonials} />

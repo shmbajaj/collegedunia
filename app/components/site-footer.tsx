@@ -139,7 +139,8 @@ export function SiteFooter() {
         <div className="col-span-full">
           <p className="text-center leading-loose md:text-left">
             {`Copyright © ${siteConfig.year}`}
-            <span className="font-medium">{siteConfig.name}</span> | Powered by
+            <span className="font-medium">{siteConfig.name}</span> | Powered
+            by&nbsp;
             <a
               href={siteConfig.poweredBy.link}
               target="_blank"
