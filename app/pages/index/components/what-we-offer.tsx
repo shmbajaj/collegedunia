@@ -26,7 +26,7 @@ export function WhatWeOffer() {
       <article className="grid lg:grid-cols-2 max-w-lg gap-4 p-4 lg:max-w-5xl">
         <Card className="p-4 flex flex-col text-center shadow-md lg:p-6">
           <CardHeader className="items-center gap-4">
-            <div className="rounded-full w-20 h-20 pb-4 flex items-center">
+            <div className="rounded-full w-20 h-20 pb-4 flex items-center bg-blend-screen bg-opacity-50 bg-educom/5">
               <div className="overflow-hidden rounded-md">
                 <img
                   src={carrerCounseling}
@@ -50,7 +50,7 @@ export function WhatWeOffer() {
         </Card>
         <Card className="p-4 flex flex-col text-center shadow-xl lg:p-6">
           <CardHeader className="items-center gap-4">
-            <div className="rounded-full w-20 h-20 pb-4 flex items-center">
+            <div className="rounded-full w-20 h-20 pb-4 flex items-center bg-blend-screen bg-opacity-50 bg-educom/5">
               <div className="overflow-hidden rounded-md">
                 <img
                   src={personalizedCounseling}
@@ -60,6 +60,7 @@ export function WhatWeOffer() {
                   className={
                     'h-auto w-auto object-cover transition-all hover:scale-105 m-auto aspect-square'
                   }
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -77,7 +78,7 @@ export function WhatWeOffer() {
         </Card>
         <Card className="p-4 flex flex-col text-center shadow-md lg:p-6">
           <CardHeader className="items-center gap-4">
-            <div className="rounded-full w-20 h-20 pb-4 flex items-center">
+            <div className="rounded-full w-20 h-20 pb-4 flex items-center bg-blend-screen bg-opacity-50 bg-educom/5">
               <div className="overflow-hidden rounded-md">
                 <img
                   src={admissionSupport}
@@ -87,6 +88,7 @@ export function WhatWeOffer() {
                   className={
                     'h-auto w-auto object-cover transition-all hover:scale-105 m-auto aspect-square'
                   }
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -101,7 +103,7 @@ export function WhatWeOffer() {
         </Card>
         <Card className="p-4 flex flex-col text-center shadow-md lg:p-6">
           <CardHeader className="items-center gap-4">
-            <div className="rounded-full w-20 h-20 pb-4 flex items-center">
+            <div className="rounded-full w-20 h-20 pb-4 flex items-center bg-blend-screen bg-opacity-50 bg-educom/5">
               <div className="overflow-hidden rounded-md">
                 <img
                   src={admissionAssitance}
@@ -111,6 +113,7 @@ export function WhatWeOffer() {
                   className={
                     'h-auto w-auto object-cover transition-all hover:scale-105 m-auto aspect-square'
                   }
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -125,7 +128,7 @@ export function WhatWeOffer() {
         </Card>
         <Card className="p-4 flex flex-col text-center shadow-md lg:p-6 lg:col-span-2">
           <CardHeader className="items-center gap-4">
-            <div className="rounded-full w-20 h-20 pb-4 flex items-center">
+            <div className="rounded-full w-20 h-20 pb-4 flex items-center bg-blend-screen bg-opacity-50 bg-educom/5">
               <div className="overflow-hidden rounded-md">
                 <img
                   src={continuousSupport}
@@ -135,6 +138,7 @@ export function WhatWeOffer() {
                   className={
                     'h-auto w-auto object-cover transition-all hover:scale-105 m-auto aspect-square'
                   }
+                  loading="lazy"
                 />
               </div>
             </div>

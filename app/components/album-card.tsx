@@ -24,8 +24,13 @@ export function AlbumCard({
 }: AlbumCardProps) {
   return (
     <Card {...props} className={className}>
-      <CardHeader>
-        <div className="overflow-hidden rounded-md">
+      <CardHeader
+        className={cn('p-0', {
+          'h-36': width === 150,
+          'h-60': width === 250,
+        })}
+      >
+        <div className="overflow-hidden rounded-md ">
           <img
             src={album.cover}
             alt={album.title}

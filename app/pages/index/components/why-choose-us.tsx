@@ -15,10 +15,7 @@ export function WhyChooseUs({ albums }: { albums?: Album[] }) {
           </PageHeaderHeading>
           <hr className="h-1 w-36 rounded border-0 bg-orange-500 m-auto" />
         </CardHeader>
-        <AlbumArtWork
-          albums={albums ?? whyChooseUsAlbums}
-          // className="w-[250px]"
-        />
+        <AlbumArtWork albums={albums ?? whyChooseUsAlbums} />
       </Card>
     </section>
   );

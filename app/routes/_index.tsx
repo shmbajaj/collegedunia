@@ -54,13 +54,13 @@ export default function Index() {
             </Link>
           </div>
         </PageHeader>
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full bg-blend-screen bg-opacity-30 bg-slate-500">
           <img
             src={homePageHeader}
             alt="Page Header Background"
-            className="w-full h-full object-cover object-center abs"
+            className="w-full h-full object-cover object-center absolute"
+            loading="eager"
           />
-          <div className="w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-30 bg-slate-500"></div>
         </div>
       </section>
       <Stats />
@@ -111,55 +111,39 @@ export default function Index() {
         </PageHeader>
         <div className="w-full h-full max-w-md relative bg-educom p-1 mt-2 md:mt-0">
           <div className="flex mb-1 gap-1">
-            <div className="w-full h-full relative flex-1">
+            <div className="w-full h-full relative flex-1 bg-blend-screen bg-opacity-50 bg-educom/5">
               <img
                 src={aboutUsFirst}
                 alt="Why Choose Us Article Thumbnail"
                 className="aspect-auto w-full h-full object-cover object-center"
+                loading="eager"
               />
-              <div
-                className={
-                  'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
-                }
-              ></div>
             </div>
-            <div className="w-full h-full relative flex-1">
+            <div className="w-full h-full relative flex-1 bg-blend-screen bg-opacity-50 bg-educom/5">
               <img
                 src={aboutUsSecond}
                 alt="Why Choose Us Article Thumbnail"
                 className="aspect-auto w-full h-full object-cover object-center"
+                loading="eager"
               />
-              <div
-                className={
-                  'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
-                }
-              ></div>
             </div>{' '}
           </div>
           <div className="flex gap-1">
-            <div className="w-full h-full relative flex-1">
+            <div className="w-full h-full relative flex-1 bg-blend-screen bg-opacity-50 bg-educom/5">
               <img
                 src={aboutUsThird}
                 alt="Why Choose Us Article Thumbnail"
                 className="aspect-auto w-full h-full object-cover object-center"
+                loading="eager"
               />
-              <div
-                className={
-                  'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
-                }
-              ></div>
             </div>{' '}
-            <div className="w-full h-full relative flex-1">
+            <div className="w-full h-full relative flex-1 bg-blend-screen bg-opacity-50 bg-educom/5">
               <img
                 src={aboutUsFourth}
                 alt="Why Choose Us Article Thumbnail"
                 className="aspect-auto w-full h-full object-cover object-center"
+                loading="eager"
               />
-              <div
-                className={
-                  'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
-                }
-              ></div>
             </div>
           </div>
         </div>
