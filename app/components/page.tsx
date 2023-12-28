@@ -82,14 +82,14 @@ export function Page({
         </div>
       </section>
 
+      <section className="mx-4 my-auto">
+        <Stats />
+      </section>
+
       {children}
 
       <section className="mx-4 my-auto">
         <WhyChooseUs />
-      </section>
-
-      <section className="mx-4 my-auto">
-        <Stats />
       </section>
 
       <section className="mx-4 my-auto">

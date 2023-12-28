@@ -208,19 +208,15 @@ export default function ManagementAdmissions() {
             (specialization, index) => (
               <Card className="border-2 border-[#0C71C3] w-full" key={index}>
                 <CardHeader className="relative h-44 p-0">
-                  <div className="w-full h-full relative">
+                  <div className="w-full h-full relative bg-blend-screen bg-opacity-50 bg-educom/5">
                     <img
                       src={specialization.imageSource}
                       alt="PageHeader Background"
-                      className={cn(
-                        'w-full h-full object-cover object-center absolute top-0 left-0'
-                      )}
-                    />
-                    <div
                       className={
-                        'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
+                        'w-full h-full object-cover object-center absolute top-0 left-0'
                       }
-                    ></div>
+                      loading="lazy"
+                    />
                   </div>
                 </CardHeader>
                 <CardContent className="p-2">

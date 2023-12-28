@@ -16,7 +16,11 @@ import { GetInTouchFormSchema } from '~/data/schema';
 import type { GetInTouchFormInput } from '~/pages/index/components/get-in-touch-form';
 import homePageHeader from 'app/images/educom-home-page-pageheader.jpeg';
 import { homePageTestimonials } from '~/data/testimonials.data';
-import thumbnail from '~/images/about-us.jpeg';
+import aboutUsFirst from '~/images/about-us-1.jpeg';
+import aboutUsSecond from '~/images/about-us-2.jpeg';
+import aboutUsThird from '~/images/about-us-3.jpeg';
+import aboutUsFourth from '~/images/about-us-4.jpeg';
+
 import { navConfig } from '~/config/nav';
 
 export const action = async ({ request }: ActionFunctionArgs) => {
@@ -59,6 +63,7 @@ export default function Index() {
           <div className="w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-30 bg-slate-500"></div>
         </div>
       </section>
+      <Stats />
       <section className="flex flex-col items-center md:flex-row pt-4 pb-8 m-auto">
         <PageHeader className="items-center">
           <PageHeaderHeading className="capitalize  md:text-left  text-center font-bold text-orange-500">
@@ -72,21 +77,21 @@ export default function Index() {
               &nbsp;
               <Link
                 to={allAdmissionPageHref[0].to}
-                className="hover:text-educom underline"
+                className="hover:text-educom"
               >
                 <>MBA admission</>
               </Link>
               ,&nbsp;
               <Link
                 to={allAdmissionPageHref[1].to}
-                className="hover:text-educom underline"
+                className="hover:text-educom"
               >
                 Engineering admission
               </Link>
               , and&nbsp;
               <Link
                 to={allAdmissionPageHref[2].to}
-                className="hover:text-educom underline"
+                className="hover:text-educom"
               >
                 Medical admissions
               </Link>
@@ -104,23 +109,64 @@ export default function Index() {
             </span>
           </PageHeaderDescription>
         </PageHeader>
-        <div className="w-full h-full md:max-w-md relative">
-          <img
-            src={thumbnail}
-            alt="Why Choose Us Article Thumbnail"
-            className="aspect-auto w-full h-full object-cover object-center"
-          />
-          <div
-            className={
-              'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
-            }
-          ></div>
+        <div className="w-full h-full max-w-md relative bg-educom p-1 mt-2 md:mt-0">
+          <div className="flex mb-1 gap-1">
+            <div className="w-full h-full relative flex-1">
+              <img
+                src={aboutUsFirst}
+                alt="Why Choose Us Article Thumbnail"
+                className="aspect-auto w-full h-full object-cover object-center"
+              />
+              <div
+                className={
+                  'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
+                }
+              ></div>
+            </div>
+            <div className="w-full h-full relative flex-1">
+              <img
+                src={aboutUsSecond}
+                alt="Why Choose Us Article Thumbnail"
+                className="aspect-auto w-full h-full object-cover object-center"
+              />
+              <div
+                className={
+                  'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
+                }
+              ></div>
+            </div>{' '}
+          </div>
+          <div className="flex gap-1">
+            <div className="w-full h-full relative flex-1">
+              <img
+                src={aboutUsThird}
+                alt="Why Choose Us Article Thumbnail"
+                className="aspect-auto w-full h-full object-cover object-center"
+              />
+              <div
+                className={
+                  'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
+                }
+              ></div>
+            </div>{' '}
+            <div className="w-full h-full relative flex-1">
+              <img
+                src={aboutUsFourth}
+                alt="Why Choose Us Article Thumbnail"
+                className="aspect-auto w-full h-full object-cover object-center"
+              />
+              <div
+                className={
+                  'w-full h-full absolute top-0 left-0 bg-blend-screen bg-opacity-50 bg-educom/5'
+                }
+              ></div>
+            </div>
+          </div>
         </div>
       </section>
       <WhatWeOffer />
       <Testimonials testimonials={homePageTestimonials} />
       <WhyChooseUs />
-      <Stats />
       <GetInTouch showContactInfo></GetInTouch>
     </div>
   );
