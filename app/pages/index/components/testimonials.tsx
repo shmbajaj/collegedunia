@@ -31,15 +31,15 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
           </p>
         </div>
       </div>
-      <Carousel>
+      <div className="relative grid gap-4 md:grid-cols-[repeat(auto-fit,minmax(256px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(420px,1fr))] lg:flex ">
         {testimonials.map((testimonial: Testimonial) => (
           <FeedbackCard
             {...testimonial}
             key={testimonial.key}
-            className="w-full max-w-xs m-auto"
+            className="w-full"
           />
         ))}
-      </Carousel>
+      </div>
     </section>
   );
 }

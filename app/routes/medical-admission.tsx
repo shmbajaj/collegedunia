@@ -190,12 +190,9 @@ export default function MedicalAdmissions() {
             </span>
           </PageHeaderDescription>
         </PageHeader>
-        <Carousel>
+        <div className="grid gap-8 grid-cols-1 p-4 md:grid-cols-[repeat(auto-fit,minmax(220px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] md:max-w-2xl lg:max-w-5xl m-auto">
           {medicalAdmission.medicalColleges.map((college, index) => (
-            <Card
-              className="border-2 border-[#0C71C3] w-full  min-w-[220px]"
-              key={index}
-            >
+            <Card className="border-2 border-[#0C71C3] w-full" key={index}>
               <CardHeader className="relative h-44 p-0">
                 <div className="w-full h-full relative">
                   <img
@@ -219,7 +216,7 @@ export default function MedicalAdmissions() {
               </CardContent>
             </Card>
           ))}
-        </Carousel>
+        </div>
       </section>
     </Page>
   );

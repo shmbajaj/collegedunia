@@ -83,9 +83,9 @@ export default function ManagementAdmissions() {
           </PageHeaderDescription>
           <hr className="mx-auto my-1 h-1 w-36 rounded border-0 bg-orange-500 md:my-4" />
         </PageHeader>
-        <Carousel>
+        <div className="grid gap-8 grid-cols-1 p-4 md:grid-cols-[repeat(auto-fit,minmax(220px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(320px,1fr))] md:max-w-2xl lg:max-w-5xl m-auto">
           {managementAdmission.managementColleges.map((college, index) => (
-            <Card className="border-2 border-[#0C71C3] w-60" key={index}>
+            <Card className="border-2 border-[#0C71C3]" key={index}>
               <CardHeader className="relative h-44 p-0">
                 <div className="w-full h-full relative">
                   <img
@@ -109,7 +109,7 @@ export default function ManagementAdmissions() {
               </CardContent>
             </Card>
           ))}
-        </Carousel>
+        </div>
       </section>
 
       <section className="flex flex-col items-center pb-8">

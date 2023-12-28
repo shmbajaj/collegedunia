@@ -93,92 +93,92 @@ const managementColleges = [
   {
     collegeName: 'Symbiosis Institute of Business Management',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Symbiosis-Institute-of-International-Business-SIIB.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/SymbiosisInstitutesBM.jpg',
   },
   {
     collegeName: 'NMIMS',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Great-Lakes-Institute-Of-Management-GLIM.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/NMIMS.jpg',
   },
   {
     collegeName: 'N. L. Dalmia',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/International-Management-InstituteIMI.png',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/NLDalmia.jpg',
   },
   {
     collegeName: 'We School',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/bharati-vidyapeeth.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/WeSchool.jpg',
   },
   {
     collegeName: 'Indira',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Birla-Institute-Of-Management-Technology-BIMTECH.png',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/Indira.jpg',
   },
   {
     collegeName: 'PIBM',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Symbiosis-Institute-of-International-Business-SIIB.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/PIBM.jpg',
   },
   {
     collegeName: 'RIIM',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/International-Management-InstituteIMI.png',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/RIIM.jpg',
   },
   {
     collegeName: 'Lexicon Management Institutes',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Symbiosis-Institute-of-International-Business-SIIB.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/LEXICONMANAGEMENTINSTITUTE.jpg',
   },
   {
     collegeName: 'Mitcon Institu Of Management',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Great-Lakes-Institute-Of-Management-GLIM.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/mitconinstituteofmanagement.jpg',
   },
   {
     collegeName: 'DPU',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/International-Management-InstituteIMI.png',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/DPU.jpg',
   },
   {
     collegeName: 'ITM',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/bharati-vidyapeeth.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/ITM.jpg',
   },
-  {
-    collegeName: 'IIBS',
-    imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Birla-Institute-Of-Management-Technology-BIMTECH.png',
-  },
+  // {
+  //   collegeName: 'IIBS',
+  //   imageSource:
+  //     'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/Birla-Institute-Of-Management-Technology-BIMTECH.png',
+  // },
   {
     collegeName: 'Pune Business School',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Symbiosis-Institute-of-International-Business-SIIB.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/PuneBusinessSchool.jpg',
   },
   {
     collegeName: 'Atlas Skillset University',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/International-Management-InstituteIMI.png',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/ATLAS%20SKILLSET%20UNIVERSITY.jpg',
   },
   {
     collegeName: 'Jaipuria Institute of Management',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Symbiosis-Institute-of-International-Business-SIIB.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/JAIPURIA%20INSTITUTE%20OF%20MANAGEMENT.jpg',
   },
   {
     collegeName: 'IMI Bhubaneswar',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Great-Lakes-Institute-Of-Management-GLIM.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/IMI%20BHUBANESWAR.jpg',
   },
-  {
-    collegeName: 'Parul University',
-    imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/International-Management-InstituteIMI.png',
-  },
+  // {
+  //   collegeName: 'Parul University',
+  //   imageSource:
+  //     'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/International-Management-InstituteIMI.png',
+  // },
   {
     collegeName: 'Alliance University',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/bharati-vidyapeeth.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-management/ALLIANCE%20UNIVERSITY.jpg',
   },
 ];
 
@@ -196,97 +196,92 @@ const engineeringColleges = [
   {
     collegeName: 'Symbiosis International University',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Symbiosis-Institute-of-International-Business-SIIB.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/SYMBIOSIS%20INTERNATIONAL%20UNIVERSITY.jpg',
   },
   {
     collegeName: 'D.Y. Patil',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Manipal-University-manipal.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/D.Y.%20PATIL%20Engineering%20College.jpg',
   },
   {
     collegeName: 'Cummins',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Ajeenkya-DY-Patil-University.jpeg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/CUMMINS%20engineering%20College.jpg',
   },
   {
     collegeName: 'INDRA',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/VIT-Univerisy.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/INDRA%20ingineering%20Colleges.jpg',
   },
   {
     collegeName: 'VIT',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/AMITY.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/VIT%20Engineering%20College.jpg',
   },
   {
     collegeName: 'JSPM',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/mit-world-peace-university-mitwpu-pune-7604.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/JSPM%20Engineering%20College.jpg',
   },
   {
     collegeName: 'NMIMS',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/KIET.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/NMIMS%20engineering%20College.jpg',
   },
   {
     collegeName: 'MIT World Peace University',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/mit-world-peace-university-mitwpu-pune-7604.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/MIT%20WORLD%20PEACE%20UNIVERSITY.jpg',
   },
   {
     collegeName: 'Amity University',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/AMITY.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/AMITY%20UNIVERSITY%20eng%20college.jpg',
   },
   {
     collegeName: 'Bhartiya Vidya Peeth',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Vishkarma-Institute.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/BHARTIYA%20VIDYA%20PEETH%20eng%20Clge.jpg',
   },
   {
     collegeName: 'Manipal University',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Manipal-University-manipal.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/MANIPAL%20UNIVERSITY%20Engineering%20College.jpg',
   },
   {
     collegeName: 'Ajinkya DY Patil University',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Ajeenkya-DY-Patil-University.jpeg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/AJINKYA%20DY%20PATIL%20UNIVERSITY.jpg',
   },
   {
     collegeName: 'Teerthanker Mahaveer College',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Teerthanker-Mahaveer-College.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/TEERTHANKER%20MAHAVEER%20COLLEGE%20eng%20clg.jpg',
   },
   {
     collegeName: 'Wadia',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Wadia-College-Pune.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/WADIA.jpg',
   },
   {
     collegeName: 'Modern College',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Modern-College.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/MODERN%20COLLEGE%20Engineering%20College.jpg',
   },
   {
     collegeName: 'Vidyalankar Institute',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Vidyalankar-Institute.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/VIDYALANKAR%20INSTITUTE.jpg',
   },
   {
     collegeName: 'AISSMS',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/AISSMS.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/AISSMS%20Engineering%20College.jpg',
   },
   {
     collegeName: 'Vishwakarma Institute',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Vishwakarma-Institute.jpg',
-  },
-  {
-    collegeName: 'SIET Graduate School',
-    imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/SIET-Graduate-School.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master/educom-eng/VISHWAKARMA%20INSTITUTE%20Engineering%20College.jpg',
   },
 ];
 
@@ -573,97 +568,92 @@ const medicalColleges = [
   {
     collegeName: 'MIT WPU',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/RajshreeMedicalResearchInstituteHospitalBareilly-Bareilly-UP.jpeg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/mit-wpuMedical.jpg',
   },
   {
     collegeName: 'DY Patil',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/hind-institute.jpeg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/DY%20PATIL%20medCollege.jpg',
   },
   {
     collegeName: 'Symbiosis Pune',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/shri-ram-murti-smarak-institute-of-medical-sciences-srms-ims-bareilly.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/SYMBIOSIS%20PUNE%20medical%20college.jpg',
   },
   {
     collegeName: 'SRM Chennai',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Kanti-Devi-Medical-College.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/SRM%20CHENNAI%20medical%20college.jpg',
   },
   {
     collegeName: 'NIMS Jaipur',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/FHMC-Agra-1.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/NIMS%20JAIPUR%20medical%20clge.jpg',
   },
   {
     collegeName: 'RIMS Raipur',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/RajshreeMedicalResearchInstituteHospitalBareilly-Bareilly-UP.jpeg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/RIMS%20RAIPUR%20medical%20college.jpg',
   },
   {
     collegeName: 'BVP',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/hind-institute.jpeg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/BVP%20medical%20college.jpg',
   },
   {
     collegeName: 'MIMER',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/shri-ram-murti-smarak-institute-of-medical-sciences-srms-ims-bareilly.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/MIMER%20medical%20college.jpg',
   },
   {
     collegeName: 'Vedanta',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Kanti-Devi-Medical-College.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/VEDANTA%20medical%20College.jpg',
   },
   {
     collegeName: 'Akash Medical',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/FHMC-Agra-1.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/AKASH%20MEDICAL%20College.jpg',
   },
   {
     collegeName: 'M S Ramiah',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/RajshreeMedicalResearchInstituteHospitalBareilly-Bareilly-UP.jpeg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/M%20S%20RAMIAH%20medical%20college.jpg',
   },
   {
     collegeName: 'Sri Lakshmi Narayana Institute',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/hind-institute.jpeg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/SRI%20LAKSHMI%20NARAYANA%20INSTITUTE%20medical%20college.jpg',
   },
   {
     collegeName: 'Geetanjali Medical College',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/shri-ram-murti-smarak-institute-of-medical-sciences-srms-ims-bareilly.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/GEETANJALI%20MEDICAL%20COLLEGE.jpg',
   },
   {
     collegeName: 'Teerthanker Mahaveer University',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Kanti-Devi-Medical-College.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/TEERTHANKER%20MAHAVEER%20UNIVERSITY%20Medical%20college.jpg',
   },
   {
     collegeName: 'Mahatma Gandhi Medical College, Mumbai',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/FHMC-Agra-1.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/MAHATMA%20GANDHI%20MEDICAL%20COLLEGE,%20MUMBAI.jpg',
   },
   {
     collegeName: 'Oxford Medical College Bangalore',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/RajshreeMedicalResearchInstituteHospitalBareilly-Bareilly-UP.jpeg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/OXFORD%20MEDICAL%20COLLEGE%20BANGALORE.jpg',
   },
   {
     collegeName: 'East Point College of Medical',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/hind-institute.jpeg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/EAST%20POINT%20COLLEGE%20OF%20MEDICAL.jpg',
   },
   {
     collegeName: 'Vydehi Medical College',
     imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/shri-ram-murti-smarak-institute-of-medical-sciences-srms-ims-bareilly.jpg',
-  },
-  {
-    collegeName: 'Siddhartha Medical College',
-    imageSource:
-      'https://catalysteducations.com/wp-content/uploads/2022/12/Kanti-Devi-Medical-College.jpg',
+      'https://raw.githubusercontent.com/shmbajaj/files-hosted/master//educom-medical/VYDEHI%20MEDICAL%20COLLEGE.jpg',
   },
 ];
 

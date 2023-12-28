@@ -23,16 +23,16 @@ export function SiteFooter() {
 
           <p className="flex flex-col gap-4 text-white  mb-4">
             <span className="leading-6">
-              {`${siteConfig.name} Pvt. Ltd. is a company dedicated to education consultants for personalized guidance.`}
+              {`${siteConfig.name} is a company dedicated to education consultants for personalized guidance.`}
             </span>
-            <span className="leading-6">
+            {/* <span className="leading-6">
               We specialize in providing expert guidance with a rich legacy of
               14 years of experience. Our focus areas include MBA consultation,
               engineering consultation, and medical admission consultation. We
               understand that navigating the educational landscape can be
               complex, and that's where our experienced education consultants
               come in to simplify the process and guide you towards success.
-            </span>
+            </span> */}
           </p>
 
           <div className="flex flex-col gap-4 mb-4">

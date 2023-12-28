@@ -10,6 +10,7 @@ import { useIsVisible } from '~/hooks/useIsVisible';
 import { cn } from '~/lib/utils';
 import { GetInTouch } from '~/pages/index/components/get-in-touch';
 import { OurConsultingServices } from '~/pages/index/components/our-consulting-services';
+import { Stats } from '~/pages/index/components/stats';
 import type { TestimonialsProps } from '~/pages/index/components/testimonials';
 import { Testimonials } from '~/pages/index/components/testimonials';
 import { WhyChooseUs } from '~/pages/index/components/why-choose-us';
@@ -85,6 +86,10 @@ export function Page({
 
       <section className="mx-4 my-auto">
         <WhyChooseUs />
+      </section>
+
+      <section className="mx-4 my-auto">
+        <Stats />
       </section>
 
       <section className="mx-4 my-auto">
