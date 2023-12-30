@@ -59,7 +59,6 @@ export default function Index() {
             src={homePageHeader}
             alt="Page Header Background"
             className="w-full h-full object-cover object-center absolute"
-            loading="eager"
           />
         </div>
       </section>
@@ -116,7 +115,6 @@ export default function Index() {
                 src={aboutUsFirst}
                 alt="Why Choose Us Article Thumbnail"
                 className="aspect-auto w-full h-full object-cover object-center"
-                loading="eager"
               />
             </div>
             <div className="w-full h-full relative flex-1 bg-blend-screen bg-opacity-50 bg-educom/5">
@@ -124,7 +122,6 @@ export default function Index() {
                 src={aboutUsSecond}
                 alt="Why Choose Us Article Thumbnail"
                 className="aspect-auto w-full h-full object-cover object-center"
-                loading="eager"
               />
             </div>{' '}
           </div>
@@ -134,7 +131,6 @@ export default function Index() {
                 src={aboutUsThird}
                 alt="Why Choose Us Article Thumbnail"
                 className="aspect-auto w-full h-full object-cover object-center"
-                loading="eager"
               />
             </div>{' '}
             <div className="w-full h-full relative flex-1 bg-blend-screen bg-opacity-50 bg-educom/5">
@@ -142,7 +138,6 @@ export default function Index() {
                 src={aboutUsFourth}
                 alt="Why Choose Us Article Thumbnail"
                 className="aspect-auto w-full h-full object-cover object-center"
-                loading="eager"
               />
             </div>
           </div>

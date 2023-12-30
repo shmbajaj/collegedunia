@@ -100,7 +100,6 @@ export default function EngineeringAdmissions() {
                     className={
                       'w-full h-full object-cover object-center absolute top-0 left-0'
                     }
-                    loading="lazy"
                   />
                 </div>
               </CardHeader>
@@ -155,7 +154,6 @@ export default function EngineeringAdmissions() {
                     className={
                       'w-full h-full object-cover object-center absolute top-0 left-0'
                     }
-                    loading="lazy"
                   />
                 </div>
               </CardHeader>

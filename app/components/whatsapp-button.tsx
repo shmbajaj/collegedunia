@@ -16,7 +16,7 @@ export const WhatsAppButton = () => {
     >
       <Icons.Whatsapp className="w-10 h-10 md:mr-2" />
 
-      <span className="text-sm">
+      <span className="hidden md:inline-block text-sm">
         CHAT WITH US <br />
         Typically replies within minutes!!
       </span>

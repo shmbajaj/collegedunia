@@ -60,7 +60,6 @@ export function WhatWeOffer() {
                   className={
                     'h-auto w-auto object-cover transition-all hover:scale-105 m-auto aspect-square'
                   }
-                  loading="lazy"
                 />
               </div>
             </div>
@@ -88,7 +87,6 @@ export function WhatWeOffer() {
                   className={
                     'h-auto w-auto object-cover transition-all hover:scale-105 m-auto aspect-square'
                   }
-                  loading="lazy"
                 />
               </div>
             </div>
@@ -113,7 +111,6 @@ export function WhatWeOffer() {
                   className={
                     'h-auto w-auto object-cover transition-all hover:scale-105 m-auto aspect-square'
                   }
-                  loading="lazy"
                 />
               </div>
             </div>
@@ -138,7 +135,6 @@ export function WhatWeOffer() {
                   className={
                     'h-auto w-auto object-cover transition-all hover:scale-105 m-auto aspect-square'
                   }
-                  loading="lazy"
                 />
               </div>
             </div>

@@ -77,7 +77,6 @@ export function Page({
             className={cn(
               'w-full h-full object-cover object-center absolute top-0 left-0'
             )}
-            loading="eager"
           />
         </div>
       </section>

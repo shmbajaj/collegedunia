@@ -173,7 +173,6 @@ export default function ManagementAdmissions() {
                       className={cn(
                         'w-full h-full object-cover object-center absolute top-0 left-0'
                       )}
-                      loading="lazy"
                     />
                   </div>
                   <hr className="mx-1 h-1 w-12 rounded border-0 bg-black md:mx-4" />
@@ -215,7 +214,6 @@ export default function ManagementAdmissions() {
                       className={
                         'w-full h-full object-cover object-center absolute top-0 left-0'
                       }
-                      loading="lazy"
                     />
                   </div>
                 </CardHeader>
