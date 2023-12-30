@@ -6,7 +6,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from '~/components/page-header';
-import aboutPageHeader from 'app/images/educom-about-us-page-pageheader.jpeg';
+import aboutPageHeader from 'app/images/educom-about-us-page-pageheader.jpg';
 import { siteConfig } from '~/config/site';
 import { WhyChooseUs } from '~/pages/index/components/why-choose-us';
 import { StyledHeading2 } from '~/components/typography';
