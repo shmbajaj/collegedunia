@@ -17,7 +17,7 @@ import { WhatsAppButton } from './components/whatsapp-button';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles },
-  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
+  // ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
 ];
 
 export const meta: MetaFunction = () => {
