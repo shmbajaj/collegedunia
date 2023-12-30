@@ -1,10 +1,10 @@
-import { PageHeaderHeading } from "../../../components/page-header";
+import { PageHeaderHeading } from '../../../components/page-header';
 
 const data = [
-  { heading: "SUCCESSFUL ADMISSIONS", value: "5340", symbol: "+" },
-  { heading: "OFFICES ACROSS INDIA", value: "14", symbol: "+" },
-  { heading: "YEARS OF EXPERIENCE", value: "17", symbol: "+" },
-  { heading: "SUCCESS RATE", value: "99", symbol: "%" },
+  { heading: 'SUCCESSFUL ADMISSIONS', value: '5000', symbol: '+' },
+  { heading: 'YEARS OF EXPERIENCE', value: '14', symbol: '+' },
+  { heading: 'TOP COLLEGE PARTNERS', value: '200', symbol: '+' },
+  { heading: 'SUCCESS RATE', value: '99', symbol: '%' },
 ];
 
 export function Stats() {

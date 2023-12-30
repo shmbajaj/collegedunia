@@ -2,6 +2,7 @@ import { GetInTouchForm } from './get-in-touch-form';
 import { PageHeaderHeading } from '../../../components/page-header';
 import React from 'react';
 import { cn } from '~/lib/utils';
+import { siteConfig } from '~/config/site';
 
 export function GetInTouch({
   showContactInfo = false,
@@ -25,12 +26,10 @@ export function GetInTouch({
         {showContactInfo && (
           <div className="flex-1">
             <div className="p-4 lg:p-12 bg-educom border-t-8 border-orange-500 text-white flex flex-col gap-2 text-center font-semibold h-max">
-              <span>
-                COMMERCIA, HINJAWADI BRIDGE,WAKAD, PUNE, MAHARASHTRA 411057
-              </span>
+              <span>{siteConfig.contact.address}</span>
               <span>CONTACT:</span>
-              <span>+91 77579 20539</span>
-              <span>+91 87673 31852</span>
+              <span>{siteConfig.contact.primaryNumber}</span>
+              <span>{siteConfig.contact.secondaryNumber}</span>
             </div>
           </div>
         )}
