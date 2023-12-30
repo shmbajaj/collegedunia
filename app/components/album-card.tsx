@@ -23,11 +23,11 @@ export function AlbumCard({
   ...props
 }: AlbumCardProps) {
   return (
-    <Card {...props} className={className}>
+    <Card {...props} className={cn(className, "flex flex-col justify-center")}>
       <CardHeader
         className={cn('p-0', {
-          'h-36': width === 150,
-          'h-60': width === 250,
+          'h-36 md:h-auto': width === 150,
+          'h-60 md:h-auto': width === 250,
         })}
       >
         <div className="overflow-hidden rounded-md ">

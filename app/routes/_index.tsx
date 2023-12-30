@@ -14,12 +14,12 @@ import { cn, validationAction } from '~/lib/utils';
 import { json, type ActionFunctionArgs } from '@remix-run/node';
 import { GetInTouchFormSchema } from '~/data/schema';
 import type { GetInTouchFormInput } from '~/pages/index/components/get-in-touch-form';
-import homePageHeader from 'app/images/educom-home-page-pageheader.jpeg';
+import homePageHeader from 'app/images/educom-home-page-pageheader.jpg';
 import { homePageTestimonials } from '~/data/testimonials.data';
-import aboutUsFirst from '~/images/about-us-1.jpeg';
-import aboutUsSecond from '~/images/about-us-2.jpeg';
-import aboutUsThird from '~/images/about-us-3.jpeg';
-import aboutUsFourth from '~/images/about-us-4.jpeg';
+import aboutUsFirst from '~/images/about-us-1.jpg';
+import aboutUsSecond from '~/images/about-us-2.jpg';
+import aboutUsThird from '~/images/about-us-3.jpg';
+import aboutUsFourth from '~/images/about-us-4.jpg';
 
 import { navConfig } from '~/config/nav';
 
