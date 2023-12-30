@@ -1,4 +1,5 @@
 import { Link } from '@remix-run/react';
+import { json, type ActionFunctionArgs } from '@remix-run/node';
 import { GetInTouch } from '~/pages/index/components/get-in-touch';
 import {
   PageHeader,
@@ -11,11 +12,11 @@ import { buttonVariants } from '~/components/ui/button';
 import { WhatWeOffer } from '~/pages/index/components/what-we-offer';
 import { WhyChooseUs } from '~/pages/index/components/why-choose-us';
 import { cn, validationAction } from '~/lib/utils';
-import { json, type ActionFunctionArgs } from '@remix-run/node';
 import { GetInTouchFormSchema } from '~/data/schema';
 import type { GetInTouchFormInput } from '~/pages/index/components/get-in-touch-form';
-import homePageHeader from 'app/images/educom-home-page-pageheader.jpg';
 import { homePageTestimonials } from '~/data/testimonials.data';
+import homePageHeader from '~/images/HomePage.jpg';
+import homePageHeaderWebP from '~/images/HomePage.webp';
 import aboutUsFirst from '~/images/about-us-1.jpg';
 import aboutUsSecond from '~/images/about-us-2.jpg';
 import aboutUsThird from '~/images/about-us-3.jpg';
@@ -55,11 +56,14 @@ export default function Index() {
           </div>
         </PageHeader>
         <div className="relative w-full h-full bg-blend-screen bg-opacity-30 bg-slate-500">
-          <img
-            src={homePageHeader}
-            alt="Page Header Background"
-            className="w-full h-full object-cover object-center absolute"
-          />
+          <picture>
+            <source srcSet={homePageHeaderWebP} type="image/webp" />
+            <img
+              src={homePageHeader}
+              alt="Page Header Background"
+              className="w-full h-full object-cover object-center absolute"
+            />
+          </picture>
         </div>
       </section>
       <Stats />

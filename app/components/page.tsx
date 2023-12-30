@@ -23,6 +23,7 @@ export interface PageInfoProps extends TestimonialsProps {
   pageHeaderBackgroundImageURL: string;
   pageHeaderBackgroundFallbackColor: string;
   showDescription?: boolean;
+  isDarkBg?: boolean;
 }
 
 export function Page({
@@ -35,6 +36,7 @@ export function Page({
   children,
   className,
   testimonials,
+  isDarkBg = false,
   showDescription = false,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & PageInfoProps) {
@@ -45,7 +47,9 @@ export function Page({
       <section className="relative h-[580px]">
         <PageHeader className="pb-8 absolute top-16 left-4 md:left-28 z-40 w-full max-w-lg ">
           <p className="capitalize font-bold">{pageHeaderCaption}</p>
-          <PageHeaderHeading className="capitalize">
+          <PageHeaderHeading
+            className={cn('capitalize', { 'text-white font-semibold': isDarkBg })}
+          >
             {pageHeaderTitle}
           </PageHeaderHeading>
           <PageHeaderDescription className="text-white">

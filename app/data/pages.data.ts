@@ -1,7 +1,7 @@
 import type { PageInfoProps } from '~/components/page';
-import engineeringAdmissionBGImg from '../images/educom-engg-admission-page-pageheader.jpeg';
-import managementAdmissionBGImg from '../images/educom-management-admission-page-pageheader.jpeg';
-import medicalAdmissionBGImg from '../images/educom-medical-admission-page-pageheader.jpeg';
+import engineeringAdmissionBGImg from '../images/EngineeringWeb.jpg';
+import managementAdmissionBGImg from '../images/Managementweb.jpg';
+import medicalAdmissionBGImg from '../images/MedicalWeb.jpg';
 import {
   engineeringPageTestimonials,
   managementPageTestimonials,
@@ -694,8 +694,9 @@ const engineeringAdmission: PageInfoProps & {
   `,
   pageHeaderTo: '#get-in-touch-form',
   pageHeaderBackgroundImageURL: engineeringAdmissionBGImg,
-  pageHeaderBackgroundFallbackColor: '#0C71C3',
+  pageHeaderBackgroundFallbackColor: '#fff',
   testimonials: engineeringPageTestimonials,
+  isDarkBg: true,
   engineeringBranches,
   engineeringColleges,
 };
